@@ -1,0 +1,68 @@
+/* AURA: an open editorial spread. All colors and families inherit the existing product tokens. */
+.aura-chapter{position:relative;overflow:hidden;padding:95px var(--page-gutter) 0;color:var(--foreground);background:var(--field);font-family:var(--font-body);--aura-rule:#65401f35}
+.aura-chapter .aura-intro,.aura-chapter .aura-scene,.aura-chapter .aura-closing{max-width:1424px;margin-inline:auto}
+.aura-chapter .aura-identity{display:flex;align-items:center;gap:17px}
+.aura-chapter .aura-identity img{width:54px;height:54px;border-radius:12px}
+.aura-chapter .aura-eyebrow{display:flex;align-items:center;gap:12px;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;line-height:1.65;color:var(--secondary)}
+.aura-chapter .aura-identity .aura-eyebrow{display:block;margin:0}
+.aura-chapter .aura-identity .aura-eyebrow>span{display:block;font-size:9px;letter-spacing:.1em;margin-top:4px}
+.aura-chapter .aura-title-row{display:flex;align-items:end;justify-content:space-between;gap:30px;padding:25px 0 30px;border-bottom:1px solid var(--aura-rule)}
+.aura-chapter .aura-title-row h2{font-family:var(--font-display);font-weight:var(--name-weight);font-size:clamp(100px,12vw,176px);letter-spacing:var(--name-tracking);line-height:.86;margin:0}
+.aura-chapter .aura-title-row h2>span{color:var(--name-dot)}
+.aura-chapter .aura-title-row>p{font-family:var(--font-display);font-size:clamp(28px,2.7vw,39px);font-weight:500;letter-spacing:-.025em;line-height:1.1;margin:0 3px 5px 0}
+.aura-chapter .aura-scene{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:center;gap:clamp(50px,8vw,130px);padding:72px 0 80px}
+.aura-chapter .aura-chart{margin:0;min-width:0}
+.aura-chapter .aura-chart-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:17px;font-size:11px;color:var(--secondary)}
+.aura-chapter .aura-chart-heading>span:first-child{font-weight:600}
+.aura-chapter .aura-chart-heading>span:last-child{font-size:9px;letter-spacing:.07em;text-transform:uppercase}
+.aura-chapter .aura-chart-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr));aspect-ratio:1;border:1px solid #65401f66;background:var(--aura-rule);gap:1px;padding:1px;box-shadow:0 18px 42px -32px #65401f60}
+.aura-chapter .aura-sign{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-width:0;background:var(--field);color:var(--secondary);font-size:clamp(10px,1vw,13px);transition:background .3s,color .3s}
+.aura-chapter .aura-sign::after{position:absolute;inset:0;content:"";border:2px solid transparent;pointer-events:none;transition:border-color .3s}
+.aura-chapter .aura-sign.is-selected{background:#e4cfb7;color:var(--foreground)}
+.aura-chapter .aura-sign.is-selected::after{border-color:var(--accent)}
+.aura-chapter .aura-sign-number{position:absolute;top:8px;left:9px;font-size:8px;letter-spacing:.04em;color:var(--secondary);opacity:.7}
+.aura-chapter .aura-placement{font-size:10px;font-weight:600;line-height:1.4;padding:3px 7px;border:1px solid #65401f50;border-radius:3px;color:var(--accent);background:#f8f2e9}
+.aura-chapter .aura-sign.is-selected .aura-placement{color:#fff8ee;background:var(--accent);border-color:var(--accent)}
+.aura-chapter .aura-chart-center{grid-column:2 / 4;grid-row:2 / 4;background:var(--field);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:15px 7px}
+.aura-chapter .aura-center-kicker{font-size:9px;font-weight:500;color:var(--secondary);letter-spacing:.035em}
+.aura-chapter .aura-chart-center>p{font-family:var(--font-display);font-size:clamp(26px,3.2vw,45px);font-weight:500;line-height:1.02;letter-spacing:-.045em;margin:17px 0 22px}
+.aura-chapter .aura-center-foot{font-size:7px;letter-spacing:.14em;color:var(--secondary)}
+.aura-chapter .aura-chart figcaption{display:flex;justify-content:center;gap:9px;color:var(--secondary);font-size:10px;margin-top:19px;line-height:1.6}
+.aura-chapter .aura-editorial{min-width:0;padding-top:8px}
+.aura-chapter .aura-small-rule{height:1px;width:28px;background:var(--accent)}
+.aura-chapter .aura-editorial>.aura-eyebrow{margin:0 0 23px}
+.aura-chapter .aura-editorial>h3{font-family:var(--font-display);font-size:clamp(40px,4vw,59px);font-weight:500;line-height:1.05;letter-spacing:-.035em;margin-bottom:23px}
+.aura-chapter .aura-editorial>h3>em{font-weight:500;color:var(--accent)}
+.aura-chapter .aura-description{font-size:14px;line-height:1.8;color:var(--secondary);max-width:340px;margin:0 0 31px}
+.aura-chapter #aura-controls{border-top:1px solid var(--aura-rule);padding-top:14px}
+.aura-chapter #aura-controls>legend{padding:0 10px 0 0;font-size:10px;line-height:1.6;color:var(--secondary)}
+.aura-chapter .aura-choices{display:flex;gap:9px}
+.aura-chapter .aura-choices>label{position:relative;flex:1;cursor:pointer}
+.aura-chapter .aura-choices input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.aura-chapter .aura-choices label>span{display:flex;justify-content:center;align-items:center;gap:7px;min-height:46px;border:1px solid var(--aura-rule);font-size:11px;font-weight:500;transition:background .2s,border-color .2s}
+.aura-chapter .aura-choices input:checked+span{background:var(--accent);border-color:var(--accent);color:#fff8ee}
+.aura-chapter .aura-choices input:focus-visible+span,.aura-chapter a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.aura-chapter .aura-choices label:hover>span{border-color:var(--accent)}
+.aura-chapter #aura-controls:disabled .aura-choices{opacity:.65}
+.aura-chapter #aura-controls:disabled label{cursor:default}
+.aura-chapter .aura-detail{min-height:217px;padding:28px 0 20px}
+.aura-chapter .aura-detail-label{font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin:0 0 11px}
+.aura-chapter .aura-detail-inner>h4{font-family:var(--font-display);font-size:39px;line-height:1.1;letter-spacing:-.025em;font-weight:500;margin:0 0 11px}
+.aura-chapter #aura-detail-copy{color:var(--secondary);font-size:13px;line-height:1.8;max-width:350px;margin:0}
+.aura-chapter .aura-product-link{display:inline-flex;align-items:center;gap:45px;min-height:44px;font-size:12px;font-weight:600;border-bottom:1px solid #65401f77}
+.aura-chapter .aura-product-link>span{font-size:20px;transition:transform .2s}
+.aura-chapter .aura-product-link:hover>span{transform:translate(2px,-2px)}
+.aura-chapter .aura-no-script{font-size:12px;line-height:1.7;color:var(--secondary)}
+.aura-chapter .aura-closing{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:33px 0 38px;border-top:1px solid var(--aura-rule)}
+.aura-chapter .aura-closing>p{font-size:12px;font-weight:500;line-height:1.9;color:var(--foreground);margin:0}
+.aura-chapter .aura-closing>p>span{color:var(--secondary);font-weight:400}
+.aura-chapter .aura-closing>a{display:flex;align-items:center;gap:20px;font-size:11px;min-height:44px}
+.aura-chapter .aura-closing>a>span:last-child{display:grid;place-items:center;width:44px;height:44px;border:1px solid #65401f77;border-radius:50%;font-size:21px;transition:transform .2s}
+.aura-chapter .aura-closing>a:hover>span:last-child{transform:translateY(3px)}
+@media(min-width:1600px){.aura-chapter .aura-sign{font-size:14px}.aura-chapter .aura-placement{font-size:11px}}
+@media(max-width:1000px){.aura-chapter .aura-scene{gap:40px;grid-template-columns:minmax(0,1fr) minmax(0,.9fr)}.aura-chapter .aura-editorial>h3{font-size:42px}.aura-chapter .aura-description{font-size:13px}.aura-chapter .aura-chart-center>p{font-size:31px}.aura-chapter .aura-sign{gap:5px}.aura-chapter .aura-placement{font-size:8px;padding:2px 4px}.aura-chapter .aura-detail{min-height:238px}.aura-chapter .aura-chart-heading{align-items:start;flex-direction:column;gap:5px}}
+@media(max-width:760px){.aura-chapter{padding-top:58px}.aura-chapter .aura-identity{gap:12px}.aura-chapter .aura-identity img{width:44px;height:44px}.aura-chapter .aura-identity .aura-eyebrow{font-size:8px}.aura-chapter .aura-identity .aura-eyebrow>span{font-size:8px}.aura-chapter .aura-title-row{padding:26px 0 27px;gap:18px}.aura-chapter .aura-title-row h2{font-size:clamp(72px,18vw,118px)}.aura-chapter .aura-title-row>p{font-size:clamp(23px,5.5vw,32px);margin:0 0 2px}.aura-chapter .aura-scene{display:flex;flex-direction:column;align-items:stretch;gap:40px;padding:38px 0 44px}.aura-chapter .aura-chart{width:100%;max-width:530px;align-self:center}.aura-chapter .aura-chart-heading{flex-direction:row;align-items:center;font-size:10px;margin-bottom:15px}.aura-chapter .aura-chart-heading>span:last-child{font-size:8px}.aura-chapter .aura-sign{font-size:clamp(10px,2.7vw,13px);gap:5px}.aura-chapter .aura-placement{font-size:clamp(8px,2.2vw,10px);padding:2px 4px}.aura-chapter .aura-sign-number{font-size:7px;top:6px;left:6px}.aura-chapter .aura-chart-center>p{font-size:clamp(27px,7.5vw,43px);margin:15px 0 17px}.aura-chapter .aura-center-kicker{font-size:8px}.aura-chapter .aura-center-foot{font-size:6px;letter-spacing:.09em}.aura-chapter .aura-chart figcaption{font-size:9px;margin-top:15px}.aura-chapter .aura-editorial{padding-top:0;max-width:530px;align-self:center;width:100%}.aura-chapter .aura-editorial>.aura-eyebrow{font-size:8px;margin-bottom:18px}.aura-chapter .aura-editorial>h3{font-size:clamp(42px,10.3vw,58px);margin-bottom:18px}.aura-chapter .aura-description{font-size:14px;max-width:390px;margin-bottom:26px}.aura-chapter .aura-detail{min-height:210px;padding:25px 0 15px}.aura-chapter #aura-detail-copy{max-width:430px;font-size:13px}.aura-chapter .aura-closing{padding:27px 0 32px;align-items:start;flex-direction:column;gap:15px}.aura-chapter .aura-closing>p{font-size:11px}.aura-chapter .aura-closing>a{align-self:flex-end;font-size:10px}.aura-chapter .aura-product-link{font-size:11px}}
+/* Put the controls beside their result in the mobile reading order. */
+@media(max-width:760px){.aura-chapter .aura-scene{gap:0}.aura-chapter .aura-editorial{display:contents}.aura-chapter .aura-editorial>:not(.sr-only){width:100%;max-width:530px;align-self:center}.aura-chapter .aura-editorial>.aura-eyebrow{order:1}.aura-chapter .aura-editorial>h3{order:2}.aura-chapter .aura-description{order:3}.aura-chapter #aura-controls{order:4;margin-bottom:22px}.aura-chapter .aura-chart{order:5;margin-bottom:0}.aura-chapter .aura-detail{order:6;min-height:210px;padding-top:28px}.aura-chapter .aura-editorial>noscript{order:7}.aura-chapter .aura-product-link{order:8;align-self:flex-start;width:fit-content;margin-top:2px}}
+@media(max-width:480px){.aura-chapter .aura-title-row{align-items:start;flex-direction:column;gap:21px}.aura-chapter .aura-title-row h2{font-size:90px}.aura-chapter .aura-title-row>p{font-size:29px;line-height:1.08}}
+@media(max-width:360px){.aura-chapter .aura-sign{font-size:9px}.aura-chapter .aura-placement{font-size:7px}.aura-chapter .aura-chart-center>p{font-size:25px}}

@@ -1,38 +1,45 @@
-# v3 — Design explorations
+# v3 — Round 02
 
-Three interactive design directions for the next gLitCh Labs site, awaiting the user's choice before the full build. Serve the repository root and open `/v3/`.
+Three new experience prototypes, awaiting selection before the full site build. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
 
-| Direction | Composition | Motion |
+| Direction | Main idea | Interaction |
 | --- | --- | --- |
-| Blue / Editorial | Warm paper, electric blue, grotesk/serif typography, a sculptural cover, staggered project grid | Art depth, gentle parallax, sequenced reveals |
-| Dark / Observatory | Ink-black gallery, acid-green light, large serif type, landscape project spreads | Luminous cover, art depth, larger quiet reveals |
-| Color / Playground | Butter yellow, coral, lilac, mint, rounded type, stacked project posters | Rotated compositions, sticky desktop posters with scroll-linked scale |
+| Portal | A monumental, live 3D corridor connecting four product worlds | Scroll moves the camera through the same gateway architecture; pointer adds restrained depth |
+| Signal | The studio's identity is a field of physical blocks | Disturb the letters with the pointer or the Disrupt button; they re-form |
+| Orbit | Four project posters form an explorable spatial collection | Drag to turn the collection, select a named project, or click a poster |
 
-The bottom picker switches instantly between directions. Keys **1–3**, **left/right arrows**, and **R** switch or replay; keyboard events from the embedded pages reach the picker. The selection persists in `?v=1`, `?v=2`, or `?v=3`. Each direction is also directly accessible in `prototypes/`.
+Expenses, AURA, Lumen, then Afterlight remain the document and control order. Afterlight is explicitly **in development**. Its imagery and description come from the local Afterlight repository; development captures do not represent balanced-play results or a downloadable release.
 
-Each concept includes Expenses, AURA, Lumen, then Afterlight. Afterlight is explicitly **in development**, with no release date, store, or download claim. Its description and capture come from the local Afterlight repo, including README.md, NEXT_RUN.md, ART_DIRECTION.md, and current art-direction test captures.
+The comparison picker uses **1–3**, **left/right**, and **R** for switch/replay. Selection persists in the query string. Each prototype also works directly through `prototypes/portal.html`, `signal.html`, or `orbit.html`.
 
-Working samples: exact bill splits for two/three/four people, selectable fictional AURA placements, Lumen answer/feedback/reset, and expandable Afterlight information. App samples are labeled concepts. The AURA orbital graphic is illustrative rather than a calculated or traditional chart. Gameplay captures are development fixtures, not evidence of economic balance.
+## Architecture
 
-## Implementation
+Buildless HTML/CSS/JavaScript. Three.js r170 and official RoomEnvironment, RoundedBoxGeometry, and Reflector add-ons are local. GSAP 3.13.0 + ScrollTrigger and Lenis 1.3.26 are also local. One renderer, scene, and Lenis instance per loaded experience; the GSAP ticker drives smooth scroll and rendering. Touch scrolling stays native.
 
-Plain HTML/CSS/JS. GSAP 3.13.0 + ScrollTrigger and Lenis 1.3.26 are copied locally with their licenses. One Lenis instance per loaded direction, driven by the GSAP ticker; native touch scrolling. No Three.js: generated sculptural artwork supplies the visual depth for this comparison. Full WebGL would be a separate choice after selection.
+Portal keeps one world alive across its authored chapters. Signal uses one instanced draw for its letter field. Orbit uses four physical poster objects and native controls describing the same selection. Renderer DPR is capped, Portal's mirror is omitted when initially opened on a phone, and offscreen/hidden scenes pause. GPU resources, observations, and event handlers are released on motion changes and page exit.
 
-The Motion control and system reduced-motion preference remove smooth scrolling, scroll-linked effects, and entrances. Color posters return to normal flow. Without JavaScript, project content and navigation remain available; sample controls stay disabled. The picker offers direct-page links without JavaScript. Resources are version-local. Earlier versions are untouched.
+Motion off and system reduced motion retain static, readable content. Portal uses its generated poster; Signal uses native typography; Orbit uses a printed fallback with working selection buttons. WebGL failure also retains the content and project links. The complete project index remains in HTML before enhancement.
 
-Skills: `prototype` (picker and divergent directions), `build-awwwards-quality-sites`, `editorial-portfolio-chapters`, `cinematic-gsap-lenis-motion-system`, `design-taste-frontend`, and `imagegen`.
+See [DIRECTION.md](DIRECTION.md) for the world, camera, material, and interaction contracts; see [assets/README.md](assets/README.md) for provenance.
 
-## Assets and checks
+## Verification
 
-See `assets/README.md` and `assets/provenance.json` for artwork, source copies, and hashes. Original studio/product marks are unchanged. Three original hero images were generated with the built-in image tool. Font and vendor licenses are retained.
+From the repository root:
 
-Run `python -X utf8 scripts/check-site.py` from the root, then `node --check` for `scripts/picker.js` and `scripts/explorations.js` inside v3. Browser review covers all directions, picker switching/replay, keyboard use, responsive widths, sample controls, motion off, and a script-free fixture. Saved review captures live in ignored `.cache/v3-review/`.
+```powershell
+python -X utf8 scripts/check-site.py
+node --check v3/scripts/experience.js
+node --check v3/scripts/picker.js
+```
 
-## Review — 18 October 2026
+The local-resource checker permits explicit navigation from a version into the root drafts archive; runtime assets still cannot escape their version. Archive pages retain their own local dependencies. All 49 files from the first round were verified byte-identical after moving them.
 
-- Root validator passed 27 pages and 731 local references; both authored v3 scripts passed Node syntax checks. v1 and v2 have no changes.
-- Desktop covers and 390px phone compositions inspected for every direction. Widths 320, 390, 800, 1000, and 1440 were checked; observed overflow and phone grid/title issues were repaired and rechecked.
-- Picker buttons, number/arrow shortcuts, replay, URL persistence, and exactly one active choice verified in the browser.
-- Bill allocation (including the exact three-person remainder), AURA selection, Lumen empty/wrong/correct/reset states, and Afterlight disclosure verified.
-- Motion off removed Lenis and restored Color posters to normal flow; restoring motion reinstated the scene. A script-free fixture retained visible content, links, and disabled sample controls, then was removed.
-- No browser warnings or errors were recorded during these checks. OS reduced-motion is implemented through live matchMedia and CSS; the available browser tool did not expose media-preference emulation.
+Live rendering was verified for all three directions at 320, 390, 800, and 1440px without horizontal overflow or browser warnings/errors. Orbit selection, drag, Afterlight status, and motion-off selection were checked. Root Drafts links were followed into the preserved original. Further review evidence is kept under ignored `.cache/v3-round02-review/`.
+
+Skills: `prototype`, `build-awwwards-quality-sites`, `build-threejs-scroll-worlds`, `webgl-landing-steering`, `threejs`, and the existing GSAP/Lenis motion workflow. Fonts: Bebas Neue and Space Grotesk, with local OFL licenses. This is a local design exploration; physical-device frame rates and cross-browser behavior remain unmeasured.
+
+## Final review — 18 October 2026
+
+All 32 pages and 825 local HTML/CSS references passed validation. Both authored scripts passed syntax checks; v1/v2 are unchanged. The root Drafts links opened the archived original with its images intact. A script-free Portal fixture retained readable headings, all four projects, and links, then was removed.
+
+Portal's forward journey to Afterlight and reverse trip to Expenses were checked. Signal's keyboard-triggered disruption was observed in the renderer; its phone composition folds the identity into two rows. Orbit's native selection, raycast/drag selection, and working motion-off selection were verified. Afterlight selection hides the release link and displays In development. All three rendered at 320/390/800/1440px without horizontal overflow. Desktop/phone captures are retained under `.cache/v3-round02-review/`; no browser warnings or errors were recorded in these checks.

@@ -1,59 +1,50 @@
 {
   "date": "2026-10-18",
-  "images": [
+  "round": 2,
+  "files": [
     {
       "file": "images/afterlight-combat.png",
-      "source": "G:/Programs/Afterlight/test-output/art10-combat.png",
+      "origin": "Unchanged project artwork; see assets/README.md and root drafts/round-01/assets/provenance.json.",
       "sha256": "294d6db34295a82d21fcfd9ed95d5210191ab1b0bbb962a754529caba12771b4"
     },
     {
       "file": "images/afterlight-frontier.png",
-      "source": "G:/Programs/Afterlight/test-output/art10-frontier.png",
+      "origin": "Unchanged project artwork; see assets/README.md and root drafts/round-01/assets/provenance.json.",
       "sha256": "9b4d50bd929590a5ba3ec497bc96de5a11812f52e8197e8d43d86d2342703f7b"
     },
     {
       "file": "images/afterlight-logo.png",
-      "source": "G:/Programs/Afterlight/assets/brand/afterlight-logo.png",
+      "origin": "Unchanged project artwork; see assets/README.md and root drafts/round-01/assets/provenance.json.",
       "sha256": "8223b8d4a67f422881b70b4a95deb99cdf86ff8ae5f07b284f5606bb05491da6"
     },
     {
-      "file": "images/afterlight-oblique.png",
-      "source": "G:/Programs/Afterlight/test-output/art10-oblique.png",
-      "sha256": "7049013c8c99a32315a51c5bfdd4be33e2979073b100d4355735eba6a3fe1463"
-    },
-    {
       "file": "images/aura.webp",
-      "source": "v2/assets/images/aura.476e6b0002960b94.webp",
+      "origin": "Unchanged project artwork; see assets/README.md and root drafts/round-01/assets/provenance.json.",
       "sha256": "476e6b0002960b94ae917cac418fa75162d1b2c13d4db055626fd412ad123a7a"
     },
     {
-      "file": "images/blue-hero.png",
-      "source": "Built-in image_gen: exec-17729f3c-b30c-4897-9425-2ba0b667a19f.png; original cobalt ribbon still life",
-      "sha256": "0e0d2d3158a3a98812f437c23889eadb4ee2f14fc8c2015c6336337c038163d1"
-    },
-    {
-      "file": "images/color-hero.png",
-      "source": "Built-in image_gen: exec-5a4378f1-6a93-4799-9f26-1cce807523a9.png; original colorful sculptural still life",
-      "sha256": "b1ea49645537b3b55156e57e75104ac0a896552ea87542dd1304d715b7c08cc2"
-    },
-    {
-      "file": "images/dark-hero.png",
-      "source": "Built-in image_gen: exec-4397a898-0ebd-4d7b-b193-9be3cbd8e0d6.png; original optical-glass sculpture",
-      "sha256": "a380ceae788550b6d9192117074954ea88e5cf8734cdcef090b5c3834754440b"
+      "file": "images/basalt.png",
+      "origin": "image_gen exec-96b5056c-1e73-4757-9792-293e43610c2d.png",
+      "sha256": "6fe72983e63d0b56bca183eabe81aa865391c2e0f85ab6b9876c457d7c9f8257"
     },
     {
       "file": "images/expenses.webp",
-      "source": "v2/assets/images/expenses.218dc64e5888b5b5.webp",
+      "origin": "Unchanged project artwork; see assets/README.md and root drafts/round-01/assets/provenance.json.",
       "sha256": "218dc64e5888b5b5a1a426f6d4268e58b944a250fced5fa066c58efb318ec686"
     },
     {
       "file": "images/lumen.webp",
-      "source": "v2/assets/images/lumen.19a65105a4ebe278.webp",
+      "origin": "Unchanged project artwork; see assets/README.md and root drafts/round-01/assets/provenance.json.",
       "sha256": "19a65105a4ebe2780d57d25edeb2a02faa20906dc0caafeeda741e58125c827e"
     },
     {
+      "file": "images/portal-poster.png",
+      "origin": "image_gen exec-e6196392-cb47-4b2a-8684-9a5c4fb7dde7.png",
+      "sha256": "1cd9bfe0bc144a6f6b3e86f1e8f213c937ad7a79517f8c45441e080064dfc340"
+    },
+    {
       "file": "images/studio.webp",
-      "source": "v2/assets/images/glitchlabs.28737668f879555d.webp",
+      "origin": "Unchanged project artwork; see assets/README.md and root drafts/round-01/assets/provenance.json.",
       "sha256": "28737668f879555d9c78ce879d25c3fece2b49ac7df47f6205b1c5870e8bfbc0"
     }
   ]

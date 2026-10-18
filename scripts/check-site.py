@@ -42,7 +42,8 @@ def check_url(path, url, navigation=False):
     assert target.is_relative_to(ROOT), (path, 'reference escapes repository', url)
     version = next((ROOT / part for part in path.relative_to(ROOT).parts[:1] if re.fullmatch(r'v\d+', part)), None)
     if version:
-        assert target.is_relative_to(version), (path, 'reference escapes version', url)
+        archive_navigation = navigation and target.is_relative_to(ROOT / 'drafts')
+        assert target.is_relative_to(version) or archive_navigation, (path, 'reference escapes version', url)
     if target.is_dir():
         target /= 'index.html'
     assert target.is_file(), (path, 'missing resource', url)

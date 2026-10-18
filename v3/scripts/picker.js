@@ -1,7 +1,7 @@
 const variants = [
-  () => '<iframe src="prototypes/blue.html" title="Blue — Editorial direction"></iframe>',
-  () => '<iframe src="prototypes/dark.html" title="Dark — Observatory direction"></iframe>',
-  () => '<iframe src="prototypes/color.html" title="Color — Playground direction"></iframe>'
+  () => '<iframe src="prototypes/portal.html" title="Portal — spatial journey"></iframe>',
+  () => '<iframe src="prototypes/signal.html" title="Signal — kinetic identity"></iframe>',
+  () => '<iframe src="prototypes/orbit.html" title="Orbit — spatial collection"></iframe>'
 ];
 // `variants` is an array of render functions, one per variant, in picker order.
 const stage = document.getElementById('stage');

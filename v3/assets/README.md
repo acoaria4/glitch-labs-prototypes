@@ -1,16 +1,16 @@
-# Asset provenance
+# Round-02 assets
 
-The three hero still lifes (`blue-hero.png`, `dark-hero.png`, `color-hero.png`) are original conceptual artwork generated with the built-in image tool on 18 October 2026. They depict studio curiosity through sculptural forms, not shipped products or screenshots.
+- `images/portal-poster.png`: original generated architecture, used for the still/fallback Portal view.
+- `images/basalt.png`: original generated seamless basalt material. The live Portal architecture uses it as a surface and approximate bump texture.
+- Studio and app marks: unchanged copies from the existing repository artwork.
+- Afterlight captures and original game logo: unchanged copies originally sourced from `G:/Programs/Afterlight`. The current development capture is displayed as a project poster in Orbit and within Portal's final gateway; the combat capture is linked from the game's disclosure.
 
-The studio and three app marks are unchanged copies from v2's existing artwork. Fonts and OFL license notices are copied unchanged from v2; CSS uses the corresponding local faces.
+The two generated assets were created with the built-in image tool on 18 October 2026. No generated scene is represented as gameplay. Orbit's poster layouts and Signal's sampled studio lettering are rendered from actual brand text and original project marks; they are editorial compositions, not app screenshots.
 
-Afterlight sources are local, read-only copies from `G:/Programs/Afterlight`:
+Font sources and licenses:
 
-- `afterlight-frontier.png`: `test-output/art10-frontier.png`, displayed in all three directions.
-- `afterlight-combat.png`: `test-output/art10-combat.png`, linked from the game disclosure.
-- `afterlight-oblique.png`: `test-output/art10-oblique.png`, retained for the selected design's next iteration.
-- `afterlight-logo.png`: `assets/brand/afterlight-logo.png`, the existing generated game identity, retained for the next iteration.
+- [Bebas Neue](https://github.com/google/fonts/tree/main/ofl/bebasneue)
+- [Space Grotesk](https://github.com/google/fonts/tree/main/ofl/spacegrotesk)
+- Existing DM Sans, Manrope, Cormorant Garamond, and Outfit copies with their retained licenses.
 
-The captures are current art-direction development fixtures. The website makes no balance, release-date, or availability claims based on fixture gold or army state. The game is in development.
-
-`provenance.json` records every copied/generated image's SHA-256 and origin. GSAP, ScrollTrigger, Lenis, and their license notices are kept in `../vendor/`.
+Three.js r170 and its three official add-ons come from the [official npm distribution](https://www.npmjs.com/package/three/v/0.170.0), with the MIT license in `../vendor/three-LICENSE.txt`. Add-on imports are changed only to point to the local Three.js build. GSAP and Lenis retain their existing version-local licenses.

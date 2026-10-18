@@ -4,15 +4,17 @@ Round 01 is archived byte-for-byte in `../drafts/round-01/`. This exploration de
 
 ## Portal
 
-Begin with the complete original portal artwork, fitted within the viewport. During the first scroll chapter, crossfade into the monumental live gateway corridor as the four studio projects come into focus. Native scroll is the deterministic source of camera progress; pointer adds a small damped offset. One persistent Three.js scene, a reflective obsidian floor, five physically thick rectangular gateways, and a far vermilion sun establish continuity.
+One continuous sunset landscape remains visible behind a transparent Three.js layer from the opening through all four project chapters and the studio closing. The landscape contains no baked architecture. Every doorway and project mark is real geometry; native scroll moves through the corridor while the backdrop stays in place. There is no crossfade into a separate scene.
 
-- Units: one world unit approximately one metre. Gate centers at x=3.2, y=3.9, z=0/-18/-36/-54/-72. Outer width 6.2, height 8.2, depth 1.2; bevel radius .08.
-- Perspective: FOV 42 desktop / 52 phone. Desktop camera begins at (1.4, 3.15, 15) and moves down the corridor by 18 units per chapter. Look target stays ahead through the next opening. Phone camera centers on the gateway at y=8.9, framing smaller logos below the copy.
-- Silhouette: strict architectural rectangles, thick stone/metal edges, no ornamental floating primitives. Frame trim and focal objects change by chapter.
-- Materials: rough black basalt frames, polished black floor, narrow emissive trims, physically lit metal focal objects. A single low-resolution planar mirror on desktop; simple floor on phones.
-- Lighting: neutral top key and vermilion rim; chapter focal colors change warm gray → champagne → blush → ember. Fog separates depth; it does not obscure copy.
-- Chapters: threshold gateway; original Expenses, AURA, and Lumen icon faces on thick bodies following their source alpha silhouettes; Afterlight’s source vector crest extruded in aged gold, with the original title artwork beneath. Restrained tilt and vertical drift preserve legibility.
-- Desktop scene cap: one renderer, mirror 512, DPR 1.5; phone DPR 1.25, no mirror. Pause when hidden/offscreen; no continuous rendering under reduced motion. Context loss returns to the poster and semantic content.
+- Environment: `assets/images/portal-environment.png`, generated from the original poster with all architecture and structural reflections removed. The original poster remains preserved as the source. The exact built-in image-generation prompt is in `assets/portal-environment.prompt.txt`.
+- Composition: CSS `cover` with the source ground vanishing point anchored at 76% width /72% height. Camera view offset uses the same principal point. Vertical FOV adjusts to the covered image height so perspective stays aligned on wide screens and phones.
+- Geometry: five monolithic basalt frames at x=0, z=0/-14/-28/-42/-56. Each is 6.3 wide and 8.275 high, with 1.2-deep columns, subtle bronze edges, warm interior trims, and a low threshold.
+- Camera: eye height 2 units, x=1.3 with bounded damped pointer drift, initial z=18. Native chapter progress advances z by 14 units. Passed frames leave the view; the active logo becomes visible as its doorway approaches. Distant logos stay hidden to keep the open corridor readable.
+- Materials: physically scaled basalt UVs, rough stone, restrained bronze, warm directional sunset, neutral fill. Original Expenses/AURA/Lumen faces retain their traced bodies. Afterlight uses its supplied extruded vector crest and original wordmark.
+- Grounding: alpha contact shadows and mirrored local geometry with height-faded transparency. No opaque ground plane, full-screen reflector, or second rendered sun can cover the landscape.
+- Phones: the shared landscape/canvas stage sits below the copy (56svh, 60svh on narrow phones) with larger logo scale. The same perspective/lighting contract applies. Project controls and native touch scrolling remain usable.
+- Lifecycle: one transparent renderer, DPR capped at 1.5 desktop /1.25 phone; hidden documents pause; teardown frees shared textures, source and mirrored geometry/materials, and subscriptions. Motion off/reduced motion retain the landscape and native project artwork.
+- Content: Expenses → AURA → Lumen → Afterlight. Afterlight remains fourth and marked In development.
 
 ## Signal
 
@@ -37,6 +39,6 @@ An explorable physical collection of four dimensional app-logo objects. Drag the
 
 GSAP/ScrollTrigger + one Lenis instance per current document, tied to the GSAP ticker. Native touch scroll. The comparison picker stays unchanged except direction labels. All resources are local. Pagehide, live motion changes, and iframe replacement release GPU resources and event subscriptions. Static content precedes enhancement; motion or WebGL failures never hide links.
 
-Fonts: Bebas Neue and Space Grotesk from Google Fonts' official repository; original licenses retained. Three.js r170, official RoomEnvironment/RoundedBoxGeometry/Reflector/SVGLoader add-ons and MIT license are vendored. Original product identity and Afterlight source repo remain unchanged.
+Fonts: Bebas Neue and Space Grotesk from Google Fonts' official repository; original licenses retained. Three.js r170, official RoomEnvironment/RoundedBoxGeometry/SVGLoader add-ons and MIT license are vendored. Original product identity and Afterlight source repo remain unchanged.
 
-The generated opening artwork remains visible when WebGL initializes; the live canvas fades in between chapter progress 0.08 and 0.72. Returning to the top reverses the transition. The obscured live scene skips rendering while the full artwork is displayed. On phones the complete landscape image sits below the hero copy. CSS depth layers also use the exact icon masks instead of approximate rounded rectangles.
+Portal’s background and transparent live layer remain at opacity 1 throughout the story. Signal’s CSS depth layers use the exact icon masks instead of approximate rounded rectangles.

@@ -14,11 +14,11 @@ The comparison picker uses **1–3**, **left/right**, and **R** for switch/repla
 
 ## Architecture
 
-Buildless HTML/CSS/JavaScript. Three.js r170 and official RoomEnvironment, RoundedBoxGeometry, Reflector, and SVGLoader add-ons are local. GSAP 3.13.0 + ScrollTrigger and Lenis 1.3.26 are also local. One renderer, scene, and Lenis instance per loaded experience; the GSAP ticker drives smooth scroll and rendering. Touch scrolling stays native.
+Buildless HTML/CSS/JavaScript. Three.js r170 and official RoomEnvironment, RoundedBoxGeometry, and SVGLoader add-ons are local. GSAP 3.13.0 + ScrollTrigger and Lenis 1.3.26 are also local. One renderer, scene, and Lenis instance per loaded experience; the GSAP ticker drives smooth scroll and rendering. Touch scrolling stays native.
 
-Portal keeps one world alive across its authored chapters. Signal uses one instanced draw for its letter field. Signal’s project marks use CSS 3D depth, GSAP entrance reveals, pointer tilt, and native keyboard/touch animation buttons. Orbit uses four physical logo objects and native controls describing the same selection. Renderer DPR is capped, Portal's mirror is omitted when initially opened on a phone, and offscreen/hidden scenes pause. GPU resources, observations, and event handlers are released on motion changes and page exit.
+Portal keeps one transparent 3D world over the same fixed sunset environment across all its authored chapters. Signal uses one instanced draw for its letter field. Signal’s project marks use CSS 3D depth, GSAP entrance reveals, pointer tilt, and native keyboard/touch animation buttons. Orbit uses four physical logo objects and native controls describing the same selection. Renderer DPR is capped, Portal uses local translucent geometry reflections instead of a full-screen mirror, and offscreen/hidden scenes pause. GPU resources, observations, and event handlers are released on motion changes and page exit.
 
-Motion off and system reduced motion retain static, readable content. Portal uses its generated architecture and original project marks; Signal uses native typography and static logos; Orbit uses the selected original logo with working selection buttons. WebGL failure also retains the content and project links. The complete project index remains in HTML before enhancement.
+Motion off and system reduced motion retain static, readable content. Portal uses its persistent landscape and original project marks; Signal uses native typography and static logos; Orbit uses the selected original logo with working selection buttons. WebGL failure also retains the content and project links. The complete project index remains in HTML before enhancement.
 
 See [DIRECTION.md](DIRECTION.md) for the world, camera, material, and interaction contracts; see [assets/README.md](assets/README.md) for provenance.
 
@@ -61,3 +61,13 @@ The app-icon backing now follows a smooth contour sampled from each original ima
 Portal’s full original background artwork is now fitted without cropping in its opening, including with WebGL active. Native scroll crossfades it into the live corridor during the first chapter; returning home restores the complete artwork. Hidden opening geometry skips recurring renders. Motion-off cleanup restores the background and default opacities.
 
 Verified in the browser at 1440×900 and 390×844: clean Expenses/AURA silhouettes, complete opening artwork with WebGL active, the forward and reverse scroll handoff, and motion-off cleanup. Node syntax and all 834 local resource references pass; reviewed browser views report no errors or warnings. Updated captures: `.cache/v3-logo-review/orbit-clean-edges.png` and `portal-full-background.png`.
+
+## Portal — persistent environment
+
+The opening-to-corridor crossfade has been removed. `portal-environment.png` stays visible throughout the experience, including behind the moving doorways, app logos, and closing section. The supplied poster was recreated without baked gates so its architecture cannot compete with the actual 3D corridor. The original asset is preserved.
+
+The Portal renderer now clears to transparent. It has no opaque background, full-screen floor, mirror target, or independent sun. Camera projection shares the landscape’s vanishing point; physically scaled basalt textures, warm rim lighting, alpha contact shadows, and softly fading local reflections ground the real objects in the same scene. Distant app marks remain hidden until their doorway approaches. The logo order and Afterlight development status are unchanged.
+
+The exact generation prompt and mode are saved in [assets/portal-environment.prompt.txt](assets/portal-environment.prompt.txt). The output is [assets/images/portal-environment.png](assets/images/portal-environment.png); the built-in image tool was used. Earlier review notes above describe prior iterations; this section and DIRECTION.md are the current Portal contract.
+
+Verified at 320×740, 390×844, 1440×900, and 1920×936: the same landscape stays at opacity 1 behind the live geometry, all four projects, and the translucent closing section. Motion-off retains the same environment and native artwork. The reviewed views have no horizontal overflow or console warnings/errors. Both authored scripts pass syntax checks; all 32 pages, 834 local references, and asset provenance hashes pass validation. Screenshots are retained under `.cache/v3-portal-scene-review/`.

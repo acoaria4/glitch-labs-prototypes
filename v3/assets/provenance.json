@@ -51,6 +51,16 @@
       "file": "images/afterlight-emblem.svg",
       "origin": "Unchanged copy from G:/Programs/Afterlight/assets/brand/afterlight-emblem.svg; supplied game identity.",
       "sha256": "b1c558edc874b55aa620011a113b9391ff7f145a306418ca89503f5ae1655b78"
+    },
+    {
+      "file": "images/portal-environment.png",
+      "origin": "Built-in image_gen edit exec-d23b4022-3ec5-4688-b24e-16e32f4b3808.png, from images/portal-poster.png; landscape only. Exact prompt: portal-environment.prompt.txt.",
+      "sha256": "f6583809d46fa70972dcdc0d2a4001b7a7bd30c241f91d8a4c54aa078b48229b"
+    },
+    {
+      "file": "portal-environment.prompt.txt",
+      "origin": "Exact built-in image_gen prompt and inspected camera calibration for the persistent Portal environment.",
+      "sha256": "495de546aeb781d230b66c1ef18975edadd4a68ec3d1a1cf12483c84d87c2c3a"
     }
   ]
 }

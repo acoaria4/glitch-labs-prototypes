@@ -1,6 +1,6 @@
 # v3 — Round 02
 
-Six directions with eighteen current styles, awaiting selection before the full site build. Eight superseded logo treatments are cataloged under `/drafts/logo-studies.html`; all twenty-six historical query links still work. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
+Six directions with nineteen current styles, awaiting selection before the full site build. Eight superseded logo treatments are cataloged under `/drafts/logo-studies.html`; all twenty-seven historical query links still work. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
 
 | Direction | Main idea | Interaction |
 | --- | --- | --- |
@@ -24,7 +24,7 @@ Six directions with eighteen current styles, awaiting selection before the full 
 
 Expenses, AURA, Lumen, then Afterlight remain the document and control order. Afterlight is explicitly **in development**. Its imagery and description come from the local Afterlight repository; development captures do not represent balanced-play results or a downloadable release.
 
-The picker has six top-level buttons: **Portal**, **Signal**, **Orbit**, **Nocturne**, **Folio**, and **Chroma**. Each has its own native style menu, remembering its last current selection for the session. Names in the dropdown describe only the style, without repeating the family. Keys **1–6** select those families in order; **left/right** cycle current styles within the family; **R** replays. Query indices remain stable across all twenty-six saved routes.
+The picker has six top-level buttons: **Portal**, **Signal**, **Orbit**, **Nocturne**, **Folio**, and **Chroma**. Each has its own native style menu, remembering its last current selection for the session. Names in the dropdown describe only the style, without repeating the family. Keys **1–6** select those families in order; **left/right** cycle current styles within the family; **R** replays. Query indices remain stable across all twenty-seven saved routes.
 
 | Family | Current styles |
 | --- | --- |
@@ -32,7 +32,7 @@ The picker has six top-level buttons: **Portal**, **Signal**, **Orbit**, **Noctu
 | Signal | Red; Titanium; Warm Ivory; Deep Plum; Acid Yellow |
 | Orbit | Cobalt; Midnight; Gallery; Dark Gallery — all with the current sculptural models |
 | Nocturne | Original artwork; Burnished metal |
-| Folio | Original print; Print & foil; Scroll folio |
+| Folio | Original print; Print & foil; Scroll folio; Curved paper |
 | Chroma | Glass loops; Cast glass |
 
 Archived query indices: **3, 5, 9, 10, 14, 15, 16, 17**. They are discoverable from the root catalog's Drafts section and `/drafts/`. Opening an archived link still mounts its unchanged page and shows that selected treatment under an “Archived draft” optgroup; it does not add drafts to normal style cycling or overwrite the family's remembered current style. Runtime pages and assets stay in their original locations for compatible links and version-local resource closure. Opening `/v3/` without a query selects the current Orbit / Cobalt. On narrow screens the six family buttons use a three-column, two-row grid above the style menu.
@@ -207,10 +207,27 @@ Atelier review: verified native picker navigation, sculpture turn controls, all 
 
 ## Scroll folio (26)
 
-`/v3/?v=26` adds **Folio / Scroll folio** and is the Folio family's initial selection. Original print and Print & foil remain in its dropdown; all previous query indices are unchanged.
+`/v3/?v=26` adds **Folio / Scroll folio** and remains available in the Folio style menu. Original print and Print & foil remain in its dropdown; all previous query indices are unchanged.
 
 One olive-cloth volume occupies a sticky stage. Native scroll opens its cover, then turns three hinged paper leaves to reveal Expenses, AURA, Lumen and Afterlight in order. Each project is a semantic HTML article with original artwork printed on the page; the previous leaf becomes the left-hand notes page. The final Afterlight page retains **In development**. Continuing scroll releases the book into the studio colophon.
 
 The isolated `folio-scroll.js` drives one paused GSAP timeline from ScrollTrigger's normalized progress; Lenis shares the GSAP ticker. The four native page links and Work link target authored reading holds. Reversing scroll restores the same page poses. Desktop shows a two-page spread; phones frame one reading page. Responsive rebuilds preserve scroll progress after viewport measurements settle. Motion off, reduced motion, missing animation libraries, or no JavaScript expose all four articles in normal document flow. Teardown removes listeners, ticker subscriptions, transforms, inert states and the smooth-scroll instance. No WebGL contexts or new raster assets are used.
 
 Review covered all four pages, a partly turned leaf, forward/reverse poses, desktop/phone resizing, native page links, motion off/on and the colophon. Static validation: 56 pages and 1,409 local references. Existing prototype sources and assets remain unchanged.
+
+
+## Curved paper (27)
+
+`/v3/?v=27` adds **Folio / Curved paper**, now the Folio family's initial selection. Original print, Print & foil and Scroll folio remain available, with every earlier route preserved.
+
+A single Three.js renderer replaces the flat hinged sheets with four printed paper leaves and a rigid cloth cover. The curved surface integrates its tangent analytically across the width: the spine stays anchored, the free edge leads, and the sheet settles onto the opposite stack. Fronts, backs and thin warm edges have separate geometry. Directional light casts changing shadows onto the receiving paper and the ground; a printed gutter, fine paper grain and ruled page stack add contact detail. The cover remains rigid.
+
+Native scroll controls the same cover/page sequence in both directions. At reading holds, planar projection aligns the real HTML artwork, headings, text and working links with the mesh. While a leaf moves, matching print textures travel over the curved surface; invisible page links are inert until it lands. Original product artwork is retained, Lumen remains Coming soon and Afterlight remains fourth and In development.
+
+The isolated `folio-paper.js`, `folio-curved.js` and `folio-curved.css` do not modify the earlier Folio implementation. Rendering is demand-driven, stops during unchanged reading holds, and skips offscreen/hidden stages. DPR is capped at 1.5 desktop / 1.25 phone; shadow maps are 1024 square. Motion off and reduced motion restore all four articles in normal flow; unsupported WebGL retains the readable page. Teardown removes the renderer, GPU resources, observers, event handlers, ticker and scroll subscriptions. The stage uses `overflow: clip` to prevent hidden full-size source sheets from creating an internal scroll offset on compact viewports.
+
+
+Curved-paper validation: 57 pages / 1,443 local references and authored script syntax checks pass. Geometry checks cover finite vertices, an anchored spine, conserved page width, flat landed poses and visible mid-turn curvature. Browser review covered all four chapters, native scrolling through a turn, live HTML reading holds, reverse-pose equivalence, 320/390/768/1024/1440 responsive measurements, progress preservation, and motion teardown/restoration. Existing 26 prototype pages and their runtimes remain byte-unchanged; all 15 manifest asset hashes match. Physical-device frame pacing was not measured.
+
+
+Curved-paper framing now gives the book more of the viewport: a larger cover and reading spread, with a reversible close-up during each turn. Compact wide previews use a full two-page spread; portrait phones retain a single-page reading view and follow the curling leaf toward the spine. The chapter index fades during turns to free space, and becomes visible on keyboard focus. Header and caption spacing keep the larger pages clear of controls. At 1440×960 the reading page is approximately 718px high (previously 575px); a compact wide preview uses nearly the full width during a turn. Responsive resizing and motion-off restoration were checked again.

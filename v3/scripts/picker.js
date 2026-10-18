@@ -25,10 +25,11 @@ const variants=[
   {group:'nocturne',name:'Burnished metal',file:'nocturne-atelier'},
   {group:'folio',name:'Print & foil',file:'folio-print'},
   {group:'chroma',name:'Cast glass',file:'chroma-glass'},
-  {group:'folio',name:'Scroll folio',file:'folio-scroll'}
+  {group:'folio',name:'Scroll folio',file:'folio-scroll'},
+  {group:'folio',name:'Curved paper',file:'folio-curved'}
 ];
 const titles={portal:'Portal',signal:'Signal',orbit:'Orbit',nocturne:'Nocturne',folio:'Folio',chroma:'Chroma'};
-const remembered={portal:21,signal:1,orbit:17,nocturne:22,folio:25,chroma:24};
+const remembered={portal:21,signal:1,orbit:17,nocturne:22,folio:26,chroma:24};
 const stage=document.getElementById('stage');
 const picker=document.querySelector('.proto-picker');
 const groups=[...picker.querySelectorAll('[data-group]')];

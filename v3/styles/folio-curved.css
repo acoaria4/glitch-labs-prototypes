@@ -1,0 +1,53 @@
+@import url('./folio-scroll.css?v=folio-scroll-5');
+
+.paper-world{display:none}
+.curved-ready .folio-stage{perspective:none;overflow:clip}
+.curved-ready .paper-world{display:block;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+.curved-ready .folio-camera{inset:0;width:100%;height:100%;transform:none!important;perspective:none;pointer-events:none;z-index:5}
+.curved-ready .folio-volume{display:contents;transform:none!important}
+.curved-ready .folio-sheet{left:0;top:0;width:480px;height:650px;transform-origin:0 0;transform-style:flat;will-change:transform;opacity:0;pointer-events:none}
+.curved-ready .page-face{padding:0;border:0;box-shadow:none;background:transparent;backface-visibility:visible;transform-style:flat;overflow:visible}
+.curved-ready .page-face:before,.curved-ready .page-face:after,.curved-ready .page-back,.curved-ready .paper-stack,.curved-ready .volume-floor,.curved-ready .page-turn-shade{display:none}
+.curved-ready .page-top{position:absolute;left:42px;right:42px;top:36px;height:20px;min-height:0;font:10px/20px 'DM Sans',sans-serif;letter-spacing:.08em}
+.curved-ready .page-top span:last-child{font-size:10px}
+.curved-ready .page-figure{position:absolute;left:58px;right:58px;top:85px;height:305px;padding:0;display:flex;align-items:center;justify-content:center}
+.curved-ready .page-figure img{width:270px;height:270px;max-height:none;object-fit:contain}
+.curved-ready .page-afterlight .page-figure img{width:364px;height:305px}
+.curved-ready .page-front h2{position:absolute;left:42px;right:35px;top:410px;font:400 48px/46px 'Cormorant Garamond',Georgia,serif;letter-spacing:-1.6px}
+.curved-ready .page-description{position:absolute;left:42px;right:42px;top:518px;margin:0;max-width:none;font:14px/21px 'DM Sans',sans-serif;color:#6e7263}
+.curved-ready .page-bottom{position:absolute;left:42px;right:42px;bottom:32px;margin:0;gap:12px;font:10px/18px 'DM Sans',sans-serif}
+.curved-ready .page-bottom .text-link{font:13px/18px 'DM Sans',sans-serif;min-height:30px;padding:5px 0;gap:18px;pointer-events:auto}
+.curved-ready .page-status{padding:4px 7px;font:10px/18px 'DM Sans',sans-serif}
+.curved-ready .page-afterlight .page-description{color:#bcc4b4}
+.curved-ready .cover-front{color:#e9e4c8}
+.curved-ready .cover-brand{position:absolute;left:38px;top:35px;font:500 16px Space,sans-serif}
+.curved-ready .cover-front h2{position:absolute;left:38px;top:185px;margin:0;font:400 62px/59px 'Cormorant Garamond',Georgia,serif;letter-spacing:-1.6px}
+.curved-ready .cover-studio{position:absolute;left:38px;bottom:100px;margin:0;width:76px;height:76px}
+.curved-ready .cover-front .page-bottom{left:38px;right:38px;bottom:30px;padding-top:24px;font-size:9px}
+.curved-ready .folio-caption{transition:opacity .12s linear}
+@media(prefers-reduced-motion:reduce){.curved-ready .folio-caption{transition:none}}
+
+/* Give the physical book the stage; utility controls sit outside its frame. */
+.curved-ready .folio-running-label{top:100px}
+.curved-ready .folio-caption{top:100px;bottom:auto;left:6%;right:auto;text-align:left}
+.curved-ready .folio-navigation{bottom:76px;transition:opacity .16s ease}
+.curved-ready.paper-open .folio-header{padding:17px 0}
+.curved-ready.paper-turning .folio-navigation,.curved-ready.paper-turning .folio-caption{opacity:0!important;pointer-events:none}
+.curved-ready.paper-turning .folio-navigation:has(a:focus-visible){opacity:1!important;pointer-events:auto}
+@media(max-width:700px){
+  .curved-ready .folio-intro{top:15%}
+  .curved-ready .folio-intro h1{font-size:clamp(34px,10vw,46px)}
+  .curved-ready .folio-navigation{bottom:128px}
+  .curved-ready .folio-caption{top:76px;left:0;right:0;text-align:center}
+  .curved-ready.paper-open .folio-header{padding:12px 0}
+  .curved-ready.paper-open .folio-running-label{display:none}
+}
+@media(max-width:700px) and (max-height:650px){
+  .curved-ready .folio-intro{top:23%;width:40%}
+  .curved-ready .folio-intro .eyebrow{display:none}
+  .curved-ready .folio-intro h1{font-size:clamp(23px,6.4vw,32px)}
+  .curved-ready .folio-running-label{top:87px}
+  .curved-ready .folio-caption{display:none}
+  .curved-ready .folio-navigation{bottom:125px}
+}
+@media(prefers-reduced-motion:reduce){.curved-ready .folio-navigation{transition:none}}

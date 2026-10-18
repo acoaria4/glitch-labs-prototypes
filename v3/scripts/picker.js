@@ -16,10 +16,18 @@ const variants=[
   {group:'studies',name:'Nocturne / 3D',file:'nocturne-3d'},
   {group:'studies',name:'Folio / 3D',file:'folio-3d'},
   {group:'studies',name:'Chroma / Studio 3D',file:'chroma-studio'},
-  {group:'portal',name:'Sculpted / 3D',file:'portal-3d'}
+  {group:'portal',name:'Sculpted / 3D',file:'portal-3d'},
+  {group:'orbit',name:'Cobalt / Sculpture',file:'orbit-sculpture'},
+  {group:'orbit',name:'Midnight / Sculpture',file:'orbit-midnight-sculpture'},
+  {group:'orbit',name:'Gallery / Sculpture',file:'orbit-gallery-sculpture'},
+  {group:'orbit',name:'Dark Gallery / Sculpture',file:'orbit-gallery-dark-sculpture'},
+  {group:'portal',name:'Warm Metal',file:'portal-atelier'},
+  {group:'studies',name:'Nocturne / Burnished',file:'nocturne-atelier'},
+  {group:'studies',name:'Folio / Print & Foil',file:'folio-print'},
+  {group:'studies',name:'Chroma / Cast Glass',file:'chroma-glass'}
 ];
 const titles={portal:'Portal',signal:'Signal',orbit:'Orbit',studies:'New studies'};
-const remembered={portal:16,signal:1,orbit:2,studies:13};
+const remembered={portal:21,signal:1,orbit:17,studies:22};
 const stage=document.getElementById('stage');
 const picker=document.querySelector('.proto-picker');
 const groups=[...picker.querySelectorAll('[data-group]')];
@@ -66,4 +74,4 @@ window.addEventListener('message',event=>{
   shortcut(event.data.key);
 });
 const requested=Number(new URLSearchParams(location.search).get('v'));
-setActive(Number.isInteger(requested)&&requested>=1&&requested<=variants.length?requested-1:16);
+setActive(Number.isInteger(requested)&&requested>=1&&requested<=variants.length?requested-1:17);

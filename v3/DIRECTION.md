@@ -88,3 +88,8 @@ All three preserve native vertical reading, working project links, contact, sour
 - One collection renderer uses clipped viewports for only the visible figures. Native overlay buttons rotate each mark; Folio’s book also contains a live 3D mark, with a snapshot of the rendered outgoing leaf during turns.
 - Chroma’s new studio hero uses an assembled black lacquer body, satin titanium frame, and 33 machined studs. Scroll progress from .06 to .72 lifts the frame by .65 units and studs by 1.05 units; damping makes the movement reversible and restrained. No automatic separation happens on arrival. The old glass hero remains in the original Chroma.
 - Portal’s additive runtime imports the same model factory. The landscape stays visible, and the final section remains beyond Afterlight’s last doorway. Original Portal is retained.
+
+
+## Context-specific identities, options 18–25
+
+Lumen now has genuinely curved page surfaces, a rounded spine, lifted leaves and sculpted stars. Afterlight has architectural recesses, raised roof ridges, a thick tubular broken halo and a lofted flame. These shared models use polished/satin metal and enamel in Orbit, warm bronze in Portal, burnished metal and quieter color in Nocturne, and tinted/frosted cast glass in Chroma. Chroma's studio hero adds a glass perimeter while retaining its black body and titanium studs. Folio uses original artwork with shallow print/foil relief; Signal's original icon plates are unchanged. All previous seventeen variants and all source assets remain available, with stable picker indices. No external repositories or original image manifest hashes were changed.

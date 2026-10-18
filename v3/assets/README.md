@@ -1,11 +1,11 @@
 # Round-02 assets
 
-- `images/portal-poster.png`: original generated architecture, used for the still/fallback Portal view.
+- `images/portal-poster.png`: original generated architecture, shown uncropped in Portal’s opening and static views, with a scroll crossfade into the live gateway scene.
 - `images/basalt.png`: original generated seamless basalt material. The live Portal architecture uses it as a surface and approximate bump texture.
 - Studio and app marks: unchanged copies from the existing repository artwork.
 - Afterlight captures and original game logo: unchanged copies originally sourced from `G:/Programs/Afterlight`. The full title artwork leads Signal’s Afterlight panel, appears in Portal’s copy and Orbit’s index/fallback, and supplies the wordmark texture beneath the 3D crest. The combat capture remains linked from the game’s disclosure.
 
-The two generated assets were created with the built-in image tool on 18 October 2026. No generated scene is represented as gameplay. Portal and Orbit use the original app artwork as transparent faces on shallow 3D bodies. Signal uses the original logos in CSS 3D assemblies. Signal’s sampled lettering preserves the exact `gLitCh Labs.` brand text.
+The two generated assets were created with the built-in image tool on 18 October 2026. No generated scene is represented as gameplay. Portal and Orbit use the original app artwork as transparent faces on shallow 3D bodies traced from the artwork’s opaque silhouette. Signal’s depth layer uses the source icon’s alpha mask. Signal uses the original logos in CSS 3D assemblies. Signal’s sampled lettering preserves the exact `gLitCh Labs.` brand text.
 
 Font sources and licenses:
 

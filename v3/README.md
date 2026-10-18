@@ -53,3 +53,11 @@ Portal suspends original app-icon faces on thick rounded bodies over plinths. Or
 Source artwork is unchanged. Afterlight stays fourth and explicitly in development. Logo animation buttons have native Enter/Space activation; motion off and reduced motion keep the original artwork visible. No additional WebGL renderer was added for Signal’s four logos.
 
 Validation for this update: all 32 pages and 831 local references pass the resource checker; the experience, picker, and SVGLoader pass Node syntax checks. Browser review covered desktop and phone compositions (320/390px), Signal’s keyboard logo activation, Orbit’s named controls, direct logo selection and drag, and motion-off Afterlight selection. A temporary reduced-motion Signal fixture verified static mixed-case branding and all four visible original logos, then was removed. No console errors or warnings were recorded in the reviewed views. Captures are under `.cache/v3-logo-review/`.
+
+## Icon edges and Portal background correction
+
+The app-icon backing now follows a smooth contour sampled from each original image’s opaque body, with an inset bevel so it cannot protrude through the transparent squircle corners. Portal and Orbit share the corrected geometry. Signal’s CSS depth layer uses the original image as an alpha mask.
+
+Portal’s full original background artwork is now fitted without cropping in its opening, including with WebGL active. Native scroll crossfades it into the live corridor during the first chapter; returning home restores the complete artwork. Hidden opening geometry skips recurring renders. Motion-off cleanup restores the background and default opacities.
+
+Verified in the browser at 1440×900 and 390×844: clean Expenses/AURA silhouettes, complete opening artwork with WebGL active, the forward and reverse scroll handoff, and motion-off cleanup. Node syntax and all 834 local resource references pass; reviewed browser views report no errors or warnings. Updated captures: `.cache/v3-logo-review/orbit-clean-edges.png` and `portal-full-background.png`.

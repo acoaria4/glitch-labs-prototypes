@@ -78,7 +78,36 @@ function mesh(geometry,material,parent,x=0,y=0,z=0) {
   return object;
 }
 
-// Original raster faces stay intact; only the supplied Afterlight vector is extruded.
+// Preserve the original faces; derive icon bodies from their alpha silhouettes.
+function iconSilhouette(image) {
+  const surface=document.createElement('canvas');
+  const width=surface.width=image.naturalWidth,height=surface.height=image.naturalHeight;
+  const ctx=surface.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0);
+  const pixels=ctx.getImageData(0,0,width,height).data;
+  const left=[],right=[],center=Math.floor(width/2);
+  // The icons have opaque, convex bodies. Scan outward from their center column
+  // to ignore detached glints and transparent padding in the original artwork.
+  const opaque=(x,y)=>pixels[(y*width+x)*4+3]>=220;
+  for(let y=0;y<height;y+=4) {
+    if(!opaque(center,y))continue;
+    let lo=center,hi=center;
+    while(lo>0&&opaque(lo-1,y))lo--;
+    while(hi<width-1&&opaque(hi+1,y))hi++;
+    left.push(new THREE.Vector2((lo/width-.5)*3.8*.982,(.5-y/height)*3.8*.982));
+    right.push(new THREE.Vector2((hi/width-.5)*3.8*.982,(.5-y/height)*3.8*.982));
+  }
+  const points=left.concat(right.reverse());
+  if(points.length<8)throw new Error('Icon silhouette unavailable');
+  const shape=new THREE.Shape();
+  const midpoint=(a,b)=>a.clone().add(b).multiplyScalar(.5);
+  const start=midpoint(points.at(-1),points[0]);shape.moveTo(start.x,start.y);
+  points.forEach((point,i)=>{
+    const next=midpoint(point,points[(i+1)%points.length]);
+    shape.quadraticCurveTo(point.x,point.y,next.x,next.y);
+  });
+  shape.closePath();return shape;
+}
+
 async function loadLogoAssets(scene,controller) {
   const textures=[];
   try {
@@ -105,15 +134,18 @@ async function loadLogoAssets(scene,controller) {
     const title=new THREE.CanvasTexture(wordmark);title.colorSpace=THREE.SRGBColorSpace;title.anisotropy=4;textures.push(title);
     // Own all textures even if teardown happens before objects are attached.
     scene.userData.logoTextures=textures;
-    return {textures,emblem};
+    return {textures,emblem,silhouettes:images.slice(0,3).map(iconSilhouette)};
   } catch(error) {textures.forEach(texture=>texture.dispose());throw error;}
 }
 
 function logoObject(index,assets) {
   const group=new THREE.Group();group.userData.index=index;
-  const sides=new THREE.MeshStandardMaterial({color:index===0?'#222322':index===1?'#bc8f4d':'#bd305a',metalness:.7,roughness:.25});
   if(index<3) {
-    mesh(new RoundedBoxGeometry(3.22,3.22,.34,4,.25),sides,group,0,0,-.11);
+    const sides=new THREE.MeshStandardMaterial({color:index===0?'#222322':index===1?'#bc8f4d':'#bd305a',metalness:.7,roughness:.25});
+    const body=new THREE.ExtrudeGeometry(assets.silhouettes[index],{
+      depth:.28,steps:1,curveSegments:1,bevelEnabled:true,bevelSegments:2,bevelSize:.018,bevelThickness:.018
+    });
+    mesh(body,sides,group,0,0,-.25);
     const front=new THREE.MeshBasicMaterial({map:assets.textures[index],transparent:true,alphaTest:.02,toneMapped:false,side:THREE.DoubleSide});
     mesh(new THREE.PlaneGeometry(3.8,3.8),front,group,0,0,.08);
   } else {
@@ -182,6 +214,8 @@ async function portalWorld(scene,camera,renderer,mobile,controller) {
     mesh(new THREE.CylinderGeometry(1.82,1.82,.025,48),materialMetal,gate,0,1.34,-2.5);
   }
   const sections=[...document.querySelectorAll('[data-chapter]')];
+  const worldHost=canvas.parentElement,poster=document.querySelector('.portal-poster');
+  let reveal=-1;
   let anchors=[];
   const pointer=new THREE.Vector2();
   const viewTarget=new THREE.Vector3();
@@ -202,6 +236,10 @@ async function portalWorld(scene,camera,renderer,mobile,controller) {
       exact=0;
       for(let i=0;i<anchors.length-1;i++) if(y>=anchors[i]) exact=i+THREE.MathUtils.clamp((y-anchors[i])/(anchors[i+1]-anchors[i]),0,1);
       if(y>=anchors.at(-1)) exact=4;
+      const blend=THREE.MathUtils.smoothstep(exact,.08,.72);
+      if(blend!==reveal&&(blend===0||blend===1||Math.abs(blend-reveal)>.001)) {
+        reveal=blend;worldHost.style.opacity=String(blend);poster.style.opacity=String(1-blend);
+      }
       progress=THREE.MathUtils.damp(progress,exact,6,dt);
       const phone=innerWidth<700;
       const x=phone?3.2:1.4;
@@ -218,7 +256,8 @@ async function portalWorld(scene,camera,renderer,mobile,controller) {
       links.forEach((link,i)=>{if(index===i)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
       sun.rotation.z=0;
     },
-    dispose:freeEnvironment
+    shouldRender:()=>reveal>0,
+    dispose(){freeEnvironment();worldHost.style.removeProperty('opacity');poster.style.removeProperty('opacity');}
   };
 }
 
@@ -420,6 +459,7 @@ async function configure() {
     if(!renderer||!part||!inView)return;
     if(kind==='portal'&&document.querySelector('main').getBoundingClientRect().bottom<=0)return;
     part.update(time,dt);
+    if(part.shouldRender?.()===false)return;
     renderer.render(scene,camera);
     if(++frame%120===0){canvas.dataset.calls=String(renderer.info.render.calls);canvas.dataset.triangles=String(renderer.info.render.triangles);}
   }

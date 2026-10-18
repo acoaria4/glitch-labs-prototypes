@@ -1,6 +1,6 @@
 # v3 — Round 02
 
-Six directions with seventeen current styles, awaiting selection before the full site build. Eight superseded logo treatments are cataloged under `/drafts/logo-studies.html`; all twenty-five historical query links still work. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
+Six directions with eighteen current styles, awaiting selection before the full site build. Eight superseded logo treatments are cataloged under `/drafts/logo-studies.html`; all twenty-six historical query links still work. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
 
 | Direction | Main idea | Interaction |
 | --- | --- | --- |
@@ -24,7 +24,7 @@ Six directions with seventeen current styles, awaiting selection before the full
 
 Expenses, AURA, Lumen, then Afterlight remain the document and control order. Afterlight is explicitly **in development**. Its imagery and description come from the local Afterlight repository; development captures do not represent balanced-play results or a downloadable release.
 
-The picker has six top-level buttons: **Portal**, **Signal**, **Orbit**, **Nocturne**, **Folio**, and **Chroma**. Each has its own native style menu, remembering its last current selection for the session. Names in the dropdown describe only the style, without repeating the family. Keys **1–6** select those families in order; **left/right** cycle current styles within the family; **R** replays. Query indices remain stable across all twenty-five saved routes.
+The picker has six top-level buttons: **Portal**, **Signal**, **Orbit**, **Nocturne**, **Folio**, and **Chroma**. Each has its own native style menu, remembering its last current selection for the session. Names in the dropdown describe only the style, without repeating the family. Keys **1–6** select those families in order; **left/right** cycle current styles within the family; **R** replays. Query indices remain stable across all twenty-six saved routes.
 
 | Family | Current styles |
 | --- | --- |
@@ -32,7 +32,7 @@ The picker has six top-level buttons: **Portal**, **Signal**, **Orbit**, **Noctu
 | Signal | Red; Titanium; Warm Ivory; Deep Plum; Acid Yellow |
 | Orbit | Cobalt; Midnight; Gallery; Dark Gallery — all with the current sculptural models |
 | Nocturne | Original artwork; Burnished metal |
-| Folio | Original print; Print & foil |
+| Folio | Original print; Print & foil; Scroll folio |
 | Chroma | Glass loops; Cast glass |
 
 Archived query indices: **3, 5, 9, 10, 14, 15, 16, 17**. They are discoverable from the root catalog's Drafts section and `/drafts/`. Opening an archived link still mounts its unchanged page and shows that selected treatment under an “Archived draft” optgroup; it does not add drafts to normal style cycling or overwrite the family's remembered current style. Runtime pages and assets stay in their original locations for compatible links and version-local resource closure. Opening `/v3/` without a query selects the current Orbit / Cobalt. On narrow screens the six family buttons use a three-column, two-row grid above the style menu.
@@ -203,3 +203,14 @@ Latest static verification: 54 HTML pages and 1,365 local resource references. R
 
 
 Atelier review: verified native picker navigation, sculpture turn controls, all four Folio pages, Chroma's assembled arrival and reversible scroll separation, Portal's open-landscape ending, and motion-off teardown/restoration. Desktop 1440×960 and narrow-phone 320×844 layouts were inspected; body widths equal scroll widths in the new Portal, Orbit, Nocturne, Folio and Chroma views. Existing 17 pages and runtimes remain byte-unchanged, as do all 15 manifest asset hashes. Lumen's four sculpture finishes each have 29 meshes and 34,908 triangles, with finite vertices and shared static geometry. No console warnings/errors were observed in the reviewed views. Glass volumes use outward-facing closed surfaces to avoid redundant backface passes. Offscreen targets use multisampling within the device limit and fall back to byte storage where floating-point color targets are unavailable. Physical-device FPS remains unmeasured.
+
+
+## Scroll folio (26)
+
+`/v3/?v=26` adds **Folio / Scroll folio** and is the Folio family's initial selection. Original print and Print & foil remain in its dropdown; all previous query indices are unchanged.
+
+One olive-cloth volume occupies a sticky stage. Native scroll opens its cover, then turns three hinged paper leaves to reveal Expenses, AURA, Lumen and Afterlight in order. Each project is a semantic HTML article with original artwork printed on the page; the previous leaf becomes the left-hand notes page. The final Afterlight page retains **In development**. Continuing scroll releases the book into the studio colophon.
+
+The isolated `folio-scroll.js` drives one paused GSAP timeline from ScrollTrigger's normalized progress; Lenis shares the GSAP ticker. The four native page links and Work link target authored reading holds. Reversing scroll restores the same page poses. Desktop shows a two-page spread; phones frame one reading page. Responsive rebuilds preserve scroll progress after viewport measurements settle. Motion off, reduced motion, missing animation libraries, or no JavaScript expose all four articles in normal document flow. Teardown removes listeners, ticker subscriptions, transforms, inert states and the smooth-scroll instance. No WebGL contexts or new raster assets are used.
+
+Review covered all four pages, a partly turned leaf, forward/reverse poses, desktop/phone resizing, native page links, motion off/on and the colophon. Static validation: 56 pages and 1,409 local references. Existing prototype sources and assets remain unchanged.

@@ -97,4 +97,9 @@ Lumen now has genuinely curved page surfaces, a rounded spine, lifted leaves and
 
 ## Curated family picker
 
-Portal, Signal, Orbit, Nocturne, Folio and Chroma each have their own top-level button and native style dropdown. Seventeen current styles remain. Eight superseded logo treatments are cataloged under the root Drafts archive, with unchanged prototype files and stable query links. The five Signal colorways and distinct original artwork/print/glass-loop studies remain current. Picker CSS uses one shared dropdown width and one responsive grid instead of family-specific width overrides. Numeric shortcuts 1–6 select families; arrows cycle only current treatments.
+Portal, Signal, Orbit, Nocturne, Folio and Chroma each have their own top-level button and native style dropdown. Eighteen current styles remain. Eight superseded logo treatments are cataloged under the root Drafts archive, with unchanged prototype files and stable query links. The five Signal colorways and distinct original artwork/print/glass-loop studies remain current. Picker CSS uses one shared dropdown width and one responsive grid instead of family-specific width overrides. Numeric shortcuts 1–6 select families; arrows cycle only current treatments.
+
+
+## Scroll folio, option 26
+
+The book becomes the complete project journey: cover opening → Expenses → AURA → Lumen → Afterlight → colophon. The cover and three printed leaves hinge around one continuous spine, with source artwork on the right and the preceding project's notes on the left. Scroll controls the whole sequence reversibly; page-index links jump to reading holds. Desktop presents the spread, phones present one page. Static and reduced-motion layouts expose all four real article pages. This is an additional Folio style, preserving the two existing print treatments.

@@ -12,7 +12,8 @@
 .proto-variant-label option{color:#fff;background:#202020}
 @media(max-width:600px){
   .proto-picker{bottom:12px;display:grid;grid-template-columns:minmax(0,1fr) 30px;gap:4px;width:calc(100vw - 24px);max-width:340px;border-radius:18px;font-size:12px}
-  .proto-groups{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .proto-groups{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .proto-groups .proto-picker-item{padding-inline:5px;font-size:11px}
   .proto-variant-label{padding:0;border:0;min-width:0}
   .proto-variant-label select{width:100%}
   .proto-picker[data-single=true] .proto-groups{grid-column:1}

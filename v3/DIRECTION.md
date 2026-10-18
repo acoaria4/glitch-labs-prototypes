@@ -68,3 +68,15 @@ Logo relief: Lumen’s book sheets use separated face depths and thinner bevels 
 Fonts: Bebas Neue and Space Grotesk from Google Fonts' official repository; original licenses retained. Three.js r170, official RoomEnvironment/RoundedBoxGeometry/SVGLoader add-ons and MIT license are vendored. Original product identity and Afterlight source repo remain unchanged.
 
 Portal’s background and transparent live layer remain at opacity 1 throughout the story. Signal’s CSS depth layers use the exact icon masks instead of approximate rounded rectangles.
+
+## Three new directions for the next selection
+
+These remain separate comparison prototypes under New studies, options 11–13. The existing Portal, five Signal treatments, and four Orbit treatments keep their routes, indices, artwork, and runtime files.
+
+| Study | Composition and material | Signature interaction | Tradeoff |
+| --- | --- | --- | --- |
+| Nocturne | Asymmetric serif opening, black lacquer, titanium, champagne light; alternating dark project stages | Move the key light around a dimensional studio emblem; scroll separates its machined studs | Requires deliberate dark-scene contrast and lighting |
+| Folio | A physical olive-cloth book, paper edges, warm editorial spreads, oversized serif type | Open the cover and turn through all four projects | Quieter first impression; typography and mobile page proportions need care |
+| Chroma | Large precise sans type, mint/violet optical glass, pearl ground, offset project color studies | Change the glass assembly’s perspective; bounded pointer depth | Physical transmission costs more GPU work than Folio |
+
+All three preserve native vertical reading, working project links, contact, source identities, the curiosity closing, and Afterlight’s fourth-place development status. Nocturne’s live studio emblem is a procedural interpretation of the supplied dot arrangement, not a new replacement studio logo. Chroma’s glass is abstract sculpture, not a product mark. Folio’s book artwork uses the existing app symbols and original full Afterlight title.

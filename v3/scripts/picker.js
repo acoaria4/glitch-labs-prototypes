@@ -9,10 +9,13 @@ const variants=[
   {group:'signal',name:'Deep Plum',file:'signal-plum'},
   {group:'signal',name:'Acid Yellow',file:'signal-acid'},
   {group:'orbit',name:'Midnight',file:'orbit-midnight'},
-  {group:'orbit',name:'Dark Gallery',file:'orbit-gallery-dark'}
+  {group:'orbit',name:'Dark Gallery',file:'orbit-gallery-dark'},
+  {group:'studies',name:'Nocturne',file:'nocturne'},
+  {group:'studies',name:'Folio',file:'folio'},
+  {group:'studies',name:'Chroma',file:'chroma'}
 ];
-const titles={portal:'Portal',signal:'Signal',orbit:'Orbit'};
-const remembered={portal:0,signal:1,orbit:2};
+const titles={portal:'Portal',signal:'Signal',orbit:'Orbit',studies:'New studies'};
+const remembered={portal:0,signal:1,orbit:2,studies:10};
 const stage=document.getElementById('stage');
 const picker=document.querySelector('.proto-picker');
 const groups=[...picker.querySelectorAll('[data-group]')];

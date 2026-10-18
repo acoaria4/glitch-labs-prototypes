@@ -33,3 +33,7 @@ Signal / Titanium needs no new bitmap assets. Its near-black textured background
 The additional Signal Ivory, Plum, and Acid palettes also use native CSS surfaces and instanced lathed geometry. Orbit / Gallery reuses the same standalone SVGs with champagne materials, a native shadow-catching plane, and one directional shadow map. No new bitmap, external runtime asset, or replacement brand artwork is needed for these four additional options.
 
 The grouped-picker update adds no raster artwork. Midnight and Dark Gallery reuse the same supplied/reconstructed identities. Lumen’s `data-z` and `data-depth` relief metadata now separates the book layers and reduces bevel overlap, with its 2D paths unchanged. Afterlight’s original emblem file and full logo remain unchanged; the runtime separates flame/core sheets and gives the supplied halo strokes shallow extrusion. The Lumen manifest hash reflects its relief metadata update.
+
+## Nocturne / Folio / Chroma
+
+These three studies add no raster assets. Nocturne’s native black body, rounded frame, and 33 lathed studs interpret the supplied studio emblem; the source image remains the header/still identity. Folio uses CSS paper and cloth surfaces around the same original marks. Chroma’s glass forms, light environment, and background shader are procedural and decorative. Original app vectors and Afterlight artwork remain unchanged; the existing asset manifest hashes still apply. The new pages use only the existing local, licensed fonts and vendored runtimes.

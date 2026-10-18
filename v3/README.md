@@ -1,6 +1,6 @@
 # v3 — Round 02
 
-Ten experience options, awaiting selection before the full site build. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
+Thirteen experience options, awaiting selection before the full site build. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
 
 | Direction | Main idea | Interaction |
 | --- | --- | --- |
@@ -14,10 +14,13 @@ Ten experience options, awaiting selection before the full site build. Open `/v3
 | Signal / Warm Ivory | Warm paper and matte graphite studs | Shared Signal interaction with a quiet editorial palette |
 | Signal / Deep Plum | Deep plum and satin lilac studs | Shared Signal interaction with soft metallic light |
 | Signal / Acid Yellow | Acid yellow and glossy black studs | Shared Signal interaction with bold contrast |
+| Nocturne | Black lacquer, satin titanium, champagne light, and large serif type | Live dimensional studio emblem with a moving light control |
+| Folio | Bone paper, olive cloth, ink type, and editorial spreads | A physical book with four working page turns |
+| Chroma | Pearl, optical glass, mint, violet, and precise sans type | Live refractive sculpture with a perspective control |
 
 Expenses, AURA, Lumen, then Afterlight remain the document and control order. Afterlight is explicitly **in development**. Its imagery and description come from the local Afterlight repository; development captures do not represent balanced-play results or a downloadable release.
 
-The picker groups all options under **Portal**, **Signal**, and **Orbit**. A native select shows the selected family’s treatments on desktop and phone. It remembers the last treatment within each family for the current session. Keys **1–9** and **0** select global options 1–10, **left/right** cycle within the family, and **R** replays. Selection persists in the query string. Existing indices 1–8 are unchanged; Midnight and Dark Gallery are 9–10. Each prototype also works directly through its HTML page in `prototypes/`.
+The picker groups options under **Portal**, **Signal**, **Orbit**, and **New studies**. New studies contains Nocturne, Folio, and Chroma. A native select shows the selected family’s treatments on desktop and phone. It remembers the last treatment within each family for the current session. Keys **1–9** and **0** select global options 1–10, **left/right** cycle within the family, and **R** replays. Selection persists in the query string. Existing indices 1–8 are unchanged; Midnight and Dark Gallery are 9–10. Nocturne, Folio, and Chroma are 11–13. All earlier indices remain stable; arrows cycle through the three new studies. The root catalog also links to each study directly. Each prototype also works directly through its HTML page in `prototypes/`.
 
 ## Architecture
 
@@ -37,6 +40,7 @@ From the repository root:
 python -X utf8 scripts/check-site.py
 node --check v3/scripts/experience.js
 node --check v3/scripts/picker.js
+node --check v3/scripts/editions.js
 ```
 
 The local-resource checker permits explicit navigation from a version into the root drafts archive; runtime assets still cannot escape their version. Archive pages retain their own local dependencies. All 49 files from the first round were verified byte-identical after moving them.
@@ -124,3 +128,17 @@ Light Gallery now uses darker bronze faces, dark sidewalls, and more directional
 A passive 180-frame desktop browser sample had a 16.7ms median and 16.8ms p95 both before and after; the corrected sample had no intervals above 34ms. This supports the geometry diagnosis rather than an ongoing frame-rate drop, but is not a physical-device performance guarantee. Browser review and timing reports are under `.cache/v3-layered-orbit-review/`.
 
 Validation: 39 pages and 982 local references pass the site checker; both authored scripts pass syntax checks. All 15 asset hashes match. Browser checks covered the grouped family controls, remembered treatment, numeric 0 and family-arrow shortcuts, desktop and 320/390px layouts, corrected Afterlight in Portal and Dark Gallery, and motion off/on. Reviewed views produced no console errors or warnings. The temporary profiling fixture was removed.
+
+## Nocturne, Folio, and Chroma
+
+Three additional full-page design studies extend the lineup without changing earlier experience pages. Each has a unique hero, four-project collection, studio statement, contact link, and closing. Shared native content remains visible before enhancement. Afterlight stays fourth and In development; Lumen is Coming soon. No new bitmap or external dependency was introduced.
+
+- Nocturne uses a native interpretation of the studio emblem: 33 machined studs, a black lacquer body, rounded titanium frame, directional light, and a controllable moving key. It continues into dark alternating project compositions. The original studio image supplies the still fallback.
+- Folio uses CSS perspective for a cloth cover, paper edges, and individual page turns. The book opens to Expenses and cycles through AURA, Lumen, and Afterlight. Turning remains usable with motion off. Four alternating editorial spreads supply every project independently of the book interaction.
+- Chroma uses three native glass forms with physical transmission, thickness, attenuation, iridescence, and negative fill cards in a local environment. The perspective control turns the assembly. Offset color studies continue into the collection; static CSS forms replace the glass when motion is off or WebGL is unavailable.
+
+The new pages share isolated `styles/editions.css` and `scripts/editions.js`; no earlier page imports either file. GSAP, ScrollTrigger, and Lenis coordinate reveals and native scroll. GPU resources, observers, subscriptions, and smooth-scroll instances are cleaned up on motion changes or iframe replacement. DPR is capped at 1.5 desktop / 1.25 phone, hidden/offscreen scenes skip rendering, and touch does not drive pointer parallax. System reduced motion selects the still view.
+
+Review captures are under `.cache/v3-new-studies-review/`.
+
+Validation for the new studies: 42 pages and 1,060 local references pass the static checker; both picker and editions scripts pass Node syntax checks. All 15 existing asset hashes match, and v1/v2/drafts remain unchanged. Browser review covered 1440px desktop, 390px and 320px phones, all four Folio page turns, still views and motion off/on, Nocturne lighting and Afterlight disclosure, Chroma perspective and collection, family restoration, keyboard cycling, and preserved Portal/Signal/Orbit routes. Reviewed views recorded no console warnings or errors. Physical-device GPU performance was not measured.

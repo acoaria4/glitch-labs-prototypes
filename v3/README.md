@@ -1,16 +1,23 @@
 # v3 — Round 02
 
-Three new experience prototypes, awaiting selection before the full site build. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
+Ten experience options, awaiting selection before the full site build. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
 
 | Direction | Main idea | Interaction |
 | --- | --- | --- |
 | Portal | A monumental, live 3D corridor connecting four product worlds | Scroll moves the camera through the same gateway architecture; pointer adds restrained depth |
 | Signal | The studio's identity is a field of physical blocks | Disturb the letters with the pointer or the Disrupt button; they re-form |
 | Orbit | Four dimensional app logos form an explorable spatial collection | Drag to turn the collection, select a named project, or click a logo |
+| Signal / Titanium | Near-black graphite with satin titanium studs echoing the studio logo | The same disruption and reform interaction as Signal |
+| Orbit / Gallery | Limestone, espresso, richer bronze faces and dark metal sidewalls | A slower orbit with smaller neighbors and ground shadows |
+| Orbit / Midnight | Ink navy, silver-blue type, and warm gold marks | The original orbit composition in a darker room |
+| Orbit / Dark Gallery | Warm near-black, ivory type, and rich bronze marks | Gallery lighting, shadows, and slower motion in a dark room |
+| Signal / Warm Ivory | Warm paper and matte graphite studs | Shared Signal interaction with a quiet editorial palette |
+| Signal / Deep Plum | Deep plum and satin lilac studs | Shared Signal interaction with soft metallic light |
+| Signal / Acid Yellow | Acid yellow and glossy black studs | Shared Signal interaction with bold contrast |
 
 Expenses, AURA, Lumen, then Afterlight remain the document and control order. Afterlight is explicitly **in development**. Its imagery and description come from the local Afterlight repository; development captures do not represent balanced-play results or a downloadable release.
 
-The comparison picker uses **1–3**, **left/right**, and **R** for switch/replay. Selection persists in the query string. Each prototype also works directly through `prototypes/portal.html`, `signal.html`, or `orbit.html`.
+The picker groups all options under **Portal**, **Signal**, and **Orbit**. A native select shows the selected family’s treatments on desktop and phone. It remembers the last treatment within each family for the current session. Keys **1–9** and **0** select global options 1–10, **left/right** cycle within the family, and **R** replays. Selection persists in the query string. Existing indices 1–8 are unchanged; Midnight and Dark Gallery are 9–10. Each prototype also works directly through its HTML page in `prototypes/`.
 
 ## Architecture
 
@@ -18,7 +25,7 @@ Buildless HTML/CSS/JavaScript. Three.js r170 and official RoomEnvironment, Round
 
 Portal keeps one transparent 3D world over the same fixed sunset environment across all its authored chapters. Signal uses one instanced draw for its letter field. Signal’s project marks use CSS 3D depth, GSAP entrance reveals, pointer tilt, and native keyboard/touch animation buttons. Orbit uses four physical logo objects and native controls describing the same selection. Renderer DPR is capped, Portal uses local translucent geometry reflections instead of a full-screen mirror, and offscreen/hidden scenes pause. GPU resources, observations, and event handlers are released on motion changes and page exit.
 
-Motion off and system reduced motion retain static, readable content. Portal uses its persistent landscape and original project marks; Signal uses native typography and static logos; Orbit uses the selected original logo with working selection buttons. WebGL failure also retains the content and project links. The complete project index remains in HTML before enhancement.
+Motion off and system reduced motion retain static, readable content. Portal uses its persistent landscape and standalone symbols; both Signal options use native typography and static logos; Orbit uses the selected standalone SVG (the original full title for Afterlight) with working selection buttons. WebGL failure also retains the content and project links. The complete project index remains in HTML before enhancement.
 
 See [DIRECTION.md](DIRECTION.md) for the world, camera, material, and interaction contracts; see [assets/README.md](assets/README.md) for provenance.
 
@@ -71,3 +78,49 @@ The Portal renderer now clears to transparent. It has no opaque background, full
 The exact generation prompt and mode are saved in [assets/portal-environment.prompt.txt](assets/portal-environment.prompt.txt). The output is [assets/images/portal-environment.png](assets/images/portal-environment.png); the built-in image tool was used. Earlier review notes above describe prior iterations; this section and DIRECTION.md are the current Portal contract.
 
 Verified at 320×740, 390×844, 1440×900, and 1920×936: the same landscape stays at opacity 1 behind the live geometry, all four projects, and the translucent closing section. Motion-off retains the same environment and native artwork. The reviewed views have no horizontal overflow or console warnings/errors. Both authored scripts pass syntax checks; all 32 pages, 834 local references, and asset provenance hashes pass validation. Screenshots are retained under `.cache/v3-portal-scene-review/`.
+
+## Standalone symbols and Signal / Titanium
+
+Portal's first three app marks now use locally reconstructed standalone SVGs, extruded into physical symbols without icon plates. Expenses keeps its E and nine dots; AURA keeps its orb and crescent; Lumen keeps its layered book and stars. The same vectors appear in chapter labels and static fallbacks. Afterlight retains its supplied crest and title, fourth and In development. The basalt doorways are near-black with less neutral fill light and warm sunset edges. The persistent landscape is unchanged.
+
+Signal / Titanium is an additional fourth picker option: satin titanium, black metallic studs, black typography, and original app colors. Its motion, project index, and fallback share Signal's implementation. The original red Signal and Orbit keep their existing selection indices. Picker controls fit on one line at 320px. Shared logo tilt now uses GSAP's canonical `rotation` property to avoid an alias-reset warning during keyboard focus changes.
+
+Browser review covered Portal's four standalone marks at desktop size, the Lumen composition at 390px, Titanium at 320/390/1440px, keyboard disruption and logo activation, motion off/on, and the fourth picker option and numeric shortcuts. Reviewed layouts had no horizontal overflow. Original red Signal and Orbit's Afterlight selection were regression checked; no new warnings were recorded after the rotation correction. Physical-device performance remains unmeasured. Captures are under `.cache/v3-symbols-titanium-review/`.
+
+Validation: both authored scripts pass syntax checks; all 33 pages, 856 local references, and asset provenance hashes pass. Earlier versions and the archived first round remain unchanged. Asset reconstruction references and distinctions from supplied source artwork are documented in [assets/README.md](assets/README.md).
+
+## Orbit symbols and inverted Titanium
+
+Orbit now shares Portal's freestanding Expenses, AURA, and Lumen geometry, with the same layered relief and no icon plates. Its static selection also uses these vectors. The obsolete raster-face backing and silhouette tracing are removed from the shared scene loader. Afterlight retains its supplied crest and full title and remains fourth, In development.
+
+Signal / Titanium now uses near-black graphite with a subtle texture, satin titanium studs, silver text and rules, and a silver primary control. The palette extends through the collection and closing. App artwork keeps its original colors. This replaces the earlier silver-background treatment described above; red Signal is unchanged.
+
+The Three.js geometry and shared GSAP/Lenis lifecycle are retained. Current design contracts are in DIRECTION.md. Browser evidence for this update is under `.cache/v3-orbit-inverted-review/`.
+
+Verified Orbit's desktop marks, keyboard selection, phone drag from Expenses to AURA, Afterlight development status, and motion-off SVG selection. Checked inverted Titanium at 320/390/1440px, keyboard disruption, motion off/on, and collection contrast. Reviewed layouts had no horizontal overflow and no console warnings/errors. Portal was regression checked after sharing its loader. Both authored scripts and all 33 pages / 856 local references pass validation. Physical-device frame rates remain unmeasured.
+
+## Portal — beyond the final doorway
+
+The studio ending now continues past Afterlight's final gateway into the open sunset landscape. The camera advances from chapter progress 4 to 6 (z=-66, beyond the final frame at z=-56). Afterlight's crest clears during the approach; the doorway stays until the camera is close, then clears too. The closing message has a full-height composition over the landscape with a light scrim and ivory type. Project navigation clears from the ending, with the top navigation and reverse scrolling available.
+
+On phones the landscape expands to fill the closing viewport after the geometry clears. Static and reduced-motion views retain this landscape ending without camera travel. Desktop and 390px browser review confirmed an empty geometry layer at the ending, restored Afterlight geometry on reverse scroll, and no horizontal overflow or console errors. Evidence: `.cache/v3-portal-ending-review/`.
+
+Closing spacing was tightened so the section and footer share approximately one viewport. Closing bottom padding is 48px; footer bottom padding is 84px to clear the fixed comparison picker. Bottom-of-page checks at 1920×936 and 390×844 retain the full heading and footer without horizontal overflow. Captures: `desktop-spacing.png` and `phone-spacing.png` in the same review folder.
+
+## Gallery and three Signal palettes
+
+Options 5–8 add Orbit / Gallery and Signal / Warm Ivory, Deep Plum, and Acid Yellow. Original indices 1–4 are retained. Gallery uses champagne symbol materials, smaller neighbors, a quieter orbit, and a shadow-catching floor against limestone. Signal's new pages use matte graphite, satin lilac, and glossy dark studs respectively. Each palette continues through the collection, controls, and closing; original app artwork and Afterlight's fourth-place development status are retained.
+
+Desktop uses eight picker buttons; phones use a native eight-option selector with replay. Shortcuts 1–8, arrows, and R are supported. No new bitmap assets or remote dependencies were added. Direction and material details are documented in DIRECTION.md; review captures are under `.cache/v3-palettes-gallery-review/`.
+
+Validation: all 37 pages and 942 local references pass; both authored scripts pass syntax checks. Browser checks covered the four new heroes at desktop and phone widths, the 320px native picker, shortcut 8 from within a child frame, Gallery drag and keyboard selection, Afterlight's development status, Gallery static selection, Signal disruption and keyboard logo activation, palette continuity through the Plum collection/closing, and motion off/on. Reviewed views produced no console warnings/errors. Original picker indices 1–4 remain stable. Physical-device frame rates remain unmeasured.
+
+## Grouped picker and layered logo corrections
+
+Lumen’s book pages previously shared front-face depths, causing depth flicker while rotating. The sheets now have thinner bevels and distinct depths. Afterlight’s orange flame and ivory core likewise occupy separate sheets, and its supplied halo strokes have real thickness. Source outlines, supplied Afterlight SVG, original title artwork, project order, and development labels remain intact. The shared fix applies to Portal and all Orbit treatments.
+
+Light Gallery now uses darker bronze faces, dark sidewalls, and more directional lighting for stronger metallic separation. Midnight and Dark Gallery are additional complete pages; every earlier treatment remains available.
+
+A passive 180-frame desktop browser sample had a 16.7ms median and 16.8ms p95 both before and after; the corrected sample had no intervals above 34ms. This supports the geometry diagnosis rather than an ongoing frame-rate drop, but is not a physical-device performance guarantee. Browser review and timing reports are under `.cache/v3-layered-orbit-review/`.
+
+Validation: 39 pages and 982 local references pass the site checker; both authored scripts pass syntax checks. All 15 asset hashes match. Browser checks covered the grouped family controls, remembered treatment, numeric 0 and family-arrow shortcuts, desktop and 320/390px layouts, corrected Afterlight in Portal and Dark Gallery, and motion off/on. Reviewed views produced no console errors or warnings. The temporary profiling fixture was removed.

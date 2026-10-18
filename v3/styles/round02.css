@@ -59,12 +59,79 @@ footer{position:relative;z-index:3;display:flex;justify-content:space-between;al
 .portal .portal-poster:after{background:linear-gradient(90deg,#0c0b0b66,transparent 52%)}
 .portal .world-chapter:before{background:linear-gradient(90deg,#0c0b0b66,transparent 58%)}
 .portal .closing{background:linear-gradient(90deg,#0c0b0bd9,#0c0b0b44)}
-.portal footer{background:#0c0b0b88;padding-bottom:195px}
+.portal footer{background:#0c0b0b88;padding-block:24px 84px}
+.portal .closing{min-height:calc(100svh - 124px);display:flex;flex-direction:column;justify-content:center;padding-block:120px 48px;background:linear-gradient(90deg,#0c0b0b80,#0c0b0b08);border-top:0}
+.portal .closing h2{color:var(--ink);font-size:clamp(75px,10.8vw,165px);text-shadow:0 3px 25px #0c0b0b66}
+.portal .closing>div{width:100%}
+.portal.portal-beyond .chapter-nav{visibility:hidden;opacity:0;pointer-events:none}
 .portal .chapter-nav{padding-inline:10px;background:#0c0b0ba6;box-shadow:0 0 22px #0c0b0b80;backdrop-filter:blur(8px)}
 @media(max-width:700px){
   .portal .portal-poster,.portal .world-host{top:56svh;bottom:80px;height:auto}
   .portal .portal-poster{mask-image:linear-gradient(transparent,#000 13%)}
   .portal .portal-poster:after{background:linear-gradient(180deg,#0c0b0b55,transparent 40%)}
   .portal .world-chapter:before{background:linear-gradient(180deg,#0c0b0b55,transparent 65%)}
+  .portal .portal-poster{transition:top .8s cubic-bezier(.22,.61,.36,1)}
+  .portal.portal-beyond .portal-poster{top:0;bottom:0;mask-image:none}
+  .portal .closing{padding-top:110px;padding-bottom:48px;background:linear-gradient(90deg,#0c0b0b88,#0c0b0b18)}
+  .portal .closing h2{font-size:16vw}
 }
-@media(max-width:370px){.portal .portal-poster,.portal .world-host{top:60svh}}
+@media(max-width:370px){.portal .portal-poster,.portal .world-host{top:60svh}.portal.portal-beyond .portal-poster{top:0}}
+
+/* Signal / Titanium — near-black graphite with satin titanium studs. */
+.signal-titanium{--bg:#101214;--ink:#d4d7da;color:var(--ink);background:repeating-linear-gradient(0deg,#ffffff03 0px,#ffffff03 1px,transparent 1px,transparent 3px),radial-gradient(ellipse at 48% 30%,#24282c 0%,#15181b 42%,#0d0f11 85%)}
+.signal-titanium .brand img{display:block;width:26px;height:26px}
+.signal-titanium .signal-collection{background:#0d0f11b3;color:var(--ink);border-top:1px solid #b9bec333}
+.signal-titanium .signal-projects,.signal-titanium .signal-project{border-color:#b9bec33d}
+.signal-titanium .signal-project .logo-stage{background:linear-gradient(135deg,#191d20,#292e32);box-shadow:inset 0 0 0 1px #c8cdd21c}
+.signal-titanium .s-afterlight .logo-stage{background:#14191b}
+.signal-titanium .disrupt{background:linear-gradient(125deg,#e1e3e4,#adb4ba);color:#101214;box-shadow:inset 0 1px 0 #ffffff80,0 5px 18px #0003}
+.signal-titanium .closing,.signal-titanium footer{background:transparent;color:var(--ink)}
+.signal-titanium .closing{border-top:1px solid #b9bec333}
+.signal-titanium .closing>div p{color:#afb6bd}
+@media(max-width:700px){.signal-titanium .brand img{display:none}}
+
+/* Signal palette studies: material and color continue through every section. */
+.signal-ivory{--bg:#e8e3d8;--ink:#242522;--collection:#ded8cb;--panel-start:#d3cbbb;--panel-end:#eee9df;--rule:#24252240;--muted:#55574e;--button-bg:#242522;--button-ink:#e8e3d8;background:repeating-linear-gradient(0deg,#ffffff09 0 1px,transparent 1px 3px),var(--bg)}
+.signal-plum{--bg:#281b30;--ink:#d9cbe5;--collection:#23172a;--panel-start:#32223c;--panel-end:#493352;--rule:#d9cbe540;--muted:#b9a7c7;--button-bg:#d9cbe5;--button-ink:#281b30;background:radial-gradient(ellipse at 50% 25%,#3b2947,transparent 65%),var(--bg)}
+.signal-acid{--bg:#dded52;--ink:#171b18;--collection:#cedd47;--panel-start:#b8c635;--panel-end:#e2ed89;--rule:#171b1845;--muted:#3c4428;--button-bg:#171b18;--button-ink:#dded52;background:var(--bg)}
+.signal-colorway{color:var(--ink)}
+.signal-colorway .brand img{display:block;width:26px;height:26px}
+.signal-colorway .signal-collection{background:var(--collection);color:var(--ink);border-top:1px solid var(--rule)}
+.signal-colorway .signal-projects,.signal-colorway .signal-project{border-color:var(--rule)}
+.signal-colorway .signal-project .logo-stage{background:linear-gradient(135deg,var(--panel-start),var(--panel-end));box-shadow:inset 0 0 0 1px var(--rule)}
+.signal-colorway .s-afterlight .logo-stage{background:#171b19}
+.signal-colorway .disrupt{background:var(--button-bg);color:var(--button-ink)}
+.signal-colorway .closing,.signal-colorway footer{background:var(--bg);color:var(--ink)}
+.signal-colorway .closing{border-top:1px solid var(--rule)}
+.signal-colorway .closing>div p{color:var(--muted)}
+
+/* Orbit / Gallery: limestone, espresso, bronze, and softly grounded sculpture. */
+.orbit-gallery{--bg:#d8d1c5;--ink:#292622;background:var(--bg);color:var(--ink)}
+.orbit-gallery .brand img{display:block;width:26px;height:26px}
+.orbit-gallery .kicker{letter-spacing:.16em;color:#655a4b}
+.orbit-gallery .orbit-selector,.orbit-gallery .orbit-selector button,.orbit-gallery .orbit-index article{border-color:#75644b45}
+.orbit-gallery .orbit-selector button{color:var(--ink)}
+.orbit-gallery .orbit-selector button[aria-pressed=true]{background:#75644b;color:#f2ece2}
+.orbit-gallery .orbit-index{background:#cec5b6}
+.orbit-gallery .closing,.orbit-gallery footer{background:#bfb4a3;color:var(--ink)}
+.orbit-gallery .orbit-fallback{color:var(--ink)}
+.orbit-gallery .fallback-image{filter:drop-shadow(0 22px 18px #65533c33)}
+.orbit-gallery .selected-index{color:#75644b}
+@media(max-width:700px){.signal-colorway .brand img,.orbit-gallery .brand img{display:none}.orbit .drag-hint{bottom:54px}}
+
+/* Dark Orbit studies retain the standalone identities and project ordering. */
+.orbit-midnight{--bg:#0c1429;--ink:#dfe7f0;background:var(--bg);color:var(--ink)}
+.orbit-midnight .orbit-selector,.orbit-midnight .orbit-selector button,.orbit-midnight .orbit-index article{border-color:#899db944}
+.orbit-midnight .orbit-selector button{color:var(--ink)}
+.orbit-midnight .orbit-selector button[aria-pressed=true]{background:#aebed7;color:#0c1429}
+.orbit-midnight .orbit-index{background:#101c32}
+.orbit-midnight .closing,.orbit-midnight footer{background:#070e1b}
+.orbit-midnight .orbit-fallback{color:var(--ink)}
+.orbit-midnight .fallback-image{filter:drop-shadow(0 24px 18px #0008)}
+.orbit-gallery-dark{--bg:#141311;--ink:#e7dfd1;background:var(--bg);color:var(--ink)}
+.orbit-gallery-dark .kicker,.orbit-gallery-dark .selected-index{color:#bca98a}
+.orbit-gallery-dark .orbit-selector,.orbit-gallery-dark .orbit-selector button,.orbit-gallery-dark .orbit-index article{border-color:#c9ad7f44}
+.orbit-gallery-dark .orbit-selector button[aria-pressed=true]{background:#c6a575;color:#17130f}
+.orbit-gallery-dark .orbit-index{background:#1c1a16}
+.orbit-gallery-dark .closing,.orbit-gallery-dark footer{background:#211e19}
+.orbit-gallery-dark .fallback-image{filter:drop-shadow(0 24px 18px #0008)}

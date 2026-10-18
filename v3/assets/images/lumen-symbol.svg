@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" data-depth="1.5">
+  <title>Lumen — standalone open book and stars</title>
+  <path fill="#bd8a3d" data-depth="3" d="M14 129Q65 120 128 172Q188 119 242 127L237 212Q180 193 128 231Q68 201 19 216Z" data-z="0"/>
+  <path fill="#087fca" d="M19 134Q77 131 125 175L125 221Q75 188 24 205Z" data-z="4.5"/>
+  <path fill="#1839a3" d="M22 166Q75 164 125 194L125 222Q72 197 25 210Z" data-z="7.5"/>
+  <path fill="#c94534" d="M131 175Q188 130 238 133L233 205Q181 189 131 221Z" data-z="4.5"/>
+  <path fill="#e88c29" d="M133 177Q183 154 237 160L234 190Q184 179 131 217Z" data-z="7.5"/>
+  <path fill="#d3ab57" d="M24 114Q83 110 128 168Q176 110 236 114L232 161Q180 151 128 214Q79 153 28 163Z" data-z="10.5"/>
+  <path fill="#f0e8d6" data-metal="paper" d="M30 103Q87 100 124 155L124 203Q85 147 34 143Z" data-z="13.5"/>
+  <path fill="#f4ead7" data-metal="paper" d="M132 155Q175 101 229 103L226 143Q179 145 132 203Z" data-z="13.5"/>
+  <path fill="#30a9d9" d="M35 144Q88 143 124 192L124 210Q85 172 37 169Z" data-z="16.5"/>
+  <path fill="#e4b849" d="M132 192Q177 142 225 144L223 169Q177 172 132 210Z" data-z="16.5"/>
+  <ellipse fill="#ca9b44" cx="128" cy="218" rx="23" ry="14" data-z="20"/>
+  <ellipse fill="#1971bc" cx="128" cy="218" rx="17" ry="10" data-z="23"/>
+  <path fill="#dfb44c" data-depth="5" d="M128 18C135 48 145 58 174 66C145 73 135 84 128 112C120 84 110 74 82 66C110 58 120 48 128 18Z" data-z="4"/>
+  <path fill="#2daed9" d="M58 59C62 77 68 83 84 88C68 93 62 99 58 116C53 99 47 93 31 88C47 83 53 77 58 59Z" data-z="4" data-depth="3"/>
+  <path fill="#d84986" d="M199 59C204 77 210 83 226 88C210 93 204 99 199 116C194 99 188 93 172 88C188 83 194 77 199 59Z" data-z="4" data-depth="3"/>
+  <g fill="#dcb24e" data-z="4" data-depth="2"><path d="M88 27 96 37 91 41 83 31Z"/><path d="M164 27 169 31 161 41 156 37Z"/><path d="M88 92 94 97 86 106 80 101Z"/><path d="M164 92 172 101 166 106 158 97Z"/></g>
+</svg>

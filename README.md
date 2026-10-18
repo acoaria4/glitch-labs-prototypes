@@ -19,7 +19,7 @@ Open the [version directory](http://127.0.0.1:8089/). No build step or package i
 | --- | --- | --- |
 | [v1](v1/README.md) | Original site from `gLitCh-Labs-Releases` | Local snapshot, including studio, product, download, and resource pages |
 | [v2](v2/README.md) | Everyday, considered — cinematic studio | Existing interactive prototype, moved intact from its former `v1/` location |
-| [v3](v3/README.md) | Round 02: Portal, Signal, Orbit | Live spatial and kinetic explorations with a visual picker |
+| [v3](v3/README.md) | Round 02: Portal, four Orbit treatments, five Signal treatments | Ten explorations grouped under Portal, Signal, and Orbit |
 
 Preview routes: `/v1/`, `/v2/`, and `/v3/`. Each version owns its runtime resources and works independently of the other versions. The catalog uses v2's local fonts and favicon. Continue new work in `v3/`; preserve earlier versions.
 
@@ -57,6 +57,6 @@ The original site was copied from `G:/Programs/gLitCh-Labs-Releases` into `v1/`.
 
 The existing cinematic experiment moved from `v1/` to `v2/`. All 43 files were verified unchanged immediately after the move; only README paths were then updated. The Discover Expenses production link is preserved. Its original extraction manifest moved to `docs/v2-migration.json`, with target paths updated and historical hashes retained. The experiment was originally extracted on 11 October 2026 from the source repository's untracked `prototype/` directory.
 
-`v3/` now holds Portal, Signal, and Orbit, pending selection for the full build. The rejected first round (Blue, Dark, Color) is preserved under root-level `drafts/round-01/` and linked individually under Drafts in the root version selector. Each presents Expenses, AURA, Lumen, then Afterlight (in development). All three versions are linked from the root directory. Every preview page carries `noindex,nofollow` metadata. This repository has no publishing workflow or domain binding; source vendor/font licenses and artwork are retained.
+`v3/` now holds Portal, Signal, Orbit, and the additional Signal / Titanium treatment, pending selection for the full build. The rejected first round (Blue, Dark, Color) is preserved under root-level `drafts/round-01/` and linked individually under Drafts in the root version selector. Each presents Expenses, AURA, Lumen, then Afterlight (in development). All three versions are linked from the root directory. Every preview page carries `noindex,nofollow` metadata. This repository has no publishing workflow or domain binding; source vendor/font licenses and artwork are retained.
 
 Validation after reorganization: 24 pages and 649 local references passed, including headings, unique IDs, fragments, and version isolation.

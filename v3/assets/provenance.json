@@ -61,6 +61,21 @@
       "file": "portal-environment.prompt.txt",
       "origin": "Exact built-in image_gen prompt and inspected camera calibration for the persistent Portal environment.",
       "sha256": "495de546aeb781d230b66c1ef18975edadd4a68ec3d1a1cf12483c84d87c2c3a"
+    },
+    {
+      "file": "images/expenses-symbol.svg",
+      "origin": "Locally authored SVG reconstruction of the standalone E and nine dots, guided by G:/Programs/expenses-by-glitchlabs/src/assets/brand/expenses-splash-mark.png and images/expenses.webp. Not a supplied source SVG; source assets unchanged.",
+      "sha256": "aad2c9d91eb1659ea28d3b9303218d112203facb0331253de54e5bd7b294bfe8"
+    },
+    {
+      "file": "images/aura-symbol.svg",
+      "origin": "Locally authored SVG reconstruction of the gold orb and crescent from G:/Programs/AstroAI/frontend/public/icon-transparent.png and images/aura.webp, without the ivory icon plate. Not a supplied source SVG; source assets unchanged.",
+      "sha256": "ee0ec1d01e21a8a10b12045a40831466fa3a125374c9ad4eef61e5f44bb8dba0"
+    },
+    {
+      "file": "images/lumen-symbol.svg",
+      "origin": "Locally authored SVG reconstruction of the existing layered book and three stars from images/lumen.webp and G:/Programs/lumen/resources/icon-original-transparent.png, without the pink icon plate. Not a supplied source SVG; source assets unchanged. Relief depths separate the backing, colored pages, paper, and binding to prevent coplanar faces; 2D outlines unchanged.",
+      "sha256": "02589ee59538fd759d133e130893e42ee9f5939f4022cdf9874f89b07b75d698"
     }
   ]
 }

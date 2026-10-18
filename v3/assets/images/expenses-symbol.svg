@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Expenses — standalone E and nine dots</title>
+  <path fill="#d6b482" data-depth="12" d="M211 31 199 48H95C70 48 50 69 50 94V114H185L173 132H50V174C50 197 68 214 91 214H172L160 232H91C58 232 31 208 31 174V94C31 58 59 31 95 31Z"/>
+  <g fill="#d6b482" data-depth="9">
+    <circle cx="197" cy="155" r="5.6"/><circle cx="197" cy="176" r="5.6"/><circle cx="197" cy="197" r="5.6"/><circle cx="197" cy="218" r="5.6"/>
+    <circle cx="220" cy="144.5" r="5.6"/><circle cx="220" cy="165.5" r="5.6"/><circle cx="220" cy="186.5" r="5.6"/><circle cx="220" cy="207.5" r="5.6"/><circle cx="220" cy="228.5" r="5.6"/>
+  </g>
+</svg>

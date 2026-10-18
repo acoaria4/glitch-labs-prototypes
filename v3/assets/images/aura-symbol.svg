@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>AURA — standalone solar orb and crescent</title>
+  <path fill="#d3a259" data-depth="14" d="M44 80C31 98 25 118 29 142C34 185 72 222 122 225C169 230 212 199 225 157C234 126 225 98 211 80C217 110 207 142 185 164C157 193 116 199 84 179C54 161 39 119 44 80Z"/>
+  <circle fill="#d9ac67" cx="127" cy="89" r="49" data-orb="true"/>
+</svg>

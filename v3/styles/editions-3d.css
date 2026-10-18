@@ -1,0 +1,16 @@
+/* Additive sculpted editions. Original study pages use their original runtime. */
+.app-world{position:fixed;inset:0;display:block;width:100%;height:100%;z-index:8;pointer-events:none}
+.sculpted-edition .project-art{isolation:isolate}
+.sculpted-edition .project-art.model-ready>.project-symbol{visibility:hidden}
+.logo-turn{position:absolute;inset:0;z-index:3;background:transparent;border:0;touch-action:pan-y;color:inherit}
+.logo-turn span{position:absolute;right:24px;bottom:22px;font:10px/1.5 'DM Sans',sans-serif;letter-spacing:.04em;opacity:.65}
+.logo-turn:hover span,.logo-turn:focus-visible span{opacity:1}
+.logo-turn:focus-visible{outline:1px solid currentColor;outline-offset:-10px}
+.nocturne .logo-turn{color:#bba886}
+.leaf-art{position:relative;display:grid;place-items:center;width:100%;height:48%;flex:1 1 auto;min-height:0;margin:12px 0}
+.book-leaf .leaf-art .leaf-logo{width:75%;height:100%;margin:0;object-fit:contain}
+.leaf-world,.leaf-render-snapshot{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+.leaf-art.model-ready .leaf-logo,.leaf-art.has-snapshot .leaf-logo{visibility:hidden}
+.sculpted-edition.chroma .hero-static:before,.sculpted-edition.chroma .hero-static:after{display:none}
+.sculpted-edition.chroma .hero-static img{display:block;width:72%;height:auto;transform:perspective(900px) rotateY(-20deg) rotateZ(8deg);filter:drop-shadow(0 30px 25px #28334135)}
+@media(max-width:700px){.logo-turn span{right:18px;bottom:17px;font-size:9px}.leaf-art{margin:8px 0}.sculpted-edition.chroma .hero-static img{max-height:320px;width:auto}}

@@ -80,3 +80,11 @@ These remain separate comparison prototypes under New studies, options 11–13. 
 | Chroma | Large precise sans type, mint/violet optical glass, pearl ground, offset project color studies | Change the glass assembly’s perspective; bounded pointer depth | Physical transmission costs more GPU work than Folio |
 
 All three preserve native vertical reading, working project links, contact, source identities, the curiosity closing, and Afterlight’s fourth-place development status. Nocturne’s live studio emblem is a procedural interpretation of the supplied dot arrangement, not a new replacement studio logo. Chroma’s glass is abstract sculpture, not a product mark. Folio’s book artwork uses the existing app symbols and original full Afterlight title.
+
+## Additive sculpted editions
+
+- Options 14–16: Nocturne / 3D, Folio / 3D, Chroma / Studio 3D. Option 17: Portal / Sculpted 3D. All older routes remain available.
+- All four products use actual extruded source shapes. Champagne or satin bronze faces, darker metal sidewalls, bevel highlights, colored enamel, separated relief, and local lighting supply the depth. Lumen retains its pages and stars; Afterlight retains its supplied crest and title and stays fourth, In development.
+- One collection renderer uses clipped viewports for only the visible figures. Native overlay buttons rotate each mark; Folio’s book also contains a live 3D mark, with a snapshot of the rendered outgoing leaf during turns.
+- Chroma’s new studio hero uses an assembled black lacquer body, satin titanium frame, and 33 machined studs. Scroll progress from .06 to .72 lifts the frame by .65 units and studs by 1.05 units; damping makes the movement reversible and restrained. No automatic separation happens on arrival. The old glass hero remains in the original Chroma.
+- Portal’s additive runtime imports the same model factory. The landscape stays visible, and the final section remains beyond Afterlight’s last doorway. Original Portal is retained.

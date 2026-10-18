@@ -12,10 +12,14 @@ const variants=[
   {group:'orbit',name:'Dark Gallery',file:'orbit-gallery-dark'},
   {group:'studies',name:'Nocturne',file:'nocturne'},
   {group:'studies',name:'Folio',file:'folio'},
-  {group:'studies',name:'Chroma',file:'chroma'}
+  {group:'studies',name:'Chroma',file:'chroma'},
+  {group:'studies',name:'Nocturne / 3D',file:'nocturne-3d'},
+  {group:'studies',name:'Folio / 3D',file:'folio-3d'},
+  {group:'studies',name:'Chroma / Studio 3D',file:'chroma-studio'},
+  {group:'portal',name:'Sculpted / 3D',file:'portal-3d'}
 ];
 const titles={portal:'Portal',signal:'Signal',orbit:'Orbit',studies:'New studies'};
-const remembered={portal:0,signal:1,orbit:2,studies:10};
+const remembered={portal:16,signal:1,orbit:2,studies:13};
 const stage=document.getElementById('stage');
 const picker=document.querySelector('.proto-picker');
 const groups=[...picker.querySelectorAll('[data-group]')];
@@ -32,7 +36,7 @@ function mount(){
 }
 function setActive(index){
   if(!Number.isInteger(index)||index<0||index>=variants.length)return;
-  current=index;const item=variants[index];remembered[item.group]=index;
+  current=index;const item=variants[index];remembered[item.group]=index;picker.dataset.group=item.group;
   groups.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.group===item.group)));
   const options=variants.flatMap((variant,i)=>variant.group===item.group?[new Option(variant.name,String(i))]:[]);
   select.replaceChildren(...options);select.value=String(index);
@@ -62,4 +66,4 @@ window.addEventListener('message',event=>{
   shortcut(event.data.key);
 });
 const requested=Number(new URLSearchParams(location.search).get('v'));
-setActive(Number.isInteger(requested)&&requested>=1&&requested<=variants.length?requested-1:0);
+setActive(Number.isInteger(requested)&&requested>=1&&requested<=variants.length?requested-1:16);

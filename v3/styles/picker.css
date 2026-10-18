@@ -20,3 +20,5 @@
   .proto-picker-replay{width:30px;padding:0}
 }
 @media(prefers-reduced-motion:reduce){.proto-picker-item{transition:none}}
+.proto-picker[data-group=studies] .proto-variant-label select{width:180px}
+@media(max-width:600px){.proto-picker[data-group=studies] .proto-variant-label select{width:100%}}

@@ -37,3 +37,7 @@ The grouped-picker update adds no raster artwork. Midnight and Dark Gallery reus
 ## Nocturne / Folio / Chroma
 
 These three studies add no raster assets. Nocturne’s native black body, rounded frame, and 33 lathed studs interpret the supplied studio emblem; the source image remains the header/still identity. Folio uses CSS paper and cloth surfaces around the same original marks. Chroma’s glass forms, light environment, and background shader are procedural and decorative. Original app vectors and Afterlight artwork remain unchanged; the existing asset manifest hashes still apply. The new pages use only the existing local, licensed fonts and vendored runtimes.
+
+## Sculpted editions
+
+Options 14–17 reuse the same source artwork without new bitmaps. The shared model factory extrudes the original reconstructed app SVGs and supplied Afterlight crest. It deepens Lumen’s pages/stars while scaling their layer offsets, deepens Afterlight’s structure while keeping flame/core/halo faces apart, and retains the original raster title as a printed inscription. Chroma’s new studio hero uses the existing procedural studio emblem with satin titanium and black lacquer, starting assembled. Source files and manifest hashes are unchanged.

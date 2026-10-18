@@ -1,6 +1,6 @@
 # v3 — Round 02
 
-Thirteen experience options, awaiting selection before the full site build. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
+Seventeen experience options, awaiting selection before the full site build. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
 
 | Direction | Main idea | Interaction |
 | --- | --- | --- |
@@ -17,14 +17,18 @@ Thirteen experience options, awaiting selection before the full site build. Open
 | Nocturne | Black lacquer, satin titanium, champagne light, and large serif type | Live dimensional studio emblem with a moving light control |
 | Folio | Bone paper, olive cloth, ink type, and editorial spreads | A physical book with four working page turns |
 | Chroma | Pearl, optical glass, mint, violet, and precise sans type | Live refractive sculpture with a perspective control |
+| Nocturne / 3D | Champagne metal, dark sidewalls, and colored enamel | Live project sculptures with pointer and keyboard turning |
+| Folio / 3D | Satin bronze on paper | Live dimensional marks inside the turning book and collection |
+| Chroma / Studio 3D | Black lacquer and titanium on pearl | Assembled studio emblem with subtle, reversible scroll separation |
+| Portal / Sculpted 3D | Sunset-lit metal, enamel pages, and deep relief | The shared project sculptures in Portal’s existing continuous landscape |
 
 Expenses, AURA, Lumen, then Afterlight remain the document and control order. Afterlight is explicitly **in development**. Its imagery and description come from the local Afterlight repository; development captures do not represent balanced-play results or a downloadable release.
 
-The picker groups options under **Portal**, **Signal**, **Orbit**, and **New studies**. New studies contains Nocturne, Folio, and Chroma. A native select shows the selected family’s treatments on desktop and phone. It remembers the last treatment within each family for the current session. Keys **1–9** and **0** select global options 1–10, **left/right** cycle within the family, and **R** replays. Selection persists in the query string. Existing indices 1–8 are unchanged; Midnight and Dark Gallery are 9–10. Nocturne, Folio, and Chroma are 11–13. All earlier indices remain stable; arrows cycle through the three new studies. The root catalog also links to each study directly. Each prototype also works directly through its HTML page in `prototypes/`.
+The picker groups options under **Portal**, **Signal**, **Orbit**, and **New studies**. New studies contains the original and sculpted Nocturne, Folio, and Chroma studies. A native select shows the selected family’s treatments on desktop and phone. It remembers the last treatment within each family for the current session. Keys **1–9** and **0** select global options 1–10, **left/right** cycle within the family, and **R** replays. Selection persists in the query string. Existing indices 1–8 are unchanged; Midnight and Dark Gallery are 9–10. Original Nocturne, Folio, and Chroma are 11–13. Their additive 3D versions are 14–16; Portal / Sculpted 3D is 17. All earlier indices remain stable; arrows cycle through the active family. Opening `/v3/` without a query selects the latest sculpted Portal; the Portal and New studies family buttons initially prefer their new 3D treatments. The root catalog also links to each study directly. Each prototype also works directly through its HTML page in `prototypes/`.
 
 ## Architecture
 
-Buildless HTML/CSS/JavaScript. Three.js r170 and official RoomEnvironment, RoundedBoxGeometry, and SVGLoader add-ons are local. GSAP 3.13.0 + ScrollTrigger and Lenis 1.3.26 are also local. One renderer, scene, and Lenis instance per loaded experience; the GSAP ticker drives smooth scroll and rendering. Touch scrolling stays native.
+Buildless HTML/CSS/JavaScript. Three.js r170 and official RoomEnvironment, RoundedBoxGeometry, and SVGLoader add-ons are local. GSAP 3.13.0 + ScrollTrigger and Lenis 1.3.26 are also local. One Lenis instance per loaded experience; the GSAP ticker drives smooth scroll and rendering. The original experiences use one renderer. Each sculpted study uses at most two contexts: collection plus hero, or collection plus book. Portal / 3D retains one renderer. Touch scrolling stays native.
 
 Portal keeps one transparent 3D world over the same fixed sunset environment across all its authored chapters. Signal uses one instanced draw for its letter field. Signal’s project marks use CSS 3D depth, GSAP entrance reveals, pointer tilt, and native keyboard/touch animation buttons. Orbit uses four physical logo objects and native controls describing the same selection. Renderer DPR is capped, Portal uses local translucent geometry reflections instead of a full-screen mirror, and offscreen/hidden scenes pause. GPU resources, observations, and event handlers are released on motion changes and page exit.
 
@@ -41,6 +45,9 @@ python -X utf8 scripts/check-site.py
 node --check v3/scripts/experience.js
 node --check v3/scripts/picker.js
 node --check v3/scripts/editions.js
+node --check v3/scripts/editions-3d.js
+node --check v3/scripts/sculpted-logos.js
+node --check v3/scripts/portal-sculpted.js
 ```
 
 The local-resource checker permits explicit navigation from a version into the root drafts archive; runtime assets still cannot escape their version. Archive pages retain their own local dependencies. All 49 files from the first round were verified byte-identical after moving them.
@@ -142,3 +149,17 @@ The new pages share isolated `styles/editions.css` and `scripts/editions.js`; no
 Review captures are under `.cache/v3-new-studies-review/`.
 
 Validation for the new studies: 42 pages and 1,060 local references pass the static checker; both picker and editions scripts pass Node syntax checks. All 15 existing asset hashes match, and v1/v2/drafts remain unchanged. Browser review covered 1440px desktop, 390px and 320px phones, all four Folio page turns, still views and motion off/on, Nocturne lighting and Afterlight disclosure, Chroma perspective and collection, family restoration, keyboard cycling, and preserved Portal/Signal/Orbit routes. Reviewed views recorded no console warnings or errors. Physical-device GPU performance was not measured.
+
+## Shared sculpted identities
+
+Options 14–17 are additional versions; original routes 1–13, their pages, and original runtimes remain intact. New studies contains Nocturne / 3D, Folio / 3D, and Chroma / Studio 3D alongside the earlier studies. Portal’s selector now also contains Sculpted / 3D.
+
+`sculpted-logos.js` loads the existing standalone SVGs and original Afterlight title. It constructs actual extruded meshes, face and sidewall materials, a dimensional AURA orb, Lumen’s separated book sheets and stars, and Afterlight’s deep gold structure, halo, flame, and ivory core. Lumen’s relief is scaled with its layer offsets, preserving clearance. No original artwork or asset hash changes. The supplied Afterlight title remains a printed inscription beneath its solid crest.
+
+The new study pages use one scissored collection renderer. Only visible figures render; the idle canvas clears once and then stops drawing. Folio uses one additional small context inside the transformed book page, preserving the rendered outgoing leaf during each turn. The Nocturne and Chroma heroes each use one additional context instead. Geometry, materials, local environments, title textures, shadow maps, observers, and subscriptions are released on motion changes and page exit. Native controls turn the project sculptures by pointer, tap, or keyboard activation. Still and reduced-motion views retain source artwork.
+
+Chroma’s new hero replaces the loops with the studio emblem in black lacquer and satin titanium. All layers start assembled. Scrolling gently lifts the frame and studs; reverse scrolling returns them. Pearl, mint, and lilac light remain. The old optical-glass Chroma is still option 13.
+
+Portal / Sculpted 3D imports the same model factory through an isolated runtime, preserving the original camera travel, landscape, mirrored geometry, project order, and open-sunset ending. Review captures are under `.cache/v3-sculpted-review/`.
+
+Validation: 46 pages and 1,169 local references pass the checker, along with syntax checks for all four authored runtime/picker modules. All 15 asset hashes match; all 13 earlier prototype pages, original runtimes, v1/v2, and drafts remain unchanged. Browser review covered desktop and 320/390px layouts, all four Folio page selections, pointer/tap and keyboard logo turning, motion teardown/restoration, Chroma’s assembled/separated/reassembled states, and Portal’s Lumen, Afterlight, and sunset ending. No console warnings or errors appeared in the reviewed views. Physical-device frame pacing was not measured.

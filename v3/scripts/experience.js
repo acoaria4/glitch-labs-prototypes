@@ -2,6 +2,7 @@ import * as THREE from '../vendor/three.module.js';
 import { RoomEnvironment } from '../vendor/RoomEnvironment.js';
 import { RoundedBoxGeometry } from '../vendor/RoundedBoxGeometry.js';
 import { Reflector } from '../vendor/Reflector.js';
+import { SVGLoader } from '../vendor/SVGLoader.js';
 
 const kind = document.body.dataset.experience;
 const canvas = document.querySelector('#world');
@@ -13,7 +14,7 @@ const projects = [
   { name:'Expenses', label:'01 / Expenses', color:'#d9e1bc', ink:'#233529', image:'expenses.webp', heading:'A little less<br>keeping track.', copy:'Personal spending and shared tabs. A clearer picture of where it all goes.', link:'https://theglitchlabs.com/expenses/' },
   { name:'AURA', label:'02 / AURA', color:'#e9d8b5', ink:'#573e2c', image:'aura.webp', heading:'A different<br>perspective.', copy:'Vedic charts, Porutham, and the Tamil calendar. Tradition, thoughtfully presented.', link:'https://theglitchlabs.com/aura/' },
   { name:'Lumen', label:'03 / Lumen', color:'#f1bacb', ink:'#4d2e46', image:'lumen.webp', heading:'A little more<br>understanding.', copy:'Quiz-based revision for grades 9–12, with clear explanations and room to grow. Coming soon.', link:'https://theglitchlabs.com/lumen/' },
-  { name:'Afterlight', label:'04 / Afterlight', color:'#263b32', ink:'#f0d7a4', image:'afterlight-frontier.png', heading:'Keep the last<br>light alive.', copy:'A dark fantasy tower-defense roguelite. Build your defenses as the haunted woodland unfolds.', link:null }
+  { name:'Afterlight', label:'04 / Afterlight', color:'#263b32', ink:'#f0d7a4', image:'afterlight-logo.png', heading:'Keep the last<br>light alive.', copy:'A dark fantasy tower-defense roguelite. Build your defenses as the haunted woodland unfolds.', link:null }
 ];
 let selected = 0;
 let wanted = true;
@@ -37,7 +38,7 @@ function choose(index, fromDrag=false) {
   document.querySelector('.fallback-label').textContent = item.label;
   const image = document.querySelector('.fallback-image');
   image.src = '../assets/images/'+item.image;
-  image.alt = item.name + (selected===3?' development capture':' app mark');
+  image.alt = item.name + (selected===3?' — The Hollow March logo':' app mark');
   document.querySelector('.fallback-title').textContent=item.name.toUpperCase();
   document.body.dataset.selected = String(selected);
   currentScene?.select?.(selected,fromDrag);
@@ -47,6 +48,7 @@ document.querySelector('.disrupt')?.addEventListener('click',()=>currentScene?.d
 
 function disposeGraph(scene) {
   const geometries=new Set(), materials=new Set(), textures=new Set();
+  (scene.userData.logoTextures||[]).forEach(texture=>textures.add(texture));
   scene.traverse(object=>{
     if(object.geometry) geometries.add(object.geometry);
     if(object.isReflector) object.getRenderTarget().dispose();
@@ -54,6 +56,7 @@ function disposeGraph(scene) {
     list.filter(Boolean).forEach(material=>{materials.add(material); for(const value of Object.values(material))if(value?.isTexture)textures.add(value);});
   });
   geometries.forEach(item=>item.dispose()); materials.forEach(item=>item.dispose()); textures.forEach(item=>item.dispose());
+  scene.userData.freeEnvironment?.();
 }
 
 function addEnvironment(scene,renderer) {
@@ -62,7 +65,10 @@ function addEnvironment(scene,renderer) {
   const target=generator.fromScene(room,0.04);
   scene.environment=target.texture;
   room.dispose(); generator.dispose();
-  return ()=>target.dispose();
+  let freed=false;
+  const free=()=>{if(!freed){freed=true;target.dispose();}};
+  scene.userData.freeEnvironment=free;
+  return free;
 }
 
 function mesh(geometry,material,parent,x=0,y=0,z=0) {
@@ -72,7 +78,67 @@ function mesh(geometry,material,parent,x=0,y=0,z=0) {
   return object;
 }
 
-function portalWorld(scene,camera,renderer,mobile,controller) {
+// Original raster faces stay intact; only the supplied Afterlight vector is extruded.
+async function loadLogoAssets(scene,controller) {
+  const textures=[];
+  try {
+    const images=await Promise.all(projects.map(async item=>{
+      const response=await fetch('../assets/images/'+item.image,{signal:controller.signal});
+      if(!response.ok)throw new Error('Logo unavailable: '+item.name);
+      const blob=await response.blob();
+      const url=URL.createObjectURL(blob);
+      try {
+        const image=new Image();image.src=url;await image.decode();return image;
+      } finally {URL.revokeObjectURL(url);}
+    }));
+    const response=await fetch('../assets/images/afterlight-emblem.svg',{signal:controller.signal});
+    if(!response.ok)throw new Error('Afterlight emblem unavailable');
+    const emblem=new SVGLoader().parse(await response.text());
+    if(controller.signal.aborted)throw new DOMException('Aborted','AbortError');
+    images.slice(0,3).forEach(image=>{
+      const texture=new THREE.Texture(image);texture.needsUpdate=true;
+      texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;textures.push(texture);
+    });
+    const wordmark=document.createElement('canvas');wordmark.width=1536;wordmark.height=369;
+    const art=images[3];
+    wordmark.getContext('2d').drawImage(art,0,art.height*.64,art.width,art.height*.36,0,0,1536,369);
+    const title=new THREE.CanvasTexture(wordmark);title.colorSpace=THREE.SRGBColorSpace;title.anisotropy=4;textures.push(title);
+    // Own all textures even if teardown happens before objects are attached.
+    scene.userData.logoTextures=textures;
+    return {textures,emblem};
+  } catch(error) {textures.forEach(texture=>texture.dispose());throw error;}
+}
+
+function logoObject(index,assets) {
+  const group=new THREE.Group();group.userData.index=index;
+  const sides=new THREE.MeshStandardMaterial({color:index===0?'#222322':index===1?'#bc8f4d':'#bd305a',metalness:.7,roughness:.25});
+  if(index<3) {
+    mesh(new RoundedBoxGeometry(3.22,3.22,.34,4,.25),sides,group,0,0,-.11);
+    const front=new THREE.MeshBasicMaterial({map:assets.textures[index],transparent:true,alphaTest:.02,toneMapped:false,side:THREE.DoubleSide});
+    mesh(new THREE.PlaneGeometry(3.8,3.8),front,group,0,0,.08);
+  } else {
+    // SVG coordinates are transformed as a group, preserving the source paths.
+    const crest=new THREE.Group();crest.scale.set(.015,-.015,.015);crest.position.set(-1.92,2.4,0);group.add(crest);
+    const metal=new THREE.MeshStandardMaterial({color:'#d6ad70',metalness:.78,roughness:.28});
+    const edge=new THREE.MeshStandardMaterial({color:'#785229',metalness:.8,roughness:.32});
+    assets.emblem.paths.forEach(path=>{
+      const style=path.userData.style;
+      if(style.fill&&style.fill!=='none') {
+        const face=style.fill==='#d6ad70'?metal:new THREE.MeshStandardMaterial({color:style.fill,metalness:.3,roughness:.3,emissive:style.fill,emissiveIntensity:.16});
+        SVGLoader.createShapes(path).forEach(shape=>mesh(new THREE.ExtrudeGeometry(shape,{depth:12,bevelEnabled:true,bevelSegments:2,steps:1,bevelSize:1.1,bevelThickness:1}),[face,edge],crest));
+      }
+      if(style.stroke&&style.stroke!=='none')path.subPaths.forEach(subpath=>{
+        const geometry=SVGLoader.pointsToStroke(subpath.getPoints(32),style);
+        if(geometry)mesh(geometry,metal,crest,0,0,8);
+      });
+    });
+    mesh(new THREE.PlaneGeometry(4.55,1.1),new THREE.MeshBasicMaterial({map:assets.textures[3],transparent:true,depthWrite:false,toneMapped:false,side:THREE.DoubleSide}),group,0,-1.9,.1);
+  }
+  return group;
+}
+
+async function portalWorld(scene,camera,renderer,mobile,controller) {
+  const assets=await loadLogoAssets(scene,controller);
   scene.background=new THREE.Color('#100d0d');
   scene.fog=new THREE.FogExp2('#100d0d',0.028);
   const freeEnvironment=addEnvironment(scene,renderer);
@@ -98,8 +164,6 @@ function portalWorld(scene,camera,renderer,mobile,controller) {
   const groups=[];
   const rounded=(w,h,d,r=.07)=>new RoundedBoxGeometry(w,h,d,3,r);
   const materialMetal=new THREE.MeshStandardMaterial({color:'#a6aaa8',metalness:0.93,roughness:0.18,envMapIntensity:1.4});
-  const cream=new THREE.MeshStandardMaterial({color:'#dedbcc',roughness:0.4,metalness:0.15});
-  const gold=new THREE.MeshStandardMaterial({color:'#a88446',metalness:0.88,roughness:0.23});
   for(let i=0;i<5;i++) {
     const gate=new THREE.Group(); gate.position.set(3.2,0,-18*i); scene.add(gate);
     for(const side of [-1,1]) {
@@ -113,32 +177,9 @@ function portalWorld(scene,camera,renderer,mobile,controller) {
     mesh(new THREE.BoxGeometry(4.73,.035,.035),lightMaterial,gate,0,7.51,.82);
     const lamp=new THREE.PointLight(innerColors[i],18,15,2); lamp.position.set(0,4.6,2); gate.add(lamp);
     if(i===0) continue;
-    const focal=new THREE.Group(); focal.position.set(0,5,-2.5); gate.add(focal); groups.push(focal);
-    if(i===1) {
-      for(let j=0;j<3;j++) {
-        const plate=mesh(rounded(2.65,1.25,.15,.055),j===1?cream:materialMetal,focal,0,(j-1)*.48,(j-1)*.4);
-        plate.rotation.set(-.18,.2,(j-1)*.14);
-        for(let row=0;row<4;row++)mesh(new THREE.BoxGeometry(1.7-row*.2,.014,.006),darkStone,plate,0,.28-row*.15,.08);
-      }
-    } else if(i===2) {
-      for(let j=0;j<4;j++) {
-        const ring=mesh(new THREE.TorusGeometry(1.6-j*.12,.023,8,100),gold,focal);
-        ring.rotation.set(j*.73,j*.6,j*.4);
-      }
-      mesh(new THREE.SphereGeometry(.42,32,24),cream,focal);
-      mesh(new THREE.SphereGeometry(.16,24,16),materialMetal,focal,1.4,.5,.15);
-    } else if(i===3) {
-      const pink=new THREE.MeshStandardMaterial({color:'#eebec7',metalness:.3,roughness:.25});
-      for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++) {
-        const cube=mesh(rounded(.59,.59,.59,.06),(x+y+z)%2?pink:cream,focal,x*.65,y*.65,z*.65);
-        cube.userData.home=cube.position.clone();
-      }
-      focal.rotation.set(.4,.5,.15);
-    } else {
-      const texture=new THREE.TextureLoader().load('../assets/images/afterlight-frontier.png'); texture.colorSpace=THREE.SRGBColorSpace;
-      mesh(rounded(4.7,3.07,.25,.06),stone,focal);
-      mesh(new THREE.PlaneGeometry(4.48,2.8),new THREE.MeshBasicMaterial({map:texture,toneMapped:false}),focal,0,0,.14);
-    }
+    const focal=logoObject(i-1,assets);focal.position.set(0,4.75,-2.5);focal.scale.setScalar(i===4?1:1.15);gate.add(focal);groups.push(focal);
+    mesh(new THREE.CylinderGeometry(1.8,2.05,.35,48),darkStone,gate,0,1.15,-2.5);
+    mesh(new THREE.CylinderGeometry(1.82,1.82,.025,48),materialMetal,gate,0,1.34,-2.5);
   }
   const sections=[...document.querySelectorAll('[data-chapter]')];
   let anchors=[];
@@ -152,24 +193,26 @@ function portalWorld(scene,camera,renderer,mobile,controller) {
   window.addEventListener('blur',()=>pointer.set(0,0),{signal:controller.signal});
   const links=[...document.querySelectorAll('.chapter-nav a')];
   return {
-    resize(){measure();camera.fov=innerWidth<700?52:42;camera.updateProjectionMatrix();},
+    resize(){
+      measure();const phone=innerWidth<700;camera.fov=phone?52:42;camera.updateProjectionMatrix();
+      sun.scale.setScalar(phone?.7:1);sun.material.color.set(phone?'#75311e':'#eb6339');
+    },
     update(time,dt){
       const y=window.scrollY;
       exact=0;
       for(let i=0;i<anchors.length-1;i++) if(y>=anchors[i]) exact=i+THREE.MathUtils.clamp((y-anchors[i])/(anchors[i+1]-anchors[i]),0,1);
       if(y>=anchors.at(-1)) exact=4;
       progress=THREE.MathUtils.damp(progress,exact,6,dt);
-      const x=innerWidth<700?3.2:1.4+Math.min(progress,1)*1.8;
-      camera.position.set(x+pointer.x,3.15+pointer.y,15-progress*18);
-      viewTarget.set(3.2,4.0,-60-progress*18);camera.lookAt(viewTarget);
+      const phone=innerWidth<700;
+      const x=phone?3.2:1.4;
+      // Phone copy occupies the upper half; keep the artwork below its actions.
+      const cameraY=phone?8.9:3.15;
+      camera.position.set(x+pointer.x,cameraY+pointer.y,15-progress*18);
+      viewTarget.set(phone?3.2:-6,cameraY+.85,-60-progress*18);camera.lookAt(viewTarget);
       groups.forEach((group,i)=>{
-        if(i===0)group.rotation.y=Math.sin(time*.2)*.14;
-        if(i===1)group.rotation.set(time*.08,time*.06,0);
-        if(i===2) {
-          group.rotation.y=.5+Math.sin(time*.18)*.17;
-          const spread=1+Math.sin(time*.7)*.045;
-          group.children.forEach(object=>object.position.copy(object.userData.home).multiplyScalar(spread));
-        }
+        group.scale.setScalar(phone?(i===3?.6:.68):(i===3?1:1.15));
+        group.position.y=4.75+Math.sin(time*.6+i)*.07;
+        group.rotation.set(Math.sin(time*.3+i)*.025,Math.sin(time*.24+i)*.13+pointer.x*.16,Math.sin(time*.2+i)*.018);
       });
       const index=Math.round(exact)-1;
       links.forEach((link,i)=>{if(index===i)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
@@ -183,20 +226,20 @@ function signalWorld(scene,camera,renderer,mobile,controller) {
   scene.add(new THREE.HemisphereLight('#fff1db','#35140c',3));
   const key=new THREE.DirectionalLight('#fff5e5',5);key.position.set(-5,8,12);scene.add(key);
   const rim=new THREE.DirectionalLight('#ffad8c',3);rim.position.set(6,-4,3);scene.add(rim);
-  const mask=document.createElement('canvas');mask.width=960;mask.height=280;
+  const mask=document.createElement('canvas');mask.width=1600;mask.height=360;
   const painter=mask.getContext('2d',{willReadFrequently:true});
-  painter.fillStyle='#fff';painter.font='400 280px Bebas';painter.textAlign='center';painter.textBaseline='middle';painter.fillText('GLITCH',480,151);
-  const pixels=painter.getImageData(0,0,960,280).data;
+  painter.fillStyle='#fff';painter.font='600 250px Space';painter.textAlign='center';painter.textBaseline='middle';painter.fillText('gLitCh Labs.',800,182);
+  const pixels=painter.getImageData(0,0,1600,360).data;
   const origins=[],folded=[];
-  const fullWidth=painter.measureText('GLITCH').width,firstWidth=painter.measureText('GLI').width;
-  const textStart=480-fullWidth/2,splitX=textStart+firstWidth;
+  const fullWidth=painter.measureText('gLitCh Labs.').width,firstWidth=painter.measureText('gLitCh ').width;
+  const textStart=800-fullWidth/2,splitX=textStart+firstWidth;
   const leftCenter=textStart+firstWidth/2,rightCenter=splitX+(fullWidth-firstWidth)/2;
-  for(let y=12;y<270;y+=5)for(let x=10;x<950;x+=5)if(pixels[(y*960+x)*4+3]>100){
-    origins.push((x-480)/50,(140-y)/50,0);
-    const first=x<splitX;folded.push((x-(first?leftCenter:rightCenter))/50,(140-y)/50+(first?3:-3),0);
+  for(let y=6;y<354;y+=6)for(let x=6;x<1594;x+=6)if(pixels[(y*1600+x)*4+3]>100){
+    origins.push((x-800)/60,(180-y)/60,0);
+    const first=x<splitX;folded.push((x-(first?leftCenter:rightCenter))/60,(180-y)/60+(first?2.4:-2.4),0);
   }
-  const count=Math.min(origins.length/3,5500);
-  const geometry=new THREE.BoxGeometry(.075,.075,.2);
+  const count=origins.length/3;
+  const geometry=new THREE.BoxGeometry(.079,.079,.2);
   const material=new THREE.MeshStandardMaterial({color:'#201710',roughness:.34,metalness:.42});
   const letters=new THREE.InstancedMesh(geometry,material,count);letters.frustumCulled=false;letters.scale.setScalar(1.4);scene.add(letters);
   const current=new Float32Array(origins.slice(0,count*3));
@@ -208,8 +251,8 @@ function signalWorld(scene,camera,renderer,mobile,controller) {
   function resize() {
     const aspect=stage.clientWidth/stage.clientHeight;
     const phone=innerWidth<700;
-    const width=phone?Math.max(firstWidth,fullWidth-firstWidth)/50*1.4*1.18:18.5;
-    const height=phone?14.8:7;
+    const width=(phone?Math.max(firstWidth,fullWidth-firstWidth):fullWidth)/60*1.4*1.12;
+    const height=phone?13:7;
     const tangent=2*Math.tan(THREE.MathUtils.degToRad(17.5));
     camera.fov=35;camera.position.set(0,0,Math.max(10,width/(tangent*aspect),height/tangent));
     camera.lookAt(0,0,0);camera.updateProjectionMatrix();
@@ -253,26 +296,8 @@ function signalWorld(scene,camera,renderer,mobile,controller) {
   };
 }
 
-async function posterTexture(item,index) {
-  const surface=document.createElement('canvas');surface.width=768;surface.height=1024;
-  const ctx=surface.getContext('2d');
-  ctx.fillStyle=item.color;ctx.fillRect(0,0,768,1024);
-  ctx.fillStyle=item.ink;ctx.font='500 23px Space';ctx.fillText('gLitCh Labs',48,57);
-  ctx.textAlign='right';ctx.fillText(item.label.split(' / ')[0],720,57);ctx.textAlign='left';
-  ctx.fillRect(48,82,672,2);
-  const image=await new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src='../assets/images/'+item.image;});
-  if(index<3) ctx.drawImage(image,124,205,520,520);
-  else {
-    const sh=image.naturalHeight,sw=sh*1.2;
-    ctx.drawImage(image,(image.naturalWidth-sw)/2,0,sw,sh,48,160,672,560);
-  }
-  ctx.fillStyle=item.ink;ctx.font=`400 ${index===3?126:145}px Bebas`;ctx.fillText(item.name.toUpperCase(),42,893);
-  ctx.font='400 22px Space';ctx.fillText(index===3?'A world in the making. In development.':index===2?'A little more understanding. Coming soon.':index===1?'A different perspective.':'Life, a little clearer.',48,956);
-  const texture=new THREE.CanvasTexture(surface);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;
-  return texture;
-}
-
 async function orbitWorld(scene,camera,renderer,mobile,controller) {
+  const assets=await loadLogoAssets(scene,controller);
   scene.background=new THREE.Color('#1937d8');
   scene.fog=new THREE.Fog('#1937d8',16,45);
   const freeEnvironment=addEnvironment(scene,renderer);
@@ -281,14 +306,12 @@ async function orbitWorld(scene,camera,renderer,mobile,controller) {
   const fill=new THREE.DirectionalLight('#95b4ff',3);fill.position.set(8,5,-5);scene.add(fill);
   const rig=new THREE.Group();rig.position.set(0,2.9,-4);scene.add(rig);
   const surfaces=[],cards=[];
-  const textures=await Promise.all(projects.map(posterTexture));
-  textures.forEach((texture,index)=>{
+  projects.forEach((project,index)=>{
     const angle=index*Math.PI/2;
-    const card=new THREE.Group();card.position.set(Math.sin(angle)*4.2,0,Math.cos(angle)*4.2);
-    const shell=mesh(new RoundedBoxGeometry(3.76,5.12,.16,3,.08),new THREE.MeshStandardMaterial({color:projects[index].color,roughness:.48,metalness:.05}),card);
-    shell.userData.index=index;
-    const front=mesh(new THREE.PlaneGeometry(3.61,4.97),new THREE.MeshBasicMaterial({map:texture,toneMapped:false,side:THREE.DoubleSide}),card,0,0,.09);
-    front.userData.index=index; surfaces.push(front);cards.push(card);rig.add(card);
+    const card=new THREE.Group();card.position.set(Math.sin(angle)*3.3,0,Math.cos(angle)*3.3);
+    const logo=logoObject(index,assets);card.add(logo);
+    logo.traverse(object=>{if(object.isMesh){object.userData.index=index;surfaces.push(object);}});
+    cards.push(card);rig.add(card);
   });
   let target=-selected*Math.PI/2,current=target,dragging=false,lastX=0,downX=0,downY=0;
   const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
@@ -309,7 +332,7 @@ async function orbitWorld(scene,camera,renderer,mobile,controller) {
     if(!dragging)return;dragging=false;
     if(event.type!=='pointercancel'&&Math.hypot(event.clientX-downX,event.clientY-downY)<7) {
       const rect=canvas.getBoundingClientRect();pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);
-      raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(surfaces);
+      raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(surfaces.filter(object=>cards[object.userData.index].visible));
       if(hits.length){choose(hits[0].object.userData.index);return;}
     }
     const index=((Math.round(-target/(Math.PI/2))%4)+4)%4;
@@ -321,10 +344,50 @@ async function orbitWorld(scene,camera,renderer,mobile,controller) {
     update(time,dt){
       current=THREE.MathUtils.damp(current,target,6,dt);rig.rotation.y=current;
       rig.updateWorldMatrix(true,true);
-      cards.forEach((card,index)=>{card.position.y=Math.sin(time*.55+index)*.085;card.lookAt(camera.position);card.rotateZ((index%2?1:-1)*.045);});
+      cards.forEach((card,index)=>{
+        const facing=(Math.cos(index*Math.PI/2+current)+1)/2;
+        card.visible=facing>.15;
+        card.scale.setScalar(.56+.44*facing*facing);
+        card.position.y=Math.sin(time*.55+index)*.085;card.lookAt(camera.position);
+        card.rotateY(Math.sin(time*.32+index)*.08);card.rotateZ((index%2?1:-1)*.045);
+      });
     },
     dispose:freeEnvironment
   };
+}
+
+function signalLogos(controller) {
+  if(kind!=='signal'||!window.gsap)return ()=>{};
+  const {gsap}=window;
+  const controls=[];
+  const context=gsap.context(()=>{
+    document.querySelectorAll('.logo-stage').forEach((stage,index)=>{
+      const button=stage.querySelector('button'),object=stage.querySelector('.logo-object');
+      button.disabled=false;controls.push(button);
+      const xTo=gsap.quickTo(object,'rotationX',{duration:.65,ease:'power3.out'});
+      const yTo=gsap.quickTo(object,'rotationY',{duration:.65,ease:'power3.out'});
+      const zTo=gsap.quickTo(object,'rotationZ',{duration:.65,ease:'power3.out'});
+      const reset=()=>{xTo(0);yTo(0);zTo(0);};
+      button.addEventListener('pointermove',event=>{
+        if(event.pointerType==='touch')return;
+        nudge?.kill();
+        const rect=button.getBoundingClientRect();
+        xTo(-((event.clientY-rect.top)/rect.height-.5)*20);
+        yTo(((event.clientX-rect.left)/rect.width-.5)*28);
+        zTo(((event.clientX-rect.left)/rect.width-.5)*3);
+      },{signal:controller.signal});
+      button.addEventListener('pointerleave',reset,{signal:controller.signal});
+      button.addEventListener('blur',reset,{signal:controller.signal});
+      let nudge;
+      button.addEventListener('click',()=>{
+        nudge?.kill();
+        nudge=gsap.timeline().to(object,{rotationY:index%2?-22:22,rotationX:-7,duration:.45,ease:'power3.out'}).to(object,{rotationY:0,rotationX:0,duration:.8,ease:'power3.out'});
+      },{signal:controller.signal});
+      controller.signal.addEventListener('abort',()=>nudge?.kill(),{once:true});
+      gsap.from(object,{rotationY:index%2?22:-22,rotationX:8,y:35,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:stage,start:'top 92%',once:true}});
+    });
+  });
+  return ()=>{context.revert();controls.forEach(button=>button.disabled=true);};
 }
 
 async function configure() {
@@ -338,10 +401,9 @@ async function configure() {
   const disrupt=document.querySelector('.disrupt');if(disrupt)disrupt.disabled=true;
   if(!active)return;
   const controller=new AbortController();
-  let renderer,scene,part,lenis,context,freeResize=()=>{},disposed=false;
-  const geometries=[];
+  let renderer,scene,part,lenis,context,freeResize=()=>{},freeLogos=()=>{},disposed=false;
   function cleanup() {
-    if(disposed)return;disposed=true;controller.abort();freeResize();
+    if(disposed)return;disposed=true;controller.abort();freeResize();freeLogos();
     context?.revert();lenis?.destroy();
     window.gsap?.ticker.remove(ticker);
     part?.dispose?.();
@@ -372,7 +434,7 @@ async function configure() {
     renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
     if(kind==='signal')renderer.setClearColor(0x000000,0);
     scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(42,1,.05,240);
-    part=kind==='portal'?portalWorld(scene,camera,renderer,mobile,controller):kind==='signal'?signalWorld(scene,camera,renderer,mobile,controller):await orbitWorld(scene,camera,renderer,mobile,controller);
+    part=kind==='portal'?await portalWorld(scene,camera,renderer,mobile,controller):kind==='signal'?signalWorld(scene,camera,renderer,mobile,controller):await orbitWorld(scene,camera,renderer,mobile,controller);
     if(ticket!==generation||disposed){part?.dispose?.();if(scene)disposeGraph(scene);renderer.dispose();return;}
     currentScene=part;
     const host=canvas.parentElement;
@@ -390,6 +452,7 @@ async function configure() {
     if(window.gsap&&window.ScrollTrigger&&window.Lenis) {
       const {gsap,ScrollTrigger,Lenis}=window;
       gsap.registerPlugin(ScrollTrigger);
+      freeLogos=signalLogos(controller);
       lenis=new Lenis({lerp:.09,smoothWheel:true,syncTouch:false,anchors:true});lenis.on('scroll',ScrollTrigger.update);
       context=gsap.context(()=>{
         gsap.from('.topbar,.threshold .kicker,.threshold h1,.signal-topline,.orbit-copy>h1',{y:22,opacity:0,stagger:.1,duration:1,ease:'power3.out',clearProps:'transform,opacity'});

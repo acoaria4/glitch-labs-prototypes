@@ -46,6 +46,11 @@
       "file": "images/studio.webp",
       "origin": "Unchanged project artwork; see assets/README.md and root drafts/round-01/assets/provenance.json.",
       "sha256": "28737668f879555d9c78ce879d25c3fece2b49ac7df47f6205b1c5870e8bfbc0"
+    },
+    {
+      "file": "images/afterlight-emblem.svg",
+      "origin": "Unchanged copy from G:/Programs/Afterlight/assets/brand/afterlight-emblem.svg; supplied game identity.",
+      "sha256": "b1c558edc874b55aa620011a113b9391ff7f145a306418ca89503f5ae1655b78"
     }
   ]
 }

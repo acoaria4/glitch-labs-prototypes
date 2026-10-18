@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>Afterlight — The Last Flame</title>
+  <desc>A flame sheltered by an A-shaped gothic watchtower beneath a broken halo.</desc>
+  <g fill="none" stroke="#d6ad70" stroke-width="8" stroke-linecap="butt">
+    <path d="M59 115A73 73 0 0 1 94 36M104 32A73 73 0 0 1 119 29M137 29A73 73 0 0 1 178 47M186 56A73 73 0 0 1 197 115"/>
+  </g>
+  <g fill="#d6ad70">
+    <path d="m128 12 8 46-8 14-8-14Z"/>
+    <path d="m43 83 20 6-20 5-16-5Zm170 0 16 6-16 5-20-5Z"/>
+    <path d="M128 65 176 114V208L213 234H163V120L128 85 93 120V234H43L80 208V114Z"/>
+    <path d="M107 202h42l-9 10h-24Zm15 10h12v17h-12Zm-12 17h36v5h-36Z"/>
+  </g>
+  <path fill="#f49259" d="M128 111c14 22 1 31 14 47 16 21 4 37-14 40-21-3-32-20-19-39-1 13 5 17 8 16-8-20 20-32 11-64Z"/>
+  <path fill="#e9e3d5" d="M129 139c4 16-9 23-6 34 1 5 4 8 6 8-2-10 7-13 9-19 10 21 0 31-10 34-12-7-16-16-10-28 2-6 9-14 11-29Z"/>
+</svg>

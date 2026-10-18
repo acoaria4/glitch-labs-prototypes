@@ -93,3 +93,8 @@ All three preserve native vertical reading, working project links, contact, sour
 ## Context-specific identities, options 18–25
 
 Lumen now has genuinely curved page surfaces, a rounded spine, lifted leaves and sculpted stars. Afterlight has architectural recesses, raised roof ridges, a thick tubular broken halo and a lofted flame. These shared models use polished/satin metal and enamel in Orbit, warm bronze in Portal, burnished metal and quieter color in Nocturne, and tinted/frosted cast glass in Chroma. Chroma's studio hero adds a glass perimeter while retaining its black body and titanium studs. Folio uses original artwork with shallow print/foil relief; Signal's original icon plates are unchanged. All previous seventeen variants and all source assets remain available, with stable picker indices. No external repositories or original image manifest hashes were changed.
+
+
+## Curated family picker
+
+Portal, Signal, Orbit, Nocturne, Folio and Chroma each have their own top-level button and native style dropdown. Seventeen current styles remain. Eight superseded logo treatments are cataloged under the root Drafts archive, with unchanged prototype files and stable query links. The five Signal colorways and distinct original artwork/print/glass-loop studies remain current. Picker CSS uses one shared dropdown width and one responsive grid instead of family-specific width overrides. Numeric shortcuts 1–6 select families; arrows cycle only current treatments.

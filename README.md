@@ -19,7 +19,7 @@ Open the [version directory](http://127.0.0.1:8089/). No build step or package i
 | --- | --- | --- |
 | [v1](v1/README.md) | Original site from `gLitCh-Labs-Releases` | Local snapshot, including studio, product, download, and resource pages |
 | [v2](v2/README.md) | Everyday, considered — cinematic studio | Existing interactive prototype, moved intact from its former `v1/` location |
-| [v3](v3/README.md) | Portal, Signal, Orbit, and Nocturne / Folio / Chroma studies | Twenty-five explorations, including context-specific metal, glass, and print treatments |
+| [v3](v3/README.md) | Portal, Signal, Orbit, and Nocturne / Folio / Chroma studies | Six direction tabs, seventeen current styles; eight earlier logo treatments under Drafts |
 
 Preview routes: `/v1/`, `/v2/`, and `/v3/`. Each version owns its runtime resources and works independently of the other versions. The catalog uses v2's local fonts and favicon. Continue new work in `v3/`; preserve earlier versions.
 

@@ -1,6 +1,6 @@
 # v3 — Round 02
 
-Twenty-five experience options, awaiting selection before the full site build. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
+Six directions with seventeen current styles, awaiting selection before the full site build. Eight superseded logo treatments are cataloged under `/drafts/logo-studies.html`; all twenty-five historical query links still work. Open `/v3/` after serving the repository root. The first round is preserved under **`/drafts/round-01/`**, with individual links in the root version selector's **Drafts** section. There is no drafts folder inside v3.
 
 | Direction | Main idea | Interaction |
 | --- | --- | --- |
@@ -24,7 +24,20 @@ Twenty-five experience options, awaiting selection before the full site build. O
 
 Expenses, AURA, Lumen, then Afterlight remain the document and control order. Afterlight is explicitly **in development**. Its imagery and description come from the local Afterlight repository; development captures do not represent balanced-play results or a downloadable release.
 
-The picker groups options under **Portal**, **Signal**, **Orbit**, and **New studies**. New studies contains the original and sculpted Nocturne, Folio, and Chroma studies. A native select shows the selected family’s treatments on desktop and phone. It remembers the last treatment within each family for the current session. Keys **1–9** and **0** select global options 1–10, **left/right** cycle within the family, and **R** replays. Selection persists in the query string. Existing indices 1–8 are unchanged; Midnight and Dark Gallery are 9–10. Original Nocturne, Folio, and Chroma are 11–13. Their additive 3D versions are 14–16; Portal / Sculpted 3D is 17. All earlier indices remain stable; arrows cycle through the active family. Opening `/v3/` without a query selects Orbit / Cobalt Sculpture; family buttons initially prefer the new sculpture, warm metal, and burnished treatments. Options 18–25 are additive; 1–17 retain their original routes and runtimes. The root catalog also links to each study directly. Each prototype also works directly through its HTML page in `prototypes/`.
+The picker has six top-level buttons: **Portal**, **Signal**, **Orbit**, **Nocturne**, **Folio**, and **Chroma**. Each has its own native style menu, remembering its last current selection for the session. Names in the dropdown describe only the style, without repeating the family. Keys **1–6** select those families in order; **left/right** cycle current styles within the family; **R** replays. Query indices remain stable across all twenty-five saved routes.
+
+| Family | Current styles |
+| --- | --- |
+| Portal | Landscape; Warm Metal |
+| Signal | Red; Titanium; Warm Ivory; Deep Plum; Acid Yellow |
+| Orbit | Cobalt; Midnight; Gallery; Dark Gallery — all with the current sculptural models |
+| Nocturne | Original artwork; Burnished metal |
+| Folio | Original print; Print & foil |
+| Chroma | Glass loops; Cast glass |
+
+Archived query indices: **3, 5, 9, 10, 14, 15, 16, 17**. They are discoverable from the root catalog's Drafts section and `/drafts/`. Opening an archived link still mounts its unchanged page and shows that selected treatment under an “Archived draft” optgroup; it does not add drafts to normal style cycling or overwrite the family's remembered current style. Runtime pages and assets stay in their original locations for compatible links and version-local resource closure. Opening `/v3/` without a query selects the current Orbit / Cobalt. On narrow screens the six family buttons use a three-column, two-row grid above the style menu.
+
+The table above this section records the full exploration history, including archived intermediates.
 
 ## Architecture
 
@@ -152,7 +165,7 @@ Validation for the new studies: 42 pages and 1,060 local references pass the sta
 
 ## Shared sculpted identities
 
-Options 14–17 are additional versions; original routes 1–13, their pages, and original runtimes remain intact. New studies contains Nocturne / 3D, Folio / 3D, and Chroma / Studio 3D alongside the earlier studies. Portal’s selector now also contains Sculpted / 3D.
+Options 14–17 are additional versions; original routes 1–13, their pages, and original runtimes remain intact. These intermediate treatments are now archived under Drafts; their original pages and query links remain intact.
 
 `sculpted-logos.js` loads the existing standalone SVGs and original Afterlight title. It constructs actual extruded meshes, face and sidewall materials, a dimensional AURA orb, Lumen’s separated book sheets and stars, and Afterlight’s deep gold structure, halo, flame, and ivory core. Lumen’s relief is scaled with its layer offsets, preserving clearance. No original artwork or asset hash changes. The supplied Afterlight title remains a printed inscription beneath its solid crest.
 

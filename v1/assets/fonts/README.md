@@ -1,5 +1,1 @@
-Self-hosted Google Fonts: Manrope, DM Sans, Outfit, and Cormorant Garamond.
-
-Copied from the gLitCh Labs website snapshot on 11 October 2026. SIL Open Font License texts are included beside these files. Latin subsets are used where available, with local system fallbacks for other characters. No runtime requests to a font provider are required.
-
-Source: https://fonts.google.com/
+Self-hosted fonts from Google Fonts (https://fonts.google.com). Families: Manrope, DM Sans, Outfit, Cormorant Garamond. SIL Open Font License texts are included. Latin subsets are used when available; local system fallback handles other characters. Regenerate with scripts/fetch-fonts.py. No runtime requests to a font provider are required.

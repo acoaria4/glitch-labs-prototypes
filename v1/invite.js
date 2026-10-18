@@ -1,0 +1,9 @@
+const params = new URLSearchParams(location.search);
+const token = (params.get('t') || params.get('token') || '').trim();
+const link = document.getElementById('open-invite');
+if (token) {
+  link.href = 'com.glitchlabs.expenses://invite/' + encodeURIComponent(token);
+  link.removeAttribute('aria-disabled');
+} else {
+  document.getElementById('invite-message').textContent = 'This invite link is missing its group token. Ask the group owner for a new link.';
+}

@@ -1,0 +1,204 @@
+{
+  "source_repository": "gLitCh-Labs-Releases",
+  "source_head": "96f28c53100b647ec7ada06c194da01f066ade38",
+  "date": "2026-10-11",
+  "note": "The prototype was untracked in the source repository. This manifest records unchanged dependency copies; HTML paths, font CSS paths, and documentation were adapted for standalone use.",
+  "unchanged_files": [
+    {
+      "source": "prototype/aura-scene.css",
+      "target": "v2/styles/aura-scene.css",
+      "sha256": "3eb7c8e1b09f45b230493a28fe69f09118db963c925647200a7c04449239df8b"
+    },
+    {
+      "source": "prototype/aura-scene.js",
+      "target": "v2/scripts/aura-scene.js",
+      "sha256": "cd17feba4b78c1f98e0758b3cfb33ce986a90dbf8f1b33de3cd56b1c80e295fd"
+    },
+    {
+      "source": "prototype/expenses-demo.js",
+      "target": "v2/scripts/expenses-demo.js",
+      "sha256": "398df744582fb3f7395e576137a888c9adcf7cd7343d1ef419edd2d13b110e78"
+    },
+    {
+      "source": "prototype/lumen-scene.css",
+      "target": "v2/styles/lumen-scene.css",
+      "sha256": "fdf3c0bf4448723ad64fcb1c8848cbc0410058942d2c0cedb2fb74a05f398cb8"
+    },
+    {
+      "source": "prototype/lumen-scene.js",
+      "target": "v2/scripts/lumen-scene.js",
+      "sha256": "9b4c5bba44eb0545f373ccd55eb2df71a953af17456b45e68849ff66163fd06c"
+    },
+    {
+      "source": "prototype/prototype.css",
+      "target": "v2/styles/prototype.css",
+      "sha256": "bdc3456b271ad55858010f541f0a45f6891f7f9bec05b602ab64f7c35fc738fc"
+    },
+    {
+      "source": "prototype/prototype.js",
+      "target": "v2/scripts/prototype.js",
+      "sha256": "fe70d3a2d49c463ce297006136dac7ff5abef689adf92bb80fbe51603bd89520"
+    },
+    {
+      "source": "prototype/vendor/gsap-LICENSE.txt",
+      "target": "v2/vendor/gsap-LICENSE.txt",
+      "sha256": "9bac9a0123a64155708be4737dd7dd43bd1cf26f5324b1e96339bcb5ae213bf5"
+    },
+    {
+      "source": "prototype/vendor/gsap.min.js",
+      "target": "v2/vendor/gsap.min.js",
+      "sha256": "96c01b81f44a3290e2b4532f55e2c9534b2adc43273a19f3756b2cb41f0fd0b6"
+    },
+    {
+      "source": "prototype/vendor/lenis-LICENSE.txt",
+      "target": "v2/vendor/lenis-LICENSE.txt",
+      "sha256": "bba15b1137346a73ed8c35e7f20961a69e0ed842d956a50339240c3e7b08c089"
+    },
+    {
+      "source": "prototype/vendor/lenis.css",
+      "target": "v2/vendor/lenis.css",
+      "sha256": "2f668ae84a668327f246faf8a770383a2bf69196d214290fbc4d5548910606c5"
+    },
+    {
+      "source": "prototype/vendor/lenis.min.js",
+      "target": "v2/vendor/lenis.min.js",
+      "sha256": "53195c9797e7ce7bf9d7fa9242b08209e57f46de4c9dac126a6494fa780e3346"
+    },
+    {
+      "source": "prototype/vendor/ScrollTrigger.min.js",
+      "target": "v2/vendor/ScrollTrigger.min.js",
+      "sha256": "308219390e5e3b84cda0c481e70caa9820883ae10bda44e6e9a149a81aac4b3f"
+    },
+    {
+      "source": "typography.css",
+      "target": "v2/styles/typography.css",
+      "sha256": "59832a3a761f0e7e796d1e24cc5e5bf5f72df46b52eb8458e5bcf4be2e87e1b3"
+    },
+    {
+      "source": "product-themes.css",
+      "target": "v2/styles/product-themes.css",
+      "sha256": "99800d9ab4e154426d0043869fbb0bbe5fb3fb8a74ec42acdefafd7a0c0c3451"
+    },
+    {
+      "source": "assets/optimized/fonts/font-1.d4a478b1420d2e62.woff2",
+      "target": "v2/assets/fonts/font-1.d4a478b1420d2e62.woff2",
+      "sha256": "d4a478b1420d2e62a0efa989b67bd330d2af60bbe6931cb8c3fc949672516281"
+    },
+    {
+      "source": "assets/optimized/fonts/font-2.59423580f67ae999.woff2",
+      "target": "v2/assets/fonts/font-2.59423580f67ae999.woff2",
+      "sha256": "59423580f67ae999ae0b089069ff9b2449a59a96388c60beb6754afbb1b4778d"
+    },
+    {
+      "source": "assets/optimized/fonts/font-3.c0610e47360b9301.woff2",
+      "target": "v2/assets/fonts/font-3.c0610e47360b9301.woff2",
+      "sha256": "c0610e47360b93018fdf033d71d3b4fcb5c2e5f26092d287fbabc11d3e6e2fb9"
+    },
+    {
+      "source": "assets/optimized/fonts/font-4.2ea1bf6e4127eebf.woff2",
+      "target": "v2/assets/fonts/font-4.2ea1bf6e4127eebf.woff2",
+      "sha256": "2ea1bf6e4127eebf51f201e62bc23578f715f9581ddebd7f63ae46d275199e40"
+    },
+    {
+      "source": "assets/optimized/fonts/font-5.5db7ec8890b78af7.woff2",
+      "target": "v2/assets/fonts/font-5.5db7ec8890b78af7.woff2",
+      "sha256": "5db7ec8890b78af7db1b70a7a9a0872acc476a8fca50b40ba6c16b8e0fc15117"
+    },
+    {
+      "source": "assets/optimized/fonts/font-6.fd6f63245e24082f.woff2",
+      "target": "v2/assets/fonts/font-6.fd6f63245e24082f.woff2",
+      "sha256": "fd6f63245e24082f4f0d9c76840e50c87834769af1711c0caccb7cebd61fc4fc"
+    },
+    {
+      "source": "assets/optimized/fonts/font-7.9b1a44756787bbc9.woff2",
+      "target": "v2/assets/fonts/font-7.9b1a44756787bbc9.woff2",
+      "sha256": "9b1a44756787bbc9fdbfbaeea5b3f6a8fcf1df426c0d6f8456bd5591a08a35a9"
+    },
+    {
+      "source": "assets/optimized/fonts/font-8.9e9e02e13969e6cc.woff2",
+      "target": "v2/assets/fonts/font-8.9e9e02e13969e6cc.woff2",
+      "sha256": "9e9e02e13969e6cc057d4aeccac39cde2df1c63adeb4b9fcfeac2e259fa6439c"
+    },
+    {
+      "source": "assets/optimized/fonts/font-9.da8e87a86e5febd3.woff2",
+      "target": "v2/assets/fonts/font-9.da8e87a86e5febd3.woff2",
+      "sha256": "da8e87a86e5febd3232e12ecf4b97d6a78a2bbb1f8af43798350cec475cd1f96"
+    },
+    {
+      "source": "assets/optimized/fonts/font-10.aa357afe8ae1aada.woff2",
+      "target": "v2/assets/fonts/font-10.aa357afe8ae1aada.woff2",
+      "sha256": "aa357afe8ae1aada344349a7729d3615a34dc0a3ac29ba8a709c85fee69d80bc"
+    },
+    {
+      "source": "assets/optimized/fonts/font-11.41d7e1d2cf8dd26c.woff2",
+      "target": "v2/assets/fonts/font-11.41d7e1d2cf8dd26c.woff2",
+      "sha256": "41d7e1d2cf8dd26cca508f00b4b6ee04a1daf0bb18ba4ac0fd20ba13d0776fa0"
+    },
+    {
+      "source": "assets/optimized/fonts/font-12.3fc3bb11400ce945.woff2",
+      "target": "v2/assets/fonts/font-12.3fc3bb11400ce945.woff2",
+      "sha256": "3fc3bb11400ce9452a604d2a73c43626d88d22633aad6a90f18b5e17beb5299a"
+    },
+    {
+      "source": "assets/optimized/fonts/font-13.aff599989e4704c8.woff2",
+      "target": "v2/assets/fonts/font-13.aff599989e4704c8.woff2",
+      "sha256": "aff599989e4704c85ebf6672ea87eea43d3160626229be2df123953591ba31e5"
+    },
+    {
+      "source": "assets/optimized/fonts/font-14.c4b25c0c2684bcfa.woff2",
+      "target": "v2/assets/fonts/font-14.c4b25c0c2684bcfa.woff2",
+      "sha256": "c4b25c0c2684bcfa09752012d7c201129ea12b0e44acd4147184a55de058a241"
+    },
+    {
+      "source": "assets/optimized/fonts/font-15.affb0664ffcf0295.woff2",
+      "target": "v2/assets/fonts/font-15.affb0664ffcf0295.woff2",
+      "sha256": "affb0664ffcf0295f8f76e3b27ee03a3cc026a24ac853b0cedbc4b2a327eb24b"
+    },
+    {
+      "source": "assets/optimized/fonts/cormorantgaramond-OFL.txt",
+      "target": "v2/assets/fonts/cormorantgaramond-OFL.txt",
+      "sha256": "b2306305139223cbc000c2b9feffaa741687056066c227ba34de31c98eda0814"
+    },
+    {
+      "source": "assets/optimized/fonts/dmsans-OFL.txt",
+      "target": "v2/assets/fonts/dmsans-OFL.txt",
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
+    },
+    {
+      "source": "assets/optimized/fonts/manrope-OFL.txt",
+      "target": "v2/assets/fonts/manrope-OFL.txt",
+      "sha256": "e178bfe7c691e41a2a106ce56f285f079355593dc78e918d30b39cf0714c70d3"
+    },
+    {
+      "source": "assets/optimized/fonts/outfit-OFL.txt",
+      "target": "v2/assets/fonts/outfit-OFL.txt",
+      "sha256": "916fdcb34129e58b62d12a9d27ac746bb8742bc42409521c1438521cfcea7eb5"
+    },
+    {
+      "source": "assets/optimized/images/aura.476e6b0002960b94.webp",
+      "target": "v2/assets/images/aura.476e6b0002960b94.webp",
+      "sha256": "476e6b0002960b94ae917cac418fa75162d1b2c13d4db055626fd412ad123a7a"
+    },
+    {
+      "source": "assets/optimized/images/expenses.218dc64e5888b5b5.webp",
+      "target": "v2/assets/images/expenses.218dc64e5888b5b5.webp",
+      "sha256": "218dc64e5888b5b5a1a426f6d4268e58b944a250fced5fa066c58efb318ec686"
+    },
+    {
+      "source": "assets/optimized/images/glitchlabs.28737668f879555d.webp",
+      "target": "v2/assets/images/glitchlabs.28737668f879555d.webp",
+      "sha256": "28737668f879555d9c78ce879d25c3fece2b49ac7df47f6205b1c5870e8bfbc0"
+    },
+    {
+      "source": "assets/optimized/images/glitchlabs.889588fa2a121724.png",
+      "target": "v2/assets/images/glitchlabs.889588fa2a121724.png",
+      "sha256": "889588fa2a1217249f8001bfb84aed5e67abf98ff83220796f3ba727cf2bb14b"
+    },
+    {
+      "source": "assets/optimized/images/lumen.19a65105a4ebe278.webp",
+      "target": "v2/assets/images/lumen.19a65105a4ebe278.webp",
+      "sha256": "19a65105a4ebe2780d57d25edeb2a02faa20906dc0caafeeda741e58125c827e"
+    }
+  ],
+  "version_reassigned": "Moved from v1 to v2 on 2026-10-18; original extraction date and hashes retained."
+}

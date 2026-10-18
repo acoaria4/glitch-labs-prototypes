@@ -1,203 +1,722 @@
 {
   "source_repository": "gLitCh-Labs-Releases",
   "source_head": "96f28c53100b647ec7ada06c194da01f066ade38",
-  "date": "2026-10-11",
-  "note": "The prototype was untracked in the source repository. This manifest records unchanged dependency copies; HTML paths, font CSS paths, and documentation were adapted for standalone use.",
-  "unchanged_files": [
+  "date": "2026-10-18",
+  "note": "Local source site snapshot. HTML adds noindex,nofollow metadata; other copied files are byte-identical. Source Git metadata, deployment configuration, domain binding, verification page, and internal tooling were not copied.",
+  "files": [
     {
-      "source": "prototype/aura-scene.css",
-      "target": "v1/styles/aura-scene.css",
-      "sha256": "3eb7c8e1b09f45b230493a28fe69f09118db963c925647200a7c04449239df8b"
+      "source": "about.html",
+      "target": "v1/about.html",
+      "source_sha256": "8b5850c428770dd5a970c2a4df14381c5fd8f6a7cfcb7ecd4759958b03788429",
+      "target_sha256": "19a3368eaac01bfbaac38545f3986d6bd65303de7f49305b3a6013f5172f1343",
+      "adaptation": "Added noindex,nofollow metadata only."
     },
     {
-      "source": "prototype/aura-scene.js",
-      "target": "v1/scripts/aura-scene.js",
-      "sha256": "cd17feba4b78c1f98e0758b3cfb33ce986a90dbf8f1b33de3cd56b1c80e295fd"
+      "source": "assets/aura.png",
+      "target": "v1/assets/aura.png",
+      "source_sha256": "383112b9a1ffedf915defe57ba55ca5cbfe5549b1cdf73eaa6f3cd55ecefa39e",
+      "target_sha256": "383112b9a1ffedf915defe57ba55ca5cbfe5549b1cdf73eaa6f3cd55ecefa39e",
+      "adaptation": null
     },
     {
-      "source": "prototype/expenses-demo.js",
-      "target": "v1/scripts/expenses-demo.js",
-      "sha256": "398df744582fb3f7395e576137a888c9adcf7cd7343d1ef419edd2d13b110e78"
+      "source": "assets/compressed/aura-solar-embrace-ivory.webp",
+      "target": "v1/assets/compressed/aura-solar-embrace-ivory.webp",
+      "source_sha256": "56edf93c0c3d97d0f94daa93f921758db60d4c3060824da707a144e6d919ef70",
+      "target_sha256": "56edf93c0c3d97d0f94daa93f921758db60d4c3060824da707a144e6d919ef70",
+      "adaptation": null
     },
     {
-      "source": "prototype/lumen-scene.css",
-      "target": "v1/styles/lumen-scene.css",
-      "sha256": "fdf3c0bf4448723ad64fcb1c8848cbc0410058942d2c0cedb2fb74a05f398cb8"
+      "source": "assets/compressed/aura-solar-embrace-obsidian.webp",
+      "target": "v1/assets/compressed/aura-solar-embrace-obsidian.webp",
+      "source_sha256": "522054a79d53117048c71798f4de4150bb1c5ce1df1bd019e1568c2ecf674dd7",
+      "target_sha256": "522054a79d53117048c71798f4de4150bb1c5ce1df1bd019e1568c2ecf674dd7",
+      "adaptation": null
     },
     {
-      "source": "prototype/lumen-scene.js",
-      "target": "v1/scripts/lumen-scene.js",
-      "sha256": "9b4c5bba44eb0545f373ccd55eb2df71a953af17456b45e68849ff66163fd06c"
+      "source": "assets/compressed/expenses-champagne-on-obsidian.webp",
+      "target": "v1/assets/compressed/expenses-champagne-on-obsidian.webp",
+      "source_sha256": "854382ef1260658456ca730c4674949bd792992e6aedbf0196d4c90b15016a47",
+      "target_sha256": "854382ef1260658456ca730c4674949bd792992e6aedbf0196d4c90b15016a47",
+      "adaptation": null
     },
     {
-      "source": "prototype/prototype.css",
-      "target": "v1/styles/prototype.css",
-      "sha256": "bdc3456b271ad55858010f541f0a45f6891f7f9bec05b602ab64f7c35fc738fc"
+      "source": "assets/compressed/glitchlabs-polished-platinum.webp",
+      "target": "v1/assets/compressed/glitchlabs-polished-platinum.webp",
+      "source_sha256": "3add038688f2cae1545bd58976634e591dc7178e06a67a70ff6fd97e828cc3e6",
+      "target_sha256": "3add038688f2cae1545bd58976634e591dc7178e06a67a70ff6fd97e828cc3e6",
+      "adaptation": null
     },
     {
-      "source": "prototype/prototype.js",
-      "target": "v1/scripts/prototype.js",
-      "sha256": "fe70d3a2d49c463ce297006136dac7ff5abef689adf92bb80fbe51603bd89520"
+      "source": "assets/compressed/lumen-metallic-enamel.webp",
+      "target": "v1/assets/compressed/lumen-metallic-enamel.webp",
+      "source_sha256": "5a88153f1a359679f596d03658b5182c9fb65c360d239a2ad452a39d66ac33c2",
+      "target_sha256": "5a88153f1a359679f596d03658b5182c9fb65c360d239a2ad452a39d66ac33c2",
+      "adaptation": null
     },
     {
-      "source": "prototype/vendor/gsap-LICENSE.txt",
-      "target": "v1/vendor/gsap-LICENSE.txt",
-      "sha256": "9bac9a0123a64155708be4737dd7dd43bd1cf26f5324b1e96339bcb5ae213bf5"
+      "source": "assets/compressed/manifest.json",
+      "target": "v1/assets/compressed/manifest.json",
+      "source_sha256": "db598df8826c73c228a8ade5b1fe9edb290f0745ba7e6bc16c484ca2cd986938",
+      "target_sha256": "db598df8826c73c228a8ade5b1fe9edb290f0745ba7e6bc16c484ca2cd986938",
+      "adaptation": null
     },
     {
-      "source": "prototype/vendor/gsap.min.js",
-      "target": "v1/vendor/gsap.min.js",
-      "sha256": "96c01b81f44a3290e2b4532f55e2c9534b2adc43273a19f3756b2cb41f0fd0b6"
+      "source": "assets/compressed/README.md",
+      "target": "v1/assets/compressed/README.md",
+      "source_sha256": "947063d55c4e6fa44970ac452d5e6f9ce3579696274ad84d8f75ee0109b1865f",
+      "target_sha256": "947063d55c4e6fa44970ac452d5e6f9ce3579696274ad84d8f75ee0109b1865f",
+      "adaptation": null
     },
     {
-      "source": "prototype/vendor/lenis-LICENSE.txt",
-      "target": "v1/vendor/lenis-LICENSE.txt",
-      "sha256": "bba15b1137346a73ed8c35e7f20961a69e0ed842d956a50339240c3e7b08c089"
+      "source": "assets/expenses.png",
+      "target": "v1/assets/expenses.png",
+      "source_sha256": "e943c2402861d796d1f0dcd676220d90cd67f27d9c61c663281bfd91a25e4371",
+      "target_sha256": "e943c2402861d796d1f0dcd676220d90cd67f27d9c61c663281bfd91a25e4371",
+      "adaptation": null
     },
     {
-      "source": "prototype/vendor/lenis.css",
-      "target": "v1/vendor/lenis.css",
-      "sha256": "2f668ae84a668327f246faf8a770383a2bf69196d214290fbc4d5548910606c5"
+      "source": "assets/fonts/cormorantgaramond-OFL.txt",
+      "target": "v1/assets/fonts/cormorantgaramond-OFL.txt",
+      "source_sha256": "b2306305139223cbc000c2b9feffaa741687056066c227ba34de31c98eda0814",
+      "target_sha256": "b2306305139223cbc000c2b9feffaa741687056066c227ba34de31c98eda0814",
+      "adaptation": null
     },
     {
-      "source": "prototype/vendor/lenis.min.js",
-      "target": "v1/vendor/lenis.min.js",
-      "sha256": "53195c9797e7ce7bf9d7fa9242b08209e57f46de4c9dac126a6494fa780e3346"
+      "source": "assets/fonts/dmsans-OFL.txt",
+      "target": "v1/assets/fonts/dmsans-OFL.txt",
+      "source_sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+      "target_sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+      "adaptation": null
     },
     {
-      "source": "prototype/vendor/ScrollTrigger.min.js",
-      "target": "v1/vendor/ScrollTrigger.min.js",
-      "sha256": "308219390e5e3b84cda0c481e70caa9820883ae10bda44e6e9a149a81aac4b3f"
+      "source": "assets/fonts/font-1.ttf",
+      "target": "v1/assets/fonts/font-1.ttf",
+      "source_sha256": "6d37a86241a25d63f8fe6018b4c083449886b7165c1acb15edd0f574f690ecf7",
+      "target_sha256": "6d37a86241a25d63f8fe6018b4c083449886b7165c1acb15edd0f574f690ecf7",
+      "adaptation": null
     },
     {
-      "source": "typography.css",
-      "target": "v1/styles/typography.css",
-      "sha256": "59832a3a761f0e7e796d1e24cc5e5bf5f72df46b52eb8458e5bcf4be2e87e1b3"
+      "source": "assets/fonts/font-10.ttf",
+      "target": "v1/assets/fonts/font-10.ttf",
+      "source_sha256": "6bad1a774228464cc88b8b0271555b266f7a3c64a7bedf15e165fdab4f6ac0ce",
+      "target_sha256": "6bad1a774228464cc88b8b0271555b266f7a3c64a7bedf15e165fdab4f6ac0ce",
+      "adaptation": null
     },
     {
-      "source": "product-themes.css",
-      "target": "v1/styles/product-themes.css",
-      "sha256": "99800d9ab4e154426d0043869fbb0bbe5fb3fb8a74ec42acdefafd7a0c0c3451"
+      "source": "assets/fonts/font-11.ttf",
+      "target": "v1/assets/fonts/font-11.ttf",
+      "source_sha256": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8",
+      "target_sha256": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-1.d4a478b1420d2e62.woff2",
-      "target": "v1/assets/fonts/font-1.d4a478b1420d2e62.woff2",
-      "sha256": "d4a478b1420d2e62a0efa989b67bd330d2af60bbe6931cb8c3fc949672516281"
+      "source": "assets/fonts/font-12.ttf",
+      "target": "v1/assets/fonts/font-12.ttf",
+      "source_sha256": "6a8c9be856a6b9e09c66615634904616152c9de5e44db343a3ced240479c586a",
+      "target_sha256": "6a8c9be856a6b9e09c66615634904616152c9de5e44db343a3ced240479c586a",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-2.59423580f67ae999.woff2",
-      "target": "v1/assets/fonts/font-2.59423580f67ae999.woff2",
-      "sha256": "59423580f67ae999ae0b089069ff9b2449a59a96388c60beb6754afbb1b4778d"
+      "source": "assets/fonts/font-13.ttf",
+      "target": "v1/assets/fonts/font-13.ttf",
+      "source_sha256": "9a9f465776e653cd6175661d844555e08684d432518f1d2c621bcb3006598f9c",
+      "target_sha256": "9a9f465776e653cd6175661d844555e08684d432518f1d2c621bcb3006598f9c",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-3.c0610e47360b9301.woff2",
-      "target": "v1/assets/fonts/font-3.c0610e47360b9301.woff2",
-      "sha256": "c0610e47360b93018fdf033d71d3b4fcb5c2e5f26092d287fbabc11d3e6e2fb9"
+      "source": "assets/fonts/font-14.ttf",
+      "target": "v1/assets/fonts/font-14.ttf",
+      "source_sha256": "8900df5726b5a6f23e723594f11d5ea27e695bd85c884f18d88ed080544fe205",
+      "target_sha256": "8900df5726b5a6f23e723594f11d5ea27e695bd85c884f18d88ed080544fe205",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-4.2ea1bf6e4127eebf.woff2",
-      "target": "v1/assets/fonts/font-4.2ea1bf6e4127eebf.woff2",
-      "sha256": "2ea1bf6e4127eebf51f201e62bc23578f715f9581ddebd7f63ae46d275199e40"
+      "source": "assets/fonts/font-15.ttf",
+      "target": "v1/assets/fonts/font-15.ttf",
+      "source_sha256": "49dcdf653a004a2575b3de649f5e4c549d774fecddf317812330edd0ad70685a",
+      "target_sha256": "49dcdf653a004a2575b3de649f5e4c549d774fecddf317812330edd0ad70685a",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-5.5db7ec8890b78af7.woff2",
-      "target": "v1/assets/fonts/font-5.5db7ec8890b78af7.woff2",
-      "sha256": "5db7ec8890b78af7db1b70a7a9a0872acc476a8fca50b40ba6c16b8e0fc15117"
+      "source": "assets/fonts/font-2.ttf",
+      "target": "v1/assets/fonts/font-2.ttf",
+      "source_sha256": "1724047c8988ca5155bff667bc48fa52e97d57aabc6b42eebbf986f21a4be20b",
+      "target_sha256": "1724047c8988ca5155bff667bc48fa52e97d57aabc6b42eebbf986f21a4be20b",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-6.fd6f63245e24082f.woff2",
-      "target": "v1/assets/fonts/font-6.fd6f63245e24082f.woff2",
-      "sha256": "fd6f63245e24082f4f0d9c76840e50c87834769af1711c0caccb7cebd61fc4fc"
+      "source": "assets/fonts/font-3.ttf",
+      "target": "v1/assets/fonts/font-3.ttf",
+      "source_sha256": "69e7ae35cba23d962227b86f99217c250e642e4c6f6104b4f3ec465039e4e2d8",
+      "target_sha256": "69e7ae35cba23d962227b86f99217c250e642e4c6f6104b4f3ec465039e4e2d8",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-7.9b1a44756787bbc9.woff2",
-      "target": "v1/assets/fonts/font-7.9b1a44756787bbc9.woff2",
-      "sha256": "9b1a44756787bbc9fdbfbaeea5b3f6a8fcf1df426c0d6f8456bd5591a08a35a9"
+      "source": "assets/fonts/font-4.ttf",
+      "target": "v1/assets/fonts/font-4.ttf",
+      "source_sha256": "b0ae3e89a7d3ef2b1838bb4b1ceb0b17cc3435af061eee809d76aa623ff116e9",
+      "target_sha256": "b0ae3e89a7d3ef2b1838bb4b1ceb0b17cc3435af061eee809d76aa623ff116e9",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-8.9e9e02e13969e6cc.woff2",
-      "target": "v1/assets/fonts/font-8.9e9e02e13969e6cc.woff2",
-      "sha256": "9e9e02e13969e6cc057d4aeccac39cde2df1c63adeb4b9fcfeac2e259fa6439c"
+      "source": "assets/fonts/font-5.ttf",
+      "target": "v1/assets/fonts/font-5.ttf",
+      "source_sha256": "376427b5322148d8de1e03f263bcca4935a2d60ba71d9f94f4947ab664c711ae",
+      "target_sha256": "376427b5322148d8de1e03f263bcca4935a2d60ba71d9f94f4947ab664c711ae",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-9.da8e87a86e5febd3.woff2",
-      "target": "v1/assets/fonts/font-9.da8e87a86e5febd3.woff2",
-      "sha256": "da8e87a86e5febd3232e12ecf4b97d6a78a2bbb1f8af43798350cec475cd1f96"
+      "source": "assets/fonts/font-6.ttf",
+      "target": "v1/assets/fonts/font-6.ttf",
+      "source_sha256": "b79a2ea7a38f33fd96a282fadb9ce97626bb0724a44d21075859f0e50239993a",
+      "target_sha256": "b79a2ea7a38f33fd96a282fadb9ce97626bb0724a44d21075859f0e50239993a",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-10.aa357afe8ae1aada.woff2",
-      "target": "v1/assets/fonts/font-10.aa357afe8ae1aada.woff2",
-      "sha256": "aa357afe8ae1aada344349a7729d3615a34dc0a3ac29ba8a709c85fee69d80bc"
+      "source": "assets/fonts/font-7.ttf",
+      "target": "v1/assets/fonts/font-7.ttf",
+      "source_sha256": "2a8e7f713ee79fbccdef3cef5c787aff47580299f7da60144961e7db2ec08211",
+      "target_sha256": "2a8e7f713ee79fbccdef3cef5c787aff47580299f7da60144961e7db2ec08211",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-11.41d7e1d2cf8dd26c.woff2",
-      "target": "v1/assets/fonts/font-11.41d7e1d2cf8dd26c.woff2",
-      "sha256": "41d7e1d2cf8dd26cca508f00b4b6ee04a1daf0bb18ba4ac0fd20ba13d0776fa0"
+      "source": "assets/fonts/font-8.ttf",
+      "target": "v1/assets/fonts/font-8.ttf",
+      "source_sha256": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
+      "target_sha256": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-12.3fc3bb11400ce945.woff2",
-      "target": "v1/assets/fonts/font-12.3fc3bb11400ce945.woff2",
-      "sha256": "3fc3bb11400ce9452a604d2a73c43626d88d22633aad6a90f18b5e17beb5299a"
+      "source": "assets/fonts/font-9.ttf",
+      "target": "v1/assets/fonts/font-9.ttf",
+      "source_sha256": "f433e5d333be1128d8ec8a28b8aadd0314d10e14e4105406076666bc830fc15d",
+      "target_sha256": "f433e5d333be1128d8ec8a28b8aadd0314d10e14e4105406076666bc830fc15d",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-13.aff599989e4704c8.woff2",
-      "target": "v1/assets/fonts/font-13.aff599989e4704c8.woff2",
-      "sha256": "aff599989e4704c85ebf6672ea87eea43d3160626229be2df123953591ba31e5"
+      "source": "assets/fonts/manrope-OFL.txt",
+      "target": "v1/assets/fonts/manrope-OFL.txt",
+      "source_sha256": "e178bfe7c691e41a2a106ce56f285f079355593dc78e918d30b39cf0714c70d3",
+      "target_sha256": "e178bfe7c691e41a2a106ce56f285f079355593dc78e918d30b39cf0714c70d3",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-14.c4b25c0c2684bcfa.woff2",
-      "target": "v1/assets/fonts/font-14.c4b25c0c2684bcfa.woff2",
-      "sha256": "c4b25c0c2684bcfa09752012d7c201129ea12b0e44acd4147184a55de058a241"
+      "source": "assets/fonts/outfit-OFL.txt",
+      "target": "v1/assets/fonts/outfit-OFL.txt",
+      "source_sha256": "916fdcb34129e58b62d12a9d27ac746bb8742bc42409521c1438521cfcea7eb5",
+      "target_sha256": "916fdcb34129e58b62d12a9d27ac746bb8742bc42409521c1438521cfcea7eb5",
+      "adaptation": null
     },
     {
-      "source": "assets/optimized/fonts/font-15.affb0664ffcf0295.woff2",
-      "target": "v1/assets/fonts/font-15.affb0664ffcf0295.woff2",
-      "sha256": "affb0664ffcf0295f8f76e3b27ee03a3cc026a24ac853b0cedbc4b2a327eb24b"
+      "source": "assets/fonts/README.md",
+      "target": "v1/assets/fonts/README.md",
+      "source_sha256": "26d96b55520b6926a514e429b7032e25190fe0cdc159cda9a92c6faa788acb64",
+      "target_sha256": "26d96b55520b6926a514e429b7032e25190fe0cdc159cda9a92c6faa788acb64",
+      "adaptation": null
+    },
+    {
+      "source": "assets/glitchlabs.png",
+      "target": "v1/assets/glitchlabs.png",
+      "source_sha256": "38e8cca8175cb95f708e18c7d5585c6e6075154f33b899a0b5472bf260427a1c",
+      "target_sha256": "38e8cca8175cb95f708e18c7d5585c6e6075154f33b899a0b5472bf260427a1c",
+      "adaptation": null
+    },
+    {
+      "source": "assets/lumen.png",
+      "target": "v1/assets/lumen.png",
+      "source_sha256": "11a92eca7e4a8d999e7ec32dc4b2f237c0a78a159f25774cef9856a56a75bf1f",
+      "target_sha256": "11a92eca7e4a8d999e7ec32dc4b2f237c0a78a159f25774cef9856a56a75bf1f",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/documents.f01063289b2fd9d0.min.css",
+      "target": "v1/assets/optimized/css/documents.f01063289b2fd9d0.min.css",
+      "source_sha256": "f01063289b2fd9d04852588baf3a9b9fee9a4121d488a1153000fba3d76b5d40",
+      "target_sha256": "f01063289b2fd9d04852588baf3a9b9fee9a4121d488a1153000fba3d76b5d40",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/fonts.22080ed0820d31af.min.css",
+      "target": "v1/assets/optimized/css/fonts.22080ed0820d31af.min.css",
+      "source_sha256": "22080ed0820d31afa3c9263772c98db0182d2c8c3243df5b8f9e0594d9e7b338",
+      "target_sha256": "22080ed0820d31afa3c9263772c98db0182d2c8c3243df5b8f9e0594d9e7b338",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/get.de431b5a6d15dc26.min.css",
+      "target": "v1/assets/optimized/css/get.de431b5a6d15dc26.min.css",
+      "source_sha256": "de431b5a6d15dc263088b467fb04fd1be5cf266008185b1ba4d45f0216219e12",
+      "target_sha256": "de431b5a6d15dc263088b467fb04fd1be5cf266008185b1ba4d45f0216219e12",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/mobile.26798943b1fe419e.min.css",
+      "target": "v1/assets/optimized/css/mobile.26798943b1fe419e.min.css",
+      "source_sha256": "26798943b1fe419ef11e8d25680e1136d98184550b637adecafc265613210ca0",
+      "target_sha256": "26798943b1fe419ef11e8d25680e1136d98184550b637adecafc265613210ca0",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/navigation.7bf84c09f43bc18e.min.css",
+      "target": "v1/assets/optimized/css/navigation.7bf84c09f43bc18e.min.css",
+      "source_sha256": "7bf84c09f43bc18ec2e3349f8fb75cf982a0f4e9b85bc82f194dde427bc61d33",
+      "target_sha256": "7bf84c09f43bc18ec2e3349f8fb75cf982a0f4e9b85bc82f194dde427bc61d33",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/product-themes.2fd1cf4d71595c02.min.css",
+      "target": "v1/assets/optimized/css/product-themes.2fd1cf4d71595c02.min.css",
+      "source_sha256": "2fd1cf4d71595c0261cbda337029dadadcb5a07258ce7df56a0461cabf7cc1a3",
+      "target_sha256": "2fd1cf4d71595c0261cbda337029dadadcb5a07258ce7df56a0461cabf7cc1a3",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/studio-theme.30eebe2ff7f128fa.min.css",
+      "target": "v1/assets/optimized/css/studio-theme.30eebe2ff7f128fa.min.css",
+      "source_sha256": "30eebe2ff7f128fa920149b98981112483607347cbf802f33df83788025ef59e",
+      "target_sha256": "30eebe2ff7f128fa920149b98981112483607347cbf802f33df83788025ef59e",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/styles.33936f59f160d2fd.min.css",
+      "target": "v1/assets/optimized/css/styles.33936f59f160d2fd.min.css",
+      "source_sha256": "33936f59f160d2fd5ec1e30a2f9ca39c0d2451cad4ac6ded17feaba922bb4937",
+      "target_sha256": "33936f59f160d2fd5ec1e30a2f9ca39c0d2451cad4ac6ded17feaba922bb4937",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/css/typography.99b1fd5f12a207d4.min.css",
+      "target": "v1/assets/optimized/css/typography.99b1fd5f12a207d4.min.css",
+      "source_sha256": "99b1fd5f12a207d4d5992e241c80a8061c55edd6626d3942fb0952e69f5405b5",
+      "target_sha256": "99b1fd5f12a207d4d5992e241c80a8061c55edd6626d3942fb0952e69f5405b5",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/fonts/cormorantgaramond-OFL.txt",
-      "target": "v1/assets/fonts/cormorantgaramond-OFL.txt",
-      "sha256": "b2306305139223cbc000c2b9feffaa741687056066c227ba34de31c98eda0814"
+      "target": "v1/assets/optimized/fonts/cormorantgaramond-OFL.txt",
+      "source_sha256": "b2306305139223cbc000c2b9feffaa741687056066c227ba34de31c98eda0814",
+      "target_sha256": "b2306305139223cbc000c2b9feffaa741687056066c227ba34de31c98eda0814",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/fonts/dmsans-OFL.txt",
-      "target": "v1/assets/fonts/dmsans-OFL.txt",
-      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
+      "target": "v1/assets/optimized/fonts/dmsans-OFL.txt",
+      "source_sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+      "target_sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-1.d4a478b1420d2e62.woff2",
+      "target": "v1/assets/optimized/fonts/font-1.d4a478b1420d2e62.woff2",
+      "source_sha256": "d4a478b1420d2e62a0efa989b67bd330d2af60bbe6931cb8c3fc949672516281",
+      "target_sha256": "d4a478b1420d2e62a0efa989b67bd330d2af60bbe6931cb8c3fc949672516281",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-10.aa357afe8ae1aada.woff2",
+      "target": "v1/assets/optimized/fonts/font-10.aa357afe8ae1aada.woff2",
+      "source_sha256": "aa357afe8ae1aada344349a7729d3615a34dc0a3ac29ba8a709c85fee69d80bc",
+      "target_sha256": "aa357afe8ae1aada344349a7729d3615a34dc0a3ac29ba8a709c85fee69d80bc",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-11.41d7e1d2cf8dd26c.woff2",
+      "target": "v1/assets/optimized/fonts/font-11.41d7e1d2cf8dd26c.woff2",
+      "source_sha256": "41d7e1d2cf8dd26cca508f00b4b6ee04a1daf0bb18ba4ac0fd20ba13d0776fa0",
+      "target_sha256": "41d7e1d2cf8dd26cca508f00b4b6ee04a1daf0bb18ba4ac0fd20ba13d0776fa0",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-12.3fc3bb11400ce945.woff2",
+      "target": "v1/assets/optimized/fonts/font-12.3fc3bb11400ce945.woff2",
+      "source_sha256": "3fc3bb11400ce9452a604d2a73c43626d88d22633aad6a90f18b5e17beb5299a",
+      "target_sha256": "3fc3bb11400ce9452a604d2a73c43626d88d22633aad6a90f18b5e17beb5299a",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-13.aff599989e4704c8.woff2",
+      "target": "v1/assets/optimized/fonts/font-13.aff599989e4704c8.woff2",
+      "source_sha256": "aff599989e4704c85ebf6672ea87eea43d3160626229be2df123953591ba31e5",
+      "target_sha256": "aff599989e4704c85ebf6672ea87eea43d3160626229be2df123953591ba31e5",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-14.c4b25c0c2684bcfa.woff2",
+      "target": "v1/assets/optimized/fonts/font-14.c4b25c0c2684bcfa.woff2",
+      "source_sha256": "c4b25c0c2684bcfa09752012d7c201129ea12b0e44acd4147184a55de058a241",
+      "target_sha256": "c4b25c0c2684bcfa09752012d7c201129ea12b0e44acd4147184a55de058a241",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-15.affb0664ffcf0295.woff2",
+      "target": "v1/assets/optimized/fonts/font-15.affb0664ffcf0295.woff2",
+      "source_sha256": "affb0664ffcf0295f8f76e3b27ee03a3cc026a24ac853b0cedbc4b2a327eb24b",
+      "target_sha256": "affb0664ffcf0295f8f76e3b27ee03a3cc026a24ac853b0cedbc4b2a327eb24b",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-2.59423580f67ae999.woff2",
+      "target": "v1/assets/optimized/fonts/font-2.59423580f67ae999.woff2",
+      "source_sha256": "59423580f67ae999ae0b089069ff9b2449a59a96388c60beb6754afbb1b4778d",
+      "target_sha256": "59423580f67ae999ae0b089069ff9b2449a59a96388c60beb6754afbb1b4778d",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-3.c0610e47360b9301.woff2",
+      "target": "v1/assets/optimized/fonts/font-3.c0610e47360b9301.woff2",
+      "source_sha256": "c0610e47360b93018fdf033d71d3b4fcb5c2e5f26092d287fbabc11d3e6e2fb9",
+      "target_sha256": "c0610e47360b93018fdf033d71d3b4fcb5c2e5f26092d287fbabc11d3e6e2fb9",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-4.2ea1bf6e4127eebf.woff2",
+      "target": "v1/assets/optimized/fonts/font-4.2ea1bf6e4127eebf.woff2",
+      "source_sha256": "2ea1bf6e4127eebf51f201e62bc23578f715f9581ddebd7f63ae46d275199e40",
+      "target_sha256": "2ea1bf6e4127eebf51f201e62bc23578f715f9581ddebd7f63ae46d275199e40",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-5.5db7ec8890b78af7.woff2",
+      "target": "v1/assets/optimized/fonts/font-5.5db7ec8890b78af7.woff2",
+      "source_sha256": "5db7ec8890b78af7db1b70a7a9a0872acc476a8fca50b40ba6c16b8e0fc15117",
+      "target_sha256": "5db7ec8890b78af7db1b70a7a9a0872acc476a8fca50b40ba6c16b8e0fc15117",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-6.fd6f63245e24082f.woff2",
+      "target": "v1/assets/optimized/fonts/font-6.fd6f63245e24082f.woff2",
+      "source_sha256": "fd6f63245e24082f4f0d9c76840e50c87834769af1711c0caccb7cebd61fc4fc",
+      "target_sha256": "fd6f63245e24082f4f0d9c76840e50c87834769af1711c0caccb7cebd61fc4fc",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-7.9b1a44756787bbc9.woff2",
+      "target": "v1/assets/optimized/fonts/font-7.9b1a44756787bbc9.woff2",
+      "source_sha256": "9b1a44756787bbc9fdbfbaeea5b3f6a8fcf1df426c0d6f8456bd5591a08a35a9",
+      "target_sha256": "9b1a44756787bbc9fdbfbaeea5b3f6a8fcf1df426c0d6f8456bd5591a08a35a9",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-8.9e9e02e13969e6cc.woff2",
+      "target": "v1/assets/optimized/fonts/font-8.9e9e02e13969e6cc.woff2",
+      "source_sha256": "9e9e02e13969e6cc057d4aeccac39cde2df1c63adeb4b9fcfeac2e259fa6439c",
+      "target_sha256": "9e9e02e13969e6cc057d4aeccac39cde2df1c63adeb4b9fcfeac2e259fa6439c",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/fonts/font-9.da8e87a86e5febd3.woff2",
+      "target": "v1/assets/optimized/fonts/font-9.da8e87a86e5febd3.woff2",
+      "source_sha256": "da8e87a86e5febd3232e12ecf4b97d6a78a2bbb1f8af43798350cec475cd1f96",
+      "target_sha256": "da8e87a86e5febd3232e12ecf4b97d6a78a2bbb1f8af43798350cec475cd1f96",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/fonts/manrope-OFL.txt",
-      "target": "v1/assets/fonts/manrope-OFL.txt",
-      "sha256": "e178bfe7c691e41a2a106ce56f285f079355593dc78e918d30b39cf0714c70d3"
+      "target": "v1/assets/optimized/fonts/manrope-OFL.txt",
+      "source_sha256": "e178bfe7c691e41a2a106ce56f285f079355593dc78e918d30b39cf0714c70d3",
+      "target_sha256": "e178bfe7c691e41a2a106ce56f285f079355593dc78e918d30b39cf0714c70d3",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/fonts/outfit-OFL.txt",
-      "target": "v1/assets/fonts/outfit-OFL.txt",
-      "sha256": "916fdcb34129e58b62d12a9d27ac746bb8742bc42409521c1438521cfcea7eb5"
+      "target": "v1/assets/optimized/fonts/outfit-OFL.txt",
+      "source_sha256": "916fdcb34129e58b62d12a9d27ac746bb8742bc42409521c1438521cfcea7eb5",
+      "target_sha256": "916fdcb34129e58b62d12a9d27ac746bb8742bc42409521c1438521cfcea7eb5",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/images/aura.476e6b0002960b94.webp",
-      "target": "v1/assets/images/aura.476e6b0002960b94.webp",
-      "sha256": "476e6b0002960b94ae917cac418fa75162d1b2c13d4db055626fd412ad123a7a"
+      "target": "v1/assets/optimized/images/aura.476e6b0002960b94.webp",
+      "source_sha256": "476e6b0002960b94ae917cac418fa75162d1b2c13d4db055626fd412ad123a7a",
+      "target_sha256": "476e6b0002960b94ae917cac418fa75162d1b2c13d4db055626fd412ad123a7a",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/images/aura.fd76018a11c4870f.png",
+      "target": "v1/assets/optimized/images/aura.fd76018a11c4870f.png",
+      "source_sha256": "fd76018a11c4870fafc71ee7435359174836959338766f1adcf113aa31994aee",
+      "target_sha256": "fd76018a11c4870fafc71ee7435359174836959338766f1adcf113aa31994aee",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/images/expenses.218dc64e5888b5b5.webp",
-      "target": "v1/assets/images/expenses.218dc64e5888b5b5.webp",
-      "sha256": "218dc64e5888b5b5a1a426f6d4268e58b944a250fced5fa066c58efb318ec686"
+      "target": "v1/assets/optimized/images/expenses.218dc64e5888b5b5.webp",
+      "source_sha256": "218dc64e5888b5b5a1a426f6d4268e58b944a250fced5fa066c58efb318ec686",
+      "target_sha256": "218dc64e5888b5b5a1a426f6d4268e58b944a250fced5fa066c58efb318ec686",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/images/expenses.b307f5567bf4c83d.png",
+      "target": "v1/assets/optimized/images/expenses.b307f5567bf4c83d.png",
+      "source_sha256": "b307f5567bf4c83d15ec1a663c6e5544970c2b9e79df1b51ebef698616b67ee7",
+      "target_sha256": "b307f5567bf4c83d15ec1a663c6e5544970c2b9e79df1b51ebef698616b67ee7",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/images/glitchlabs.28737668f879555d.webp",
-      "target": "v1/assets/images/glitchlabs.28737668f879555d.webp",
-      "sha256": "28737668f879555d9c78ce879d25c3fece2b49ac7df47f6205b1c5870e8bfbc0"
+      "target": "v1/assets/optimized/images/glitchlabs.28737668f879555d.webp",
+      "source_sha256": "28737668f879555d9c78ce879d25c3fece2b49ac7df47f6205b1c5870e8bfbc0",
+      "target_sha256": "28737668f879555d9c78ce879d25c3fece2b49ac7df47f6205b1c5870e8bfbc0",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/images/glitchlabs.889588fa2a121724.png",
-      "target": "v1/assets/images/glitchlabs.889588fa2a121724.png",
-      "sha256": "889588fa2a1217249f8001bfb84aed5e67abf98ff83220796f3ba727cf2bb14b"
+      "target": "v1/assets/optimized/images/glitchlabs.889588fa2a121724.png",
+      "source_sha256": "889588fa2a1217249f8001bfb84aed5e67abf98ff83220796f3ba727cf2bb14b",
+      "target_sha256": "889588fa2a1217249f8001bfb84aed5e67abf98ff83220796f3ba727cf2bb14b",
+      "adaptation": null
     },
     {
       "source": "assets/optimized/images/lumen.19a65105a4ebe278.webp",
-      "target": "v1/assets/images/lumen.19a65105a4ebe278.webp",
-      "sha256": "19a65105a4ebe2780d57d25edeb2a02faa20906dc0caafeeda741e58125c827e"
+      "target": "v1/assets/optimized/images/lumen.19a65105a4ebe278.webp",
+      "source_sha256": "19a65105a4ebe2780d57d25edeb2a02faa20906dc0caafeeda741e58125c827e",
+      "target_sha256": "19a65105a4ebe2780d57d25edeb2a02faa20906dc0caafeeda741e58125c827e",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/images/lumen.2ccf8d3e6182c72b.png",
+      "target": "v1/assets/optimized/images/lumen.2ccf8d3e6182c72b.png",
+      "source_sha256": "2ccf8d3e6182c72b62709fe1454f8f69bfa5bcca3965eb01970d671ae6c5ab00",
+      "target_sha256": "2ccf8d3e6182c72b62709fe1454f8f69bfa5bcca3965eb01970d671ae6c5ab00",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/js/invite.134c0a516730fd35.min.js",
+      "target": "v1/assets/optimized/js/invite.134c0a516730fd35.min.js",
+      "source_sha256": "134c0a516730fd358ce059763c91afc2303cf5b091e02fe98d847ab7a8fc9a36",
+      "target_sha256": "134c0a516730fd358ce059763c91afc2303cf5b091e02fe98d847ab7a8fc9a36",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/js/script.97ea315461fc350c.js",
+      "target": "v1/assets/optimized/js/script.97ea315461fc350c.js",
+      "source_sha256": "95d1291e90e3c124751617bd21399b016dca50fa3040bf2196a07dfafa58dce2",
+      "target_sha256": "95d1291e90e3c124751617bd21399b016dca50fa3040bf2196a07dfafa58dce2",
+      "adaptation": null
+    },
+    {
+      "source": "assets/optimized/manifest.json",
+      "target": "v1/assets/optimized/manifest.json",
+      "source_sha256": "c5e94ec5055d7ead662937fdc4fc96fc7fd5abfa339aa5881bf50dc2b3e3e889",
+      "target_sha256": "c5e94ec5055d7ead662937fdc4fc96fc7fd5abfa339aa5881bf50dc2b3e3e889",
+      "adaptation": null
+    },
+    {
+      "source": "aura/data-controls.html",
+      "target": "v1/aura/data-controls.html",
+      "source_sha256": "33bbcb2af78be1e0d12817b643222f02d5a6c2a4ebfbade1a46165110b1f824b",
+      "target_sha256": "e8ef41f4e70deaef50ac14aacc6550ef1330ea897fc478f4917818886a5ea613",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "aura/get/index.html",
+      "target": "v1/aura/get/index.html",
+      "source_sha256": "c7f90fdb212203427e3995ce31b87a2b04365e6aa34ea315e5b56a78d8e0580a",
+      "target_sha256": "b935bd4bbc52dc0dabd344e30e84673f035b53d82d563ba84d4a4c2c0c4dfa3d",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "aura/index.html",
+      "target": "v1/aura/index.html",
+      "source_sha256": "6ae464e7e566a909455be98dcea09475f1c726fa60525d3b917dcdf1d2147c17",
+      "target_sha256": "587b7aa012cd794eed049d6c319a14fff4280d1d62475a1e22a6b798b271daef",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "aura/privacy.html",
+      "target": "v1/aura/privacy.html",
+      "source_sha256": "b48ba5b708588ded837233f6bd1cd074452bfc3997937ddbe8401e33fdede635",
+      "target_sha256": "5ddd2fadecf29bae354a6e74d13839da8b46e0dc43cf20d06677275063565ce8",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "aura/support.html",
+      "target": "v1/aura/support.html",
+      "source_sha256": "a8e3fb47f60a84db6a66f3ab4798c4b6b628d4483ce637d2cd51b4d42bf0c1fe",
+      "target_sha256": "1bc38e9034286f57906bba83cc8c6b28d07689030b1fda2529f8d08c6cedac6f",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "contact.html",
+      "target": "v1/contact.html",
+      "source_sha256": "330eea5bee74e5daa3fa5c4efcaeb1fee066d337a4cd1c6c10172f317db097f2",
+      "target_sha256": "46a8b1d6bdaf43439d068729e2ed9a7f4f38916a98bb65632a069ba4c102d6a2",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "documents.css",
+      "target": "v1/documents.css",
+      "source_sha256": "34bd6ebe8a37c3552449d542d6270d20b92119786eba7ff528fe927a560f93f1",
+      "target_sha256": "34bd6ebe8a37c3552449d542d6270d20b92119786eba7ff528fe927a560f93f1",
+      "adaptation": null
+    },
+    {
+      "source": "expenses/delete-account.html",
+      "target": "v1/expenses/delete-account.html",
+      "source_sha256": "cf8d75f12412271869bd51afb47b3ee2f36479a54454f15410eb26232b0556c5",
+      "target_sha256": "d2d39d17cc217f550d54840969928f56a7bf6bdf1595d7c71df70b4e4cacb4f0",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "expenses/get/index.html",
+      "target": "v1/expenses/get/index.html",
+      "source_sha256": "8ef5072df0a7dada5f343d34843bfb7dcc928bc4ef3d979f290d7ede6662ac83",
+      "target_sha256": "39bb21d3248107477b2fe26ed59aaa58aee7eb1a2f51669fc0ff865e999c8bd9",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "expenses/index.html",
+      "target": "v1/expenses/index.html",
+      "source_sha256": "1d19fd5a125ac6d0164bd1600103f5229f12d68d24dadcba77a80ad1dfdb75f4",
+      "target_sha256": "e9b34e6ac28a25732863edc57a727adcdf4bfef8d4eca6c287f96f748f5fac54",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "expenses/invite.html",
+      "target": "v1/expenses/invite.html",
+      "source_sha256": "6e3466dad9971d1c29e68cf2b2e4a620f946627fff4f6a726df27dd56ec40688",
+      "target_sha256": "cd4cae12ffc3e9a364d029fbf10d995104c597049138e961baecf876add50258",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "expenses/privacy.html",
+      "target": "v1/expenses/privacy.html",
+      "source_sha256": "209bb2e0bd34c7fe61c845546addb2121adc1132ecfa12f409d24532edac1fbd",
+      "target_sha256": "02b718d706e058941effa1a8b80d580cd22c0c9dafe5a799cb4e8bceaccc70a1",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "expenses/support.html",
+      "target": "v1/expenses/support.html",
+      "source_sha256": "1ef9135b2a63ed7357c607f0f80d206ae40196e6830af25f091d12a5769b5fb3",
+      "target_sha256": "64b38730b5d3d16d05a39d9a979db716992b5156d5f177a1745c65f056ccfb3c",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "fonts.css",
+      "target": "v1/fonts.css",
+      "source_sha256": "0a7fa88296bfa054da60b327f2989df1a14937e74130d33203a82dd2d0f3dba3",
+      "target_sha256": "0a7fa88296bfa054da60b327f2989df1a14937e74130d33203a82dd2d0f3dba3",
+      "adaptation": null
+    },
+    {
+      "source": "get.css",
+      "target": "v1/get.css",
+      "source_sha256": "255fe9b37aaecba67307c2f8a6e0a205b5c472d371d326e2fd94c9b5d567bc23",
+      "target_sha256": "255fe9b37aaecba67307c2f8a6e0a205b5c472d371d326e2fd94c9b5d567bc23",
+      "adaptation": null
+    },
+    {
+      "source": "index.html",
+      "target": "v1/index.html",
+      "source_sha256": "ecb7ad3438e970acab3fc5e2fdd5f51c2b896ea84d3851c791516ab8edcfee65",
+      "target_sha256": "6b2514959747dd9f8246c9cf5a9c6a03d8af4653ab2d17027e86b3e0a5724185",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "invite.js",
+      "target": "v1/invite.js",
+      "source_sha256": "5811ad5467143afa13c339293a2aa6cdbdcc4b6efd15e5c7ec19a1e291fa0f76",
+      "target_sha256": "5811ad5467143afa13c339293a2aa6cdbdcc4b6efd15e5c7ec19a1e291fa0f76",
+      "adaptation": null
+    },
+    {
+      "source": "lumen/data-controls.html",
+      "target": "v1/lumen/data-controls.html",
+      "source_sha256": "4100a1219db834f11b88027178c2952304a74829ff34ff909f46f2e3173b9db6",
+      "target_sha256": "d9bcb797110d38d8cc09148c0f77eedf4a3da2f06c1f14bd55010d90ada4e309",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "lumen/delete-account.html",
+      "target": "v1/lumen/delete-account.html",
+      "source_sha256": "be654dbcf1be8d7e6cbcb464fe449d9c0768606567be9568b16a79e7a359070a",
+      "target_sha256": "5dc037d3d5147df5c542f3cc4c49ca95ae6f3746c47b4da088b90fdf094ea33b",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "lumen/get/index.html",
+      "target": "v1/lumen/get/index.html",
+      "source_sha256": "38936863f49111f939362e61d33f30ba3266bc36c5f0e8f546067c7120ede2e7",
+      "target_sha256": "f40dcfaeda50ec03e43604fabc4baf8b07c126c0b7de9c91decca94f1dea0a7b",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "lumen/index.html",
+      "target": "v1/lumen/index.html",
+      "source_sha256": "654bb4e5fc3c5900c9f6be962fdbf35f3e1d4e73c454ab71f005bee963f4c9c1",
+      "target_sha256": "a7f853c2676c69df63761173acd1c4de9a6338b9113c710d4e217162b8cb34be",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "lumen/privacy.html",
+      "target": "v1/lumen/privacy.html",
+      "source_sha256": "33e0bc8e614c33f77b52d89b6eb114e63d9a9cc54edf6581cb8883a7cb18259e",
+      "target_sha256": "cff2b8a9a2966a32e8bbabe0f6f4a47c9b6f3fef0ece75df2872e2a3af2f4789",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "lumen/support.html",
+      "target": "v1/lumen/support.html",
+      "source_sha256": "0fc547f2a614815a40766e906757c1fd98d7b8dfd781ba979424255915b0f4c0",
+      "target_sha256": "1a6bb3c48abb8c7c06f3cb3369a93a425c77007a7efcf010ffb19de3360e6379",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "lumen/terms.html",
+      "target": "v1/lumen/terms.html",
+      "source_sha256": "d36ae9b28f3c8512a9dd096e0e572e0630e5decff1ac42657a9b2ef3c021bc71",
+      "target_sha256": "3a597e5856932302ba779a76bb8f40f7bab33c4f3dbe54ae9d30f2a1b23a00f4",
+      "adaptation": "Added noindex,nofollow metadata only."
+    },
+    {
+      "source": "mobile.css",
+      "target": "v1/mobile.css",
+      "source_sha256": "0c72d81d9d6f44b14de16e59538e8af718ba3dafba9123bd09db0d4a08a36832",
+      "target_sha256": "0c72d81d9d6f44b14de16e59538e8af718ba3dafba9123bd09db0d4a08a36832",
+      "adaptation": null
+    },
+    {
+      "source": "navigation.css",
+      "target": "v1/navigation.css",
+      "source_sha256": "194018c8d3e8c2af166444860d3cfaec3c35ca9a6c301d620c0a5867c1f79c42",
+      "target_sha256": "194018c8d3e8c2af166444860d3cfaec3c35ca9a6c301d620c0a5867c1f79c42",
+      "adaptation": null
+    },
+    {
+      "source": "product-themes.css",
+      "target": "v1/product-themes.css",
+      "source_sha256": "99800d9ab4e154426d0043869fbb0bbe5fb3fb8a74ec42acdefafd7a0c0c3451",
+      "target_sha256": "99800d9ab4e154426d0043869fbb0bbe5fb3fb8a74ec42acdefafd7a0c0c3451",
+      "adaptation": null
+    },
+    {
+      "source": "script.js",
+      "target": "v1/script.js",
+      "source_sha256": "95d1291e90e3c124751617bd21399b016dca50fa3040bf2196a07dfafa58dce2",
+      "target_sha256": "95d1291e90e3c124751617bd21399b016dca50fa3040bf2196a07dfafa58dce2",
+      "adaptation": null
+    },
+    {
+      "source": "studio-theme.css",
+      "target": "v1/studio-theme.css",
+      "source_sha256": "990447947b0cf3833c151e6000b4b72cc9e0922b40298f632baaffe1a89ffed0",
+      "target_sha256": "990447947b0cf3833c151e6000b4b72cc9e0922b40298f632baaffe1a89ffed0",
+      "adaptation": null
+    },
+    {
+      "source": "styles.css",
+      "target": "v1/styles.css",
+      "source_sha256": "6c557168968cdfc40d9a6d3e1a4acdcf18539dfb0f9b906d698b7d23d2edf6d0",
+      "target_sha256": "6c557168968cdfc40d9a6d3e1a4acdcf18539dfb0f9b906d698b7d23d2edf6d0",
+      "adaptation": null
+    },
+    {
+      "source": "typography.css",
+      "target": "v1/typography.css",
+      "source_sha256": "59832a3a761f0e7e796d1e24cc5e5bf5f72df46b52eb8458e5bcf4be2e87e1b3",
+      "target_sha256": "59832a3a761f0e7e796d1e24cc5e5bf5f72df46b52eb8458e5bcf4be2e87e1b3",
+      "adaptation": null
     }
   ]
 }

@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "assets": {
+    "assets/glitchlabs.png": {
+      "source_sha256": "38e8cca8175cb95f708e18c7d5585c6e6075154f33b899a0b5472bf260427a1c",
+      "source_bytes": 1859777,
+      "output": "assets/optimized/images/glitchlabs.28737668f879555d.webp",
+      "output_sha256": "28737668f879555d9c78ce879d25c3fece2b49ac7df47f6205b1c5870e8bfbc0",
+      "output_bytes": 1237924,
+      "saved_bytes": 621853,
+      "fallback": "assets/optimized/images/glitchlabs.889588fa2a121724.png",
+      "fallback_sha256": "889588fa2a1217249f8001bfb84aed5e67abf98ff83220796f3ba727cf2bb14b",
+      "fallback_bytes": 1764978,
+      "verified": "Exact RGBA pixels, dimensions and ICC profile"
+    },
+    "assets/expenses.png": {
+      "source_sha256": "e943c2402861d796d1f0dcd676220d90cd67f27d9c61c663281bfd91a25e4371",
+      "source_bytes": 1799056,
+      "output": "assets/optimized/images/expenses.218dc64e5888b5b5.webp",
+      "output_sha256": "218dc64e5888b5b5a1a426f6d4268e58b944a250fced5fa066c58efb318ec686",
+      "output_bytes": 1184400,
+      "saved_bytes": 614656,
+      "fallback": "assets/optimized/images/expenses.b307f5567bf4c83d.png",
+      "fallback_sha256": "b307f5567bf4c83d15ec1a663c6e5544970c2b9e79df1b51ebef698616b67ee7",
+      "fallback_bytes": 1626506,
+      "verified": "Exact RGBA pixels, dimensions and ICC profile"
+    },
+    "assets/aura.png": {
+      "source_sha256": "383112b9a1ffedf915defe57ba55ca5cbfe5549b1cdf73eaa6f3cd55ecefa39e",
+      "source_bytes": 1618622,
+      "output": "assets/optimized/images/aura.476e6b0002960b94.webp",
+      "output_sha256": "476e6b0002960b94ae917cac418fa75162d1b2c13d4db055626fd412ad123a7a",
+      "output_bytes": 1043800,
+      "saved_bytes": 574822,
+      "fallback": "assets/optimized/images/aura.fd76018a11c4870f.png",
+      "fallback_sha256": "fd76018a11c4870fafc71ee7435359174836959338766f1adcf113aa31994aee",
+      "fallback_bytes": 1517479,
+      "verified": "Exact RGBA pixels, dimensions and ICC profile"
+    },
+    "assets/lumen.png": {
+      "source_sha256": "11a92eca7e4a8d999e7ec32dc4b2f237c0a78a159f25774cef9856a56a75bf1f",
+      "source_bytes": 2102033,
+      "output": "assets/optimized/images/lumen.19a65105a4ebe278.webp",
+      "output_sha256": "19a65105a4ebe2780d57d25edeb2a02faa20906dc0caafeeda741e58125c827e",
+      "output_bytes": 1433700,
+      "saved_bytes": 668333,
+      "fallback": "assets/optimized/images/lumen.2ccf8d3e6182c72b.png",
+      "fallback_sha256": "2ccf8d3e6182c72b62709fe1454f8f69bfa5bcca3965eb01970d671ae6c5ab00",
+      "fallback_bytes": 1992498,
+      "verified": "Exact RGBA pixels, dimensions and ICC profile"
+    },
+    "assets/fonts/font-1.ttf": {
+      "source_sha256": "6d37a86241a25d63f8fe6018b4c083449886b7165c1acb15edd0f574f690ecf7",
+      "source_bytes": 290236,
+      "output": "assets/optimized/fonts/font-1.d4a478b1420d2e62.woff2",
+      "output_sha256": "d4a478b1420d2e62a0efa989b67bd330d2af60bbe6931cb8c3fc949672516281",
+      "output_bytes": 63544,
+      "saved_bytes": 226692,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-10.ttf": {
+      "source_sha256": "6bad1a774228464cc88b8b0271555b266f7a3c64a7bedf15e165fdab4f6ac0ce",
+      "source_bytes": 95096,
+      "output": "assets/optimized/fonts/font-10.aa357afe8ae1aada.woff2",
+      "output_sha256": "aa357afe8ae1aada344349a7729d3615a34dc0a3ac29ba8a709c85fee69d80bc",
+      "output_bytes": 30404,
+      "saved_bytes": 64692,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-11.ttf": {
+      "source_sha256": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8",
+      "source_bytes": 94928,
+      "output": "assets/optimized/fonts/font-11.41d7e1d2cf8dd26c.woff2",
+      "output_sha256": "41d7e1d2cf8dd26cca508f00b4b6ee04a1daf0bb18ba4ac0fd20ba13d0776fa0",
+      "output_bytes": 30620,
+      "saved_bytes": 64308,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-12.ttf": {
+      "source_sha256": "6a8c9be856a6b9e09c66615634904616152c9de5e44db343a3ced240479c586a",
+      "source_bytes": 47844,
+      "output": "assets/optimized/fonts/font-12.3fc3bb11400ce945.woff2",
+      "output_sha256": "3fc3bb11400ce9452a604d2a73c43626d88d22633aad6a90f18b5e17beb5299a",
+      "output_bytes": 18136,
+      "saved_bytes": 29708,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-13.ttf": {
+      "source_sha256": "9a9f465776e653cd6175661d844555e08684d432518f1d2c621bcb3006598f9c",
+      "source_bytes": 47800,
+      "output": "assets/optimized/fonts/font-13.aff599989e4704c8.woff2",
+      "output_sha256": "aff599989e4704c85ebf6672ea87eea43d3160626229be2df123953591ba31e5",
+      "output_bytes": 17500,
+      "saved_bytes": 30300,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-14.ttf": {
+      "source_sha256": "8900df5726b5a6f23e723594f11d5ea27e695bd85c884f18d88ed080544fe205",
+      "source_bytes": 48456,
+      "output": "assets/optimized/fonts/font-14.c4b25c0c2684bcfa.woff2",
+      "output_sha256": "c4b25c0c2684bcfa09752012d7c201129ea12b0e44acd4147184a55de058a241",
+      "output_bytes": 18384,
+      "saved_bytes": 30072,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-15.ttf": {
+      "source_sha256": "49dcdf653a004a2575b3de649f5e4c549d774fecddf317812330edd0ad70685a",
+      "source_bytes": 48340,
+      "output": "assets/optimized/fonts/font-15.affb0664ffcf0295.woff2",
+      "output_sha256": "affb0664ffcf0295f8f76e3b27ee03a3cc026a24ac853b0cedbc4b2a327eb24b",
+      "output_bytes": 18200,
+      "saved_bytes": 30140,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-2.ttf": {
+      "source_sha256": "1724047c8988ca5155bff667bc48fa52e97d57aabc6b42eebbf986f21a4be20b",
+      "source_bytes": 290496,
+      "output": "assets/optimized/fonts/font-2.59423580f67ae999.woff2",
+      "output_sha256": "59423580f67ae999ae0b089069ff9b2449a59a96388c60beb6754afbb1b4778d",
+      "output_bytes": 64432,
+      "saved_bytes": 226064,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-3.ttf": {
+      "source_sha256": "69e7ae35cba23d962227b86f99217c250e642e4c6f6104b4f3ec465039e4e2d8",
+      "source_bytes": 290392,
+      "output": "assets/optimized/fonts/font-3.c0610e47360b9301.woff2",
+      "output_sha256": "c0610e47360b93018fdf033d71d3b4fcb5c2e5f26092d287fbabc11d3e6e2fb9",
+      "output_bytes": 64660,
+      "saved_bytes": 225732,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-4.ttf": {
+      "source_sha256": "b0ae3e89a7d3ef2b1838bb4b1ceb0b17cc3435af061eee809d76aa623ff116e9",
+      "source_bytes": 48280,
+      "output": "assets/optimized/fonts/font-4.2ea1bf6e4127eebf.woff2",
+      "output_sha256": "2ea1bf6e4127eebf51f201e62bc23578f715f9581ddebd7f63ae46d275199e40",
+      "output_bytes": 19164,
+      "saved_bytes": 29116,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-5.ttf": {
+      "source_sha256": "376427b5322148d8de1e03f263bcca4935a2d60ba71d9f94f4947ab664c711ae",
+      "source_bytes": 48308,
+      "output": "assets/optimized/fonts/font-5.5db7ec8890b78af7.woff2",
+      "output_sha256": "5db7ec8890b78af7db1b70a7a9a0872acc476a8fca50b40ba6c16b8e0fc15117",
+      "output_bytes": 19412,
+      "saved_bytes": 28896,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-6.ttf": {
+      "source_sha256": "b79a2ea7a38f33fd96a282fadb9ce97626bb0724a44d21075859f0e50239993a",
+      "source_bytes": 48280,
+      "output": "assets/optimized/fonts/font-6.fd6f63245e24082f.woff2",
+      "output_sha256": "fd6f63245e24082f4f0d9c76840e50c87834769af1711c0caccb7cebd61fc4fc",
+      "output_bytes": 19192,
+      "saved_bytes": 29088,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-7.ttf": {
+      "source_sha256": "2a8e7f713ee79fbccdef3cef5c787aff47580299f7da60144961e7db2ec08211",
+      "source_bytes": 48200,
+      "output": "assets/optimized/fonts/font-7.9b1a44756787bbc9.woff2",
+      "output_sha256": "9b1a44756787bbc9fdbfbaeea5b3f6a8fcf1df426c0d6f8456bd5591a08a35a9",
+      "output_bytes": 19488,
+      "saved_bytes": 28712,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-8.ttf": {
+      "source_sha256": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
+      "source_bytes": 94972,
+      "output": "assets/optimized/fonts/font-8.9e9e02e13969e6cc.woff2",
+      "output_sha256": "9e9e02e13969e6cc057d4aeccac39cde2df1c63adeb4b9fcfeac2e259fa6439c",
+      "output_bytes": 30316,
+      "saved_bytes": 64656,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "assets/fonts/font-9.ttf": {
+      "source_sha256": "f433e5d333be1128d8ec8a28b8aadd0314d10e14e4105406076666bc830fc15d",
+      "source_bytes": 95060,
+      "output": "assets/optimized/fonts/font-9.da8e87a86e5febd3.woff2",
+      "output_sha256": "da8e87a86e5febd3232e12ecf4b97d6a78a2bbb1f8af43798350cec475cd1f96",
+      "output_bytes": 30052,
+      "saved_bytes": 65008,
+      "verified": "Glyph order, character map, outlines and horizontal metrics"
+    },
+    "documents.css": {
+      "source_sha256": "8e038c89e8c79bbea03ffd4f16524d4b9394b42c7e5c2f2dc2e9fc7e4713efa0",
+      "source_bytes": 4222,
+      "output": "assets/optimized/css/documents.f01063289b2fd9d0.min.css",
+      "output_sha256": "f01063289b2fd9d04852588baf3a9b9fee9a4121d488a1153000fba3d76b5d40",
+      "output_bytes": 4002,
+      "saved_bytes": 220
+    },
+    "fonts.css": {
+      "source_sha256": "05f410a7dd3f35cf1d9e3112375cbc87e22919cdac9cd160b221c9a66819b70f",
+      "source_bytes": 2534,
+      "output": "assets/optimized/css/fonts.22080ed0820d31af.min.css",
+      "output_sha256": "22080ed0820d31afa3c9263772c98db0182d2c8c3243df5b8f9e0594d9e7b338",
+      "output_bytes": 2300,
+      "saved_bytes": 234
+    },
+    "get.css": {
+      "source_sha256": "3256b3208769bddf155dd44bbc4efbf0f422f2c61b1d9d374b4fc23848dad4db",
+      "source_bytes": 2402,
+      "output": "assets/optimized/css/get.de431b5a6d15dc26.min.css",
+      "output_sha256": "de431b5a6d15dc263088b467fb04fd1be5cf266008185b1ba4d45f0216219e12",
+      "output_bytes": 2258,
+      "saved_bytes": 144
+    },
+    "mobile.css": {
+      "source_sha256": "b2db4cfc95cbcca5185fe53d9967ce6108e633fd92b853bbfb95dc6bff9d8f1f",
+      "source_bytes": 7193,
+      "output": "assets/optimized/css/mobile.26798943b1fe419e.min.css",
+      "output_sha256": "26798943b1fe419ef11e8d25680e1136d98184550b637adecafc265613210ca0",
+      "output_bytes": 6514,
+      "saved_bytes": 679
+    },
+    "navigation.css": {
+      "source_sha256": "e2acff9a5695c16514a743769cb63a2a1cbd3c2e87f2d2e3877040fbf95c62af",
+      "source_bytes": 5572,
+      "output": "assets/optimized/css/navigation.7bf84c09f43bc18e.min.css",
+      "output_sha256": "7bf84c09f43bc18ec2e3349f8fb75cf982a0f4e9b85bc82f194dde427bc61d33",
+      "output_bytes": 5223,
+      "saved_bytes": 349
+    },
+    "product-themes.css": {
+      "source_sha256": "755c017880c0f287cf781b1384a63e6d958a887cdb12f20ae5a381f574490169",
+      "source_bytes": 10848,
+      "output": "assets/optimized/css/product-themes.2fd1cf4d71595c02.min.css",
+      "output_sha256": "2fd1cf4d71595c0261cbda337029dadadcb5a07258ce7df56a0461cabf7cc1a3",
+      "output_bytes": 10000,
+      "saved_bytes": 848
+    },
+    "studio-theme.css": {
+      "source_sha256": "7c33cd01ab56286d51fa0e67f892d47a4a9b7a5dc99ec62400f0859dafc194f7",
+      "source_bytes": 9722,
+      "output": "assets/optimized/css/studio-theme.30eebe2ff7f128fa.min.css",
+      "output_sha256": "30eebe2ff7f128fa920149b98981112483607347cbf802f33df83788025ef59e",
+      "output_bytes": 9250,
+      "saved_bytes": 472
+    },
+    "styles.css": {
+      "source_sha256": "8dcc1e51cc3a51229cbe6e1cc5f4b0d8d8dd4915f0252a0a56b1d38d1e360680",
+      "source_bytes": 10417,
+      "output": "assets/optimized/css/styles.33936f59f160d2fd.min.css",
+      "output_sha256": "33936f59f160d2fd5ec1e30a2f9ca39c0d2451cad4ac6ded17feaba922bb4937",
+      "output_bytes": 10415,
+      "saved_bytes": 2
+    },
+    "typography.css": {
+      "source_sha256": "13a74a3d4d88ecca3b3ab30cda6d57b5b6c8b378a859b1ecc890c910a15ec6a4",
+      "source_bytes": 4144,
+      "output": "assets/optimized/css/typography.99b1fd5f12a207d4.min.css",
+      "output_sha256": "99b1fd5f12a207d4d5992e241c80a8061c55edd6626d3942fb0952e69f5405b5",
+      "output_bytes": 3827,
+      "saved_bytes": 317
+    },
+    "invite.js": {
+      "source_sha256": "3197968cd8bef24a63c3fd4e71d267dc2847d4f583e340afacfcca5aa47be262",
+      "source_bytes": 461,
+      "output": "assets/optimized/js/invite.134c0a516730fd35.min.js",
+      "output_sha256": "134c0a516730fd358ce059763c91afc2303cf5b091e02fe98d847ab7a8fc9a36",
+      "output_bytes": 426,
+      "saved_bytes": 35
+    },
+    "script.js": {
+      "source_sha256": "97ea315461fc350c809485a76262363c10effd977d5684c006e904212304f742",
+      "source_bytes": 4703,
+      "output": "assets/optimized/js/script.97ea315461fc350c.js",
+      "output_sha256": "97ea315461fc350c809485a76262363c10effd977d5684c006e904212304f742",
+      "output_bytes": 4703,
+      "saved_bytes": 0,
+      "delivery": "Unminified, byte-identical to source"
+    }
+  }
+}
